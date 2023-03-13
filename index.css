@@ -1,0 +1,11 @@
+.header {
+  text-align: center;
+}
+.section {
+  width: 500px;
+
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 10px 5px 5px rgb(0, 0, 0);
+  border: 1px solid wheat;
+}
