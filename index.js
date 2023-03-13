@@ -6,20 +6,24 @@ const adding = () => {
     let div = document.createElement("d");
     div.classList.add("container");
 
-    let chilDiv = document.createElement("div");
-    chilDiv.textContent = input.value;
+    let ul = document.createElement("ul");
+    let li = document.createElement("li");
+    li.textContent = input.value;
+
     let edit = document.createElement("i");
     edit.classList.add("fa-solid");
     edit.classList.add("fa-pen");
     // console.log(edit);
-    div.appendChild(chilDiv);
-    div.appendChild(edit);
+    li.appendChild(edit);
 
     let del = document.createElement("i");
     del.classList.add("fa-regular");
     del.classList.add("fa-trash-can");
-    // console.log(del);
-    div.appendChild(del);
+
+    li.appendChild(del);
+    ul.appendChild(li);
+    div.appendChild(ul);
+    // console.log(li);
     console.log(div);
   });
 };
