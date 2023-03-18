@@ -92,8 +92,9 @@ function editTask(e) {
 
   console.log(this.parentNode.parentNode.firstChild.innerHTML);
   input.value = this.parentNode.parentNode.firstChild.innerHTML;
-
+  plus.setAttribute("fa-plus", 'fa-check"');
   //console.log("e", (e.target.onclick = h2.textContent));
+  ///<i class="fa-solid fa-check"></i>
 
   // for (let i = 0; i < ul.length; i++) {
   //   //console.log(ul[i].textContent);
