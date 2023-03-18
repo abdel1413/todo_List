@@ -1,5 +1,87 @@
+body {
+  margin: 0;
+  background-color: #faf7f5;
+}
 .header {
   text-align: center;
+}
+.palette {
+  /* border: 1px solid red; */
+  padding: 10px;
+  background-color: #200f29;
+  border-radius: 20px;
+  float: right;
+  margin-left: 0;
+}
+.palette i {
+  font-size: 1.5em;
+  padding: 5px;
+  color: #e0b0f8;
+}
+.dropdown {
+  border-radius: 30px;
+  border: 1px solid #200f29;
+  float: right;
+  margin-right: 25px;
+  margin-left: 10px;
+  margin-top: 30px;
+  padding: 0 5px;
+  background-color: #200f29;
+}
+
+.dropdown-container {
+  /* border: 1px solid red; */
+  float: right;
+  width: 250px;
+  margin-right: 16px;
+  /* clear: both; */
+}
+.themes {
+  width: 55%;
+  transform-origin: 100%;
+  top: 10;
+  bottom: auto;
+  right: 100%;
+  border: 1px solid #edeae8;
+  /* border: 2px solid blue; */
+  float: left;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-right: 0;
+  background-color: #faf7f5;
+}
+.dropdown-container .themes-data {
+  /* border: 1px solid #e4dfe1; */
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  /* transform-origin: 100%; */
+  top: 0;
+  padding: 10px;
+  bottom: auto;
+  /* right: 100%; */
+  /* border: 1px solid coral; */
+  /* width: 100%; */
+}
+.themes-data:hover {
+  /* border: 3px solid #faf7f5; */
+  background-color: #e4dfe1;
+  /* background-color: chartreuse; */
+  border-radius: 25px;
+  /* transform-origin: 100%; */
+  top: 0;
+  padding: 10px;
+  bottom: auto;
+  right: 100%;
+  /* padding: 10px; */
+  /* width: 70%; */
+  cursor: pointer;
+}
+.alert-message {
+  display: hide;
+  background-color: beige;
 }
 .input-field {
   display: flex;
@@ -40,32 +122,30 @@
   cursor: pointer;
 }
 
-.section {
+.container {
   width: 500px;
   margin: 0 auto;
   text-align: center;
-  box-shadow: 10px 10px 5px rgb(0, 0, 0);
-  border: 4px solid red;
-  background-color: lightblue;
+  box-shadow: 0 8px 32px 0 rgb(31, 38, 135, 0.6);
+  /* border: 4px solid red; */
+  background-color: #fbf8f6;
   padding: 20px;
 }
 ul {
+  /* border: 2px solid red; */
   margin: 0;
   padding: 0;
 }
 
-.container {
-  background-color: "yellow";
-}
-
 .data-container {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   /* display: flex; */
   /* justify-content: space-between; */
   /* border-radius: 30px; */
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
   /* padding: 5px; */
   padding: 0;
+  /* margin: 10px; */
 }
 /* .data-container ul {
   border: 2px solid green;
@@ -76,36 +156,42 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgb(186, 186, 212);
+  /* background-color: rgb(186, 186, 212); */
   width: 100%;
   padding: 0;
-  /* margin: 7px; */
+  margin: 7px 0;
 }
-/* li .data-item {
-  margin-left: 10px;
-} */
+.data-item {
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+}
 
+.list-data {
+  background-color: gray;
+  padding: 0;
+}
 .btn-div {
-  background-color: pink;
-  padding: 10px;
+  /* background-color: pink; */
+  /* padding: 5px; */
   align-items: center;
-
   display: inline;
   flex-direction: row;
-  margin: auto 0;
+  margin: 0;
 }
 
 .btn-div .edit-btn {
-  border: solid 1px pink;
+  border: solid 1px #67d49b;
   padding: 15px;
   border-radius: 15px;
   background-color: #67d49b;
   margin-right: 10px;
+  margin-left: 5px;
 }
 .btn-div .delete-btn {
-  border: solid 1px pink;
+  border: solid 1px #ec7071;
   padding: 15px;
-  border-radius: 20px;
+  border-radius: 15px;
   background-color: #ec7071;
   margin-right: 10px;
 }

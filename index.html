@@ -9,21 +9,27 @@
 <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div >
-        <i class="fa-solid fa-palette"></i>
-       
-    </div>
-    <section class="section">
-        <div><h1>Todo list</h1></div>
-        <div class="input-field">
-            <input type="text" name="text-field" id="text-field" >
-            <i class="fa-regular fa-plus"></i>
+    <div class="dropdown-container">
+        <div class="dropdown list">
+            <div class="palette">
+                <i class="fa-solid fa-palette"></i>
         </div>
-        <!-- <i class="fa-solid fa-pen"></i>
-        <i class="fa-regular fa-trash-can"></i> -->
-        <button id="delete-all">Delete All</button>
-        
-    </section>
+        </div>
+    </div>
+    <div class="container">
+        <header class="header-content" >
+            <h1>Todo list</h1>
+            <div class="alert-message hide"> 
+                <div class=" show-alert-message"> Task succesuflly added</div> 
+            </div>
+            <div class="input-field">
+                <input type="text" name="text-field" id="text-field" >
+                <i class="fa-regular fa-plus"></i>
+            </div>
+        </header>
+        <button id="delete-all">Delete All</button> 
+        <ul class="data-container"></ul> 
+    </div>
   <script src="index.js"></script>
 </body>
 </html>
