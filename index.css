@@ -105,10 +105,22 @@ body {
   background-color: #e2598c;
   cursor: pointer;
 }
+
+.fa-check {
+  border: solid 1px pink;
+  padding: 20px;
+  border-radius: 25px;
+  background-color: #ef9fbc;
+}
+.fa-check:hover {
+  background-color: #e2598c;
+  cursor: pointer;
+}
+
 #delete-all {
   background-color: #ef9fbc;
   margin: 10px 0;
-
+  /* width: 1500px; */
   /* margin-left: 10px; */
   display: flex;
   padding: 15px;
@@ -124,7 +136,11 @@ body {
 
 .container {
   width: 500px;
-  margin: 0 auto;
+  margin: auto;
+  /* display: flex;
+  min-width: 400px;
+  justify-content: center;
+  flex-direction: column; */
   text-align: center;
   box-shadow: 0 8px 32px 0 rgb(31, 38, 135, 0.6);
   /* border: 4px solid red; */
@@ -151,15 +167,16 @@ ul {
   border: 2px solid green;
 } */
 .data-container li {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   list-style: none;
   display: flex;
+  /* padding-left: 10px; */
   flex-direction: row;
   justify-content: space-between;
   /* background-color: rgb(186, 186, 212); */
   width: 100%;
   padding: 0;
-  margin: 7px 0;
+  margin: 10px 5px;
 }
 .data-item {
   padding: 0;
@@ -168,7 +185,7 @@ ul {
 }
 
 .list-data {
-  background-color: gray;
+  background-color: #fbf8f6;
   padding: 0;
 }
 .btn-div {

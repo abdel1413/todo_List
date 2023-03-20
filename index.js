@@ -1,3 +1,5 @@
+// search for a tutorial for local storage to have persistent data (data stays after refresh)
+
 let plus = document.querySelector(".fa-plus");
 let input = document.querySelector("#text-field");
 let section = document.querySelector("section");
@@ -5,107 +7,94 @@ let ul = document.querySelector("ul");
 let alertMessage = document.querySelector(".alert-message");
 let dropdown = document.querySelector(".list");
 let dropdownContainer = document.querySelector(".dropdown-container");
-
+let inputField = document.querySelector(".input-field");
 alertMessage.style.display = "none";
 
-// edit.addEventListener("click", () => {
-//   console.log("editing");
-// });
+let arrayElement = [];
 
 dropdown.addEventListener("click", paletteColorList);
-// console.log(input.value);
-const adding = () => {
-  let u = document.getElementsByTagName("li");
 
+const addingTask = () => {
+  let u = document.getElementsByTagName("li");
+  console.log("u", u);
+  let e = null;
+  console.log(e);
   plus.addEventListener("click", () => {
     if (input.value) {
-      let li = document.createElement("li");
-      li.classList.add("list-data");
+      let isEditing = plus.classList.contains("fa-check");
+      console.log("isEditing", isEditing);
+      if (isEditing && e) {
+        console.log("e", e);
+        console.log("e.targ", e.target);
+        e.target.parentElement.parentElement.previousSibling.innerHTML =
+          input.value;
+        plus.classList.remove("fa-check");
+      } else {
+        let li = document.createElement("li");
+        li.classList.add("list-data");
 
-      let h2 = document.createElement("h2");
-      h2.classList.add("data-item");
-      h2.textContent = input.value;
-      li.appendChild(h2);
+        let h2 = document.createElement("h2");
+        h2.classList.add("data-item");
+        h2.textContent = input.value;
+        li.appendChild(h2);
 
-      let editBtn = document.createElement("button");
-      editBtn.classList.add("edit-btn");
-      //console.log(editBtn);
+        let editBtn = document.createElement("button");
+        editBtn.classList.add("edit-btn");
 
-      let editIcon = document.createElement("i");
-      editIcon.classList.add("fa-solid");
-      editIcon.classList.add("fa-pen");
-      editBtn.appendChild(editIcon);
+        let editIcon = document.createElement("i");
+        editIcon.classList.add("fa-solid");
+        editIcon.classList.add("fa-pen");
+        editBtn.appendChild(editIcon);
 
-      //console.log("edit", editBtn);
-      //let list = document.querySelectorAll("li");
-      // console.log(list);
-      editBtn.addEventListener("click", editTask);
+        editBtn.addEventListener("click", function (ev) {
+          e = ev;
+          editTask(this);
+        });
 
-      // console.log("ul", li);
-      // let array = Array.from(list);
-      // for (let i = 0; i < array.length; i++) {
-      //   console.log(array[i], i);
-      // }
-      // let h2 = document.querySelector("h2");
+        let delBtn = document.createElement("button");
+        delBtn.classList.add("delete-btn");
+        let delIcon = document.createElement("i");
+        delIcon.classList.add("fa-regular");
+        delIcon.classList.add("fa-trash-can");
+        delBtn.appendChild(delIcon);
+        //console.log("det", delBtn);
 
-      let delBtn = document.createElement("button");
-      delBtn.classList.add("delete-btn");
-      let delIcon = document.createElement("i");
-      delIcon.classList.add("fa-regular");
-      delIcon.classList.add("fa-trash-can");
-      delBtn.appendChild(delIcon);
-      //console.log("det", delBtn);
+        delBtn.addEventListener("click", deleteTask);
 
-      delBtn.addEventListener("click", deleteTask);
+        let btnDivs = document.createElement("div");
+        btnDivs.classList.add("btn-div");
 
-      let btnDivs = document.createElement("div");
-      btnDivs.classList.add("btn-div");
+        btnDivs.appendChild(editBtn);
+        btnDivs.appendChild(delBtn);
 
-      btnDivs.appendChild(editBtn);
-      btnDivs.appendChild(delBtn);
-
-      li.appendChild(btnDivs);
-
-      ul.appendChild(li);
-
-      //console.log(ul);
+        li.appendChild(btnDivs);
+        ul.appendChild(li);
+      }
       input.value = "";
     } else {
       let modal = document.createElement("modal");
       alert("you have to enter a task!!!");
     }
   });
-
-  //deleting items function
 };
 
-adding();
+addingTask();
 
 function deleteTask() {
   this.parentNode.parentNode.remove();
 }
 function editTask(e) {
   let editable;
-  let li = document.querySelectorAll("li");
+  // let li = document.querySelectorAll("li");
   //console.log("li", li);
-  let h2 = document.querySelector("h2");
 
-  console.log(this.parentNode.parentNode.firstChild.innerHTML);
-  input.value = this.parentNode.parentNode.firstChild.innerHTML;
-  plus.setAttribute("fa-plus", 'fa-check"');
+  input.value = e.parentNode.parentNode.firstChild.innerHTML;
+  console.log(plus.className);
+  //let p = plus.classList.replace("fa-plus", "fa-check");
+  plus.classList.add("fa-check");
+
   //console.log("e", (e.target.onclick = h2.textContent));
   ///<i class="fa-solid fa-check"></i>
-
-  // for (let i = 0; i < ul.length; i++) {
-  //   //console.log(ul[i].textContent);
-  //   editable = ul[i].textContent;
-  //   console.log("eeeed", editable);
-
-  //   // ul[i].textContent.onclick = function () {
-  //   //   //console.log(e.target);
-  //   //   input.value = e.target;
-  //   // };
-  // }
 }
 
 function deletAll() {
@@ -144,18 +133,25 @@ function paletteColorList() {
     { luxury: "#09090B" },
     { night: "#0F1729" },
    */
-  let colorTheme = document.createElement("ul");
-  colorTheme.classList.add("themes");
+  let colorTheme = document.getElementsByClassName("themes");
 
-  for (let i = 0; i < colors.length; i++) {
-    let li = document.createElement("li");
-    li.classList.add("themes-data");
-    let a = document.createElement("a");
-    a.textContent = colors[i];
-    li.appendChild(a);
-    colorTheme.appendChild(li);
+  if (!colorTheme || !colorTheme.length) {
+    colorTheme = document.createElement("ul");
+    colorTheme.classList.add("themes");
+
+    for (let i = 0; i < colors.length; i++) {
+      let li = document.createElement("li");
+      li.classList.add("themes-data");
+      let a = document.createElement("a");
+      a.textContent = colors[i];
+      li.appendChild(a);
+      colorTheme.appendChild(li);
+    }
+
+    dropdownContainer.appendChild(colorTheme);
+  } else {
+    colorTheme[0].remove();
   }
 
-  dropdownContainer.appendChild(colorTheme);
   console.log(colorTheme);
 }
