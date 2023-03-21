@@ -8,6 +8,13 @@ let alertMessage = document.querySelector(".alert-message");
 let dropdown = document.querySelector(".list");
 let dropdownContainer = document.querySelector(".dropdown-container");
 let inputField = document.querySelector(".input-field");
+let container = document.querySelector(".container");
+let delt = document.querySelector("#delete-all");
+let h1 = document.querySelector("h1");
+let h2 = document.querySelector("h2");
+
+let dataContainer = document.querySelector(".data-container");
+
 alertMessage.style.display = "none";
 
 let arrayElement = [];
@@ -15,17 +22,15 @@ let arrayElement = [];
 dropdown.addEventListener("click", paletteColorList);
 
 const addingTask = () => {
-  let u = document.getElementsByTagName("li");
-  console.log("u", u);
+  //let u = document.getElementsByTagName("li");
   let e = null;
-  console.log(e);
+
   plus.addEventListener("click", () => {
     if (input.value) {
       let isEditing = plus.classList.contains("fa-check");
       console.log("isEditing", isEditing);
+
       if (isEditing && e) {
-        console.log("e", e);
-        console.log("e.targ", e.target);
         e.target.parentElement.parentElement.previousSibling.innerHTML =
           input.value;
         plus.classList.remove("fa-check");
@@ -48,6 +53,8 @@ const addingTask = () => {
 
         editBtn.addEventListener("click", function (ev) {
           e = ev;
+          // console.log("ev", e.target.parentNode.parentNode);
+          //console.log("test", this);
           editTask(this);
         });
 
@@ -57,7 +64,6 @@ const addingTask = () => {
         delIcon.classList.add("fa-regular");
         delIcon.classList.add("fa-trash-can");
         delBtn.appendChild(delIcon);
-        //console.log("det", delBtn);
 
         delBtn.addEventListener("click", deleteTask);
 
@@ -68,6 +74,7 @@ const addingTask = () => {
         btnDivs.appendChild(delBtn);
 
         li.appendChild(btnDivs);
+        // console.log(li);
         ul.appendChild(li);
       }
       input.value = "";
@@ -84,21 +91,18 @@ function deleteTask() {
   this.parentNode.parentNode.remove();
 }
 function editTask(e) {
-  let editable;
-  // let li = document.querySelectorAll("li");
-  //console.log("li", li);
+  // console.log(e.targe);
 
   input.value = e.parentNode.parentNode.firstChild.innerHTML;
   console.log(plus.className);
-  //let p = plus.classList.replace("fa-plus", "fa-check");
+
   plus.classList.add("fa-check");
 
-  //console.log("e", (e.target.onclick = h2.textContent));
-  ///<i class="fa-solid fa-check"></i>
+  // console.log("etGE", e.target);
+  //<i class="fa-solid fa-check"></i>
 }
 
 function deletAll() {
-  let delt = document.querySelector("#delete-all");
   delt.addEventListener("click", function () {
     ul.innerHTML = "";
   });
@@ -133,6 +137,7 @@ function paletteColorList() {
     { luxury: "#09090B" },
     { night: "#0F1729" },
    */
+
   let colorTheme = document.getElementsByClassName("themes");
 
   if (!colorTheme || !colorTheme.length) {
@@ -144,6 +149,38 @@ function paletteColorList() {
       li.classList.add("themes-data");
       let a = document.createElement("a");
       a.textContent = colors[i];
+      // console.log("a", a);
+      a.addEventListener("click", () => {
+        //  console.log(a.innerHTML);
+        if (a.innerHTML == "dark") {
+          // console.log("dark is clicked");
+          let body = document.querySelector("body");
+          body.style.backgroundColor = "#2A303C";
+          plus.style.backgroundColor = "#AF3888";
+          plus.style.borderRadius = "10px";
+          plus.style.border = "1px solid #4A4E5A ";
+          plus.style.color = "white";
+
+          delt.style.borderRadius = "10px";
+          delt.style.border = "1px solid #4A4E5A ";
+          delt.style.backgroundColor = "#AF3888";
+          delt.style.color = "white";
+          container.style.backgroundColor = "#4A4E5A";
+
+          input.style.border = "1px solid #AF3888";
+          input.style.backgroundColor = "#2A303C";
+          input.style.borderRadius = "10px";
+          input.style.color = "#A6ADBA";
+          input.style.placeHolder = "#A6ADBA";
+
+          h1.style.color = "#A6ADBA";
+
+          let listData = document.querySelector(".list-data");
+          listData.style.backgroundColor = "#4A4E5A";
+          //listData[0].style.backgroundColor = "#4A4E5A";
+          //h2.style.color = "#A6ADBA";
+        }
+      });
       li.appendChild(a);
       colorTheme.appendChild(li);
     }
@@ -152,6 +189,28 @@ function paletteColorList() {
   } else {
     colorTheme[0].remove();
   }
-
-  console.log(colorTheme);
 }
+
+// let expr = '"#FAF7F5"';
+// switch (expr) {
+//   case "#FFFFFF":
+//     a.addEventListener("onclick", function () {
+//       console.log(`case ${"#FFFFFF"} is clicked`);
+//     });
+//     break;
+//   case "#2A303C":
+//     a.addEventListener("onclick", function () {
+//       console.log(`case ${"#2A303C"} is clicked`);
+//     });
+//     break;
+//   case "#FFFFFF":
+//     a.addEventListener("onclick", function () {
+//       console.log(`case ${"#FFFFFF"} is clicked`);
+//     });
+//     break;
+//   case '#2D1B69':
+//      a.addEventListener("onclick", function () {
+//       console.log(`case ${"#2D1B69"} is clicked`);
+//     });
+//     break;
+// }
