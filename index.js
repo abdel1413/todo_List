@@ -12,8 +12,14 @@ let container = document.querySelector(".container");
 let delt = document.querySelector("#delete-all");
 let h1 = document.querySelector("h1");
 let h2 = document.querySelector("h2");
-
+let themes = document.getElementsByClassName("themes");
+let themeItems = document.getElementsByClassName("themes-data");
 let dataContainer = document.querySelector(".data-container");
+let listData = document.querySelectorAll(".list-data");
+let containerListItems = document.getElementsByClassName("list-data");
+let deletBotton = document.getElementsByClassName("delete-btn");
+let editBotton = document.getElementsByClassName("edit-btn");
+let btns = document.querySelector(".btn-div");
 
 alertMessage.style.display = "none";
 
@@ -149,13 +155,17 @@ function paletteColorList() {
       li.classList.add("themes-data");
       let a = document.createElement("a");
       a.textContent = colors[i];
+
       // console.log("a", a);
       a.addEventListener("click", () => {
         //  console.log(a.innerHTML);
+
         if (a.innerHTML == "dark") {
           // console.log("dark is clicked");
+          a.style.color = "#A6ADBA";
           let body = document.querySelector("body");
           body.style.backgroundColor = "#2A303C";
+
           plus.style.backgroundColor = "#AF3888";
           plus.style.borderRadius = "10px";
           plus.style.border = "1px solid #4A4E5A ";
@@ -165,6 +175,7 @@ function paletteColorList() {
           delt.style.border = "1px solid #4A4E5A ";
           delt.style.backgroundColor = "#AF3888";
           delt.style.color = "white";
+
           container.style.backgroundColor = "#4A4E5A";
 
           input.style.border = "1px solid #AF3888";
@@ -175,11 +186,38 @@ function paletteColorList() {
 
           h1.style.color = "#A6ADBA";
 
-          let listData = document.querySelector(".list-data");
-          listData.style.backgroundColor = "#4A4E5A";
+          //listData.style.backgroundColor = "#4A4E5A";
           //listData[0].style.backgroundColor = "#4A4E5A";
           //h2.style.color = "#A6ADBA";
+
+          for (item of containerListItems) {
+            // item.style.backgroundColor = "green";
+            item.style.backgroundColor = "#4A4E5A";
+            item.style.color = "#A6ADBA";
+            item.style.borderBottom = "1px solid #A6ADBA ";
+          }
+
+          Array.from(themes).map((i) => {
+            // console.log("this is themes u");
+            i.style.backgroundColor = "#2A303C";
+            i.style.border = "1px solid #2A303C";
+          });
+
+          for (let edit of editBotton) {
+            edit.style.borderRadius = "10px";
+          }
+          // console.log("editBotton", editBotton[0]);
+          // console.log("deletBotton", deletBotton[0]);
+          for (let del of deletBotton) {
+            del.style.borderRadius = "10px";
+          }
         }
+
+        //work on hover later
+        Array.from(themeItems).map((e) => {
+          // console.log("this is list ", e);
+          e.style.backgroundColorHover = "#2A303C";
+        });
       });
       li.appendChild(a);
       colorTheme.appendChild(li);
