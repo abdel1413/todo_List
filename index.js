@@ -2,6 +2,7 @@
 
 let plus = document.querySelector(".fa-plus");
 let input = document.querySelector("#text-field");
+
 let section = document.querySelector("section");
 let ul = document.querySelector("ul");
 let alertMessage = document.querySelector(".alert-message");
@@ -20,7 +21,9 @@ let containerListItems = document.getElementsByClassName("list-data");
 let deletBotton = document.getElementsByClassName("delete-btn");
 let editBotton = document.getElementsByClassName("edit-btn");
 let btns = document.querySelector(".btn-div");
-
+let palette = document.querySelector(".palette");
+let iPalette = document.querySelector(".fa-palette");
+console.log(palette);
 alertMessage.style.display = "none";
 
 let arrayElement = [];
@@ -159,9 +162,15 @@ function paletteColorList() {
       // console.log("a", a);
       a.addEventListener("click", () => {
         //  console.log(a.innerHTML);
+        if (input.value != null) {
+          plus.addEventListener("click", function () {
+            console.log("imputval", input.value);
+          });
+        }
 
         if (a.innerHTML == "dark") {
           // console.log("dark is clicked");
+
           a.style.color = "#A6ADBA";
           let body = document.querySelector("body");
           body.style.backgroundColor = "#2A303C";
@@ -186,12 +195,80 @@ function paletteColorList() {
 
           h1.style.color = "#A6ADBA";
 
+          palette.style.backgroundColor = "#111318";
+          palette.style.borderRadius = "10px";
+          palette.style.padding = "5px";
+          // palette.i.style.color = "#FFFFFF";
+
+          dropdown.style.backgroundColor = "#111318";
+          dropdown.style.borderRadius = "10px";
+          iPalette.style.color = "#A6ADBA";
+
           //listData.style.backgroundColor = "#4A4E5A";
           //listData[0].style.backgroundColor = "#4A4E5A";
           //h2.style.color = "#A6ADBA";
 
           for (item of containerListItems) {
             // item.style.backgroundColor = "green";
+            let dataItem = document.querySelector(".dataItem");
+            //console.log(dataItem);
+            item.style.backgroundColor = "#4A4E5A";
+            item.style.color = "#A6ADBA";
+            item.style.borderBottom = "1px solid #A6ADBA ";
+          }
+
+          Array.from(themes).map((i) => {
+            // console.log("this is themes u");
+            i.style.backgroundColor = "#2A303C";
+            i.style.border = "1px solid #2A303C";
+            i.style.color = "#A6ADBA";
+            i.style.fontFamily = "arial";
+            i.style.fontSize = "20px";
+          });
+
+          for (let edit of editBotton) {
+            edit.style.borderRadius = "10px";
+          }
+          // console.log("editBotton", editBotton[0]);
+          // console.log("deletBotton", deletBotton[0]);
+          for (let del of deletBotton) {
+            del.style.borderRadius = "10px";
+          }
+        } else if (a.innerHTML == "cupcake") {
+          // console.log("dark is clicked");
+
+          a.style.color = "#A6ADBA";
+
+          body.style.backgroundColor = "#faf7f5";
+
+          plus.style.backgroundColor = "#ef9fbc";
+          plus.style.borderRadius = "20px";
+          plus.style.border = "1px solid pink ";
+          // plus.style.color = "white";
+
+          delt.style.borderRadius = "10px";
+          delt.style.border = "1px solid #C43F95 ";
+          delt.style.backgroundColor = "#C43F95";
+          delt.style.color = "white";
+
+          container.style.backgroundColor = "#4A4E5A";
+
+          input.style.border = "1px solid #AF3888";
+          input.style.backgroundColor = "#2A303C";
+          input.style.borderRadius = "10px";
+          input.style.color = "#A6ADBA";
+          input.style.placeHolder = "#A6ADBA";
+
+          h1.style.color = "#A6ADBA";
+
+          //listData.style.backgroundColor = "#4A4E5A";
+          //listData[0].style.backgroundColor = "#4A4E5A";
+          //h2.style.color = "#A6ADBA";
+
+          for (item of containerListItems) {
+            // item.style.backgroundColor = "green";
+            let dataItem = document.querySelector(".dataItem");
+            //console.log(dataItem);
             item.style.backgroundColor = "#4A4E5A";
             item.style.color = "#A6ADBA";
             item.style.borderBottom = "1px solid #A6ADBA ";
@@ -208,6 +285,61 @@ function paletteColorList() {
           }
           // console.log("editBotton", editBotton[0]);
           // console.log("deletBotton", deletBotton[0]);
+          for (let del of deletBotton) {
+            del.style.borderRadius = "10px";
+          }
+        } else if (a.innerHTML == "light") {
+          // console.log("dark is clicked");
+
+          a.style.color = "#A6ADBA";
+          let body = document.querySelector("body");
+
+          body.style.backgroundColor = "#faf7f5";
+
+          palette.style.backgroundColor = "#303540";
+          palette.style.borderRadius = "10px";
+          palette.style.padding = "10px";
+          // palette.i.style.color = "#FFFFFF";
+
+          dropdown.style.backgroundColor = "#303540";
+          dropdown.style.borderRadius = "10px";
+          iPalette.style.color = "#FFFFFF";
+
+          plus.style.backgroundColor = "#AF3888";
+          plus.style.borderRadius = "10px";
+          plus.style.border = "1px solid #4A4E5A ";
+          plus.style.color = "white";
+
+          delt.style.borderRadius = "10px";
+          delt.style.border = "1px solid #4A4E5A ";
+          delt.style.backgroundColor = "#AF3888";
+          delt.style.color = "white";
+
+          container.style.backgroundColor = "#faf7f5";
+
+          input.style.border = "1px solid #AF3888";
+          input.style.backgroundColor = "#FFFFFF";
+          input.style.borderRadius = "10px";
+          input.style.color = "#A6ADBA";
+          input.style.placeHolder = "#A6ADBA";
+
+          for (item of containerListItems) {
+            let dataItem = document.querySelector(".dataItem");
+
+            item.style.backgroundColor = "#FAF7F5";
+          }
+
+          Array.from(themes).map((i) => {
+            i.style.backgroundColor = "#faf7f5";
+            i.style.border = "2px solid #E8E9EB";
+            i.style.borderRadius = "10px";
+            i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
+          });
+
+          for (let edit of editBotton) {
+            edit.style.borderRadius = "10px";
+          }
+
           for (let del of deletBotton) {
             del.style.borderRadius = "10px";
           }
