@@ -2,7 +2,7 @@
 
 let plus = document.querySelector(".fa-plus");
 let input = document.querySelector("#text-field");
-
+let body = document.querySelector("body");
 let section = document.querySelector("section");
 let ul = document.querySelector("ul");
 let alertMessage = document.querySelector(".alert-message");
@@ -237,8 +237,7 @@ function paletteColorList() {
         } else if (a.innerHTML == "cupcake") {
           // console.log("dark is clicked");
 
-          a.style.color = "#A6ADBA";
-
+          // a.style.color = "#A6ADBA";
           body.style.backgroundColor = "#faf7f5";
 
           plus.style.backgroundColor = "#ef9fbc";
@@ -246,20 +245,18 @@ function paletteColorList() {
           plus.style.border = "1px solid pink ";
           // plus.style.color = "white";
 
-          delt.style.borderRadius = "10px";
+          delt.style.borderRadius = "20px";
           delt.style.border = "1px solid pink ";
-          delt.style.backgroundColor = "#C43F95";
-          delt.style.color = "white";
+          //delt.style.backgroundColorHover = "#ea407e";
+          delt.backgroundColor = "#da5d8b";
+          // delt.style.color = "white";
 
-          container.style.backgroundColor = "#4A4E5A";
+          container.style.backgroundColor = "#FBF8F6";
 
-          input.style.border = "1px solid #AF3888";
-          input.style.backgroundColor = "#2A303C";
-          input.style.borderRadius = "10px";
-          input.style.color = "#A6ADBA";
+          input.style.border = "1px solid #da5d8b";
+          input.style.backgroundColor = "#FAF7F5";
+          input.style.borderRadius = "25px";
           input.style.placeHolder = "#A6ADBA";
-
-          // h1.style.color = "#A6ADBA";
 
           //listData.style.backgroundColor = "#4A4E5A";
           //listData[0].style.backgroundColor = "#4A4E5A";
@@ -270,14 +267,16 @@ function paletteColorList() {
             let dataItem = document.querySelector(".dataItem");
             //console.log(dataItem);
             item.style.backgroundColor = "#4A4E5A";
-            item.style.color = "#A6ADBA";
+            // item.style.color = "#A6ADBA";
             item.style.borderBottom = "1px solid #A6ADBA ";
+            item.style.padding = "10px";
           }
 
           Array.from(themes).map((i) => {
             // console.log("this is themes u");
-            i.style.backgroundColor = "#2A303C";
-            i.style.border = "1px solid #2A303C";
+            i.style.backgroundColor = "#FAF7F5";
+            i.style.border = "3px solid #efe8eb";
+            i.style.borderRadius = "10px";
           });
 
           for (let edit of editBotton) {
@@ -291,28 +290,27 @@ function paletteColorList() {
         } else if (a.innerHTML == "light") {
           // console.log("dark is clicked");
 
-          a.style.color = "#A6ADBA";
-          let body = document.querySelector("body");
+          // a.style.color = "#A6ADBA";
 
           body.style.backgroundColor = "#faf7f5";
 
           palette.style.backgroundColor = "#303540";
           palette.style.borderRadius = "10px";
-          palette.style.padding = "10px";
+          palette.style.padding = "8px";
           // palette.i.style.color = "#FFFFFF";
 
           dropdown.style.backgroundColor = "#303540";
           dropdown.style.borderRadius = "10px";
           iPalette.style.color = "#FFFFFF";
 
-          plus.style.backgroundColor = "#AF3888";
+          plus.style.backgroundColor = "#f823b1";
           plus.style.borderRadius = "10px";
-          plus.style.border = "1px solid #4A4E5A ";
+          plus.style.border = "1px solid #f823b1 ";
           plus.style.color = "white";
 
           delt.style.borderRadius = "10px";
-          delt.style.border = "1px solid #4A4E5A ";
-          delt.style.backgroundColor = "#AF3888";
+          delt.style.border = "1px solid #f823b1";
+          delt.style.backgroundColor = "#f823b1";
           delt.style.color = "white";
 
           container.style.backgroundColor = "#faf7f5";
@@ -320,7 +318,7 @@ function paletteColorList() {
           input.style.border = "1px solid #AF3888";
           input.style.backgroundColor = "#FFFFFF";
           input.style.borderRadius = "10px";
-          input.style.color = "#A6ADBA";
+          //input.style.color = "#A6ADBA";
           input.style.placeHolder = "#A6ADBA";
 
           for (item of containerListItems) {
