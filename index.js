@@ -247,7 +247,7 @@ function paletteColorList() {
           // plus.style.color = "white";
 
           delt.style.borderRadius = "10px";
-          delt.style.border = "1px solid #C43F95 ";
+          delt.style.border = "1px solid pink ";
           delt.style.backgroundColor = "#C43F95";
           delt.style.color = "white";
 
@@ -259,7 +259,7 @@ function paletteColorList() {
           input.style.color = "#A6ADBA";
           input.style.placeHolder = "#A6ADBA";
 
-          h1.style.color = "#A6ADBA";
+          // h1.style.color = "#A6ADBA";
 
           //listData.style.backgroundColor = "#4A4E5A";
           //listData[0].style.backgroundColor = "#4A4E5A";
