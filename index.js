@@ -461,8 +461,8 @@ function paletteColorList() {
             i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
           });
         } else if (a.innerHTML == "fantasy") {
-          body.backgroundColor = "#FFFFFF";
-          h1.backgroundColor = "#333333";
+          body.style.backgroundColor = "#FFFFFF";
+          h1.style.backgroundColor = "#333333";
 
           container.style.backgroundColor = "#FFFFFF";
 
@@ -495,40 +495,92 @@ function paletteColorList() {
             del.style.borderRadius = "10px";
           }
         } else if (a.innerHTML == "dracula") {
-          body.backgroundColor = "#272935";
-          h1.backgroundColor = "#333333";
+          body.style.backgroundColor = "#272935";
+          h1.style.backgroundColor = "#474853";
+          h1.style.color = "#F8F8F2";
 
-          container.style.backgroundColor = "#FFFFFF";
+          container.style.backgroundColor = "#474853";
 
-          plus.style.backgroundColor = "#29679A";
-          plus.style.color = "#BDE9FB";
+          plus.style.backgroundColor = "#904CF4";
+          plus.style.color = "#231352";
           plus.style.borderRadius = "10px";
-          plus.style.border = "1px solid #29679A ";
+          plus.style.border = "1px solid #904CF4 ";
+          plus.style.cursor = "pointer";
 
           input.style.border = "1px solid #29679A";
           input.style.borderRadius = "10px";
-          input.style.backgroundColor = "#FFFFFF";
+          input.style.color = "#F8F8F2";
+          input.style.backgroundColor = "#272935";
 
-          delt.style.backgroundColor = "#29679A";
+          delt.style.backgroundColor = "#904CF4";
           delt.style.borderRadius = "10px";
-          delt.style.color = "#B3E2F6";
-          delt.style.border = "1px solid #29679A";
+          delt.style.color = "#231352";
+          delt.style.border = "1px solid #904CF4";
+          delt.style.cursor = "pointer";
 
-          palette.style.backgroundColor = "#131325";
+          palette.style.backgroundColor = "#343746";
           palette.style.borderRadius = "10px";
           palette.style.padding = "8px";
 
-          dropdown.style.backgroundColor = "#131325";
+          dropdown.style.backgroundColor = "#343746";
           dropdown.style.borderRadius = "10px";
-          iPalette.style.color = "#BABAEE";
+          iPalette.style.color = "#C2CAF5";
           for (let edit of editBotton) {
             edit.style.borderRadius = "10px";
+            edit.style.backgroundColor = "#79F47C";
+            edit.style.cursor = "pointer";
           }
 
           for (let del of deletBotton) {
             del.style.borderRadius = "10px";
+            del.style.backgroundColor = "#E93F36";
+            del.style.color = "#F8DBDA";
+            del.style.cursor = "pointer";
           }
         } else if (a.innerHTML == "aqua") {
+          //#335CA8
+          body.style.backgroundColor = "#335CA8";
+          h1.style.backgroundColor = "#474853";
+          h1.style.color = "#C7DBFB";
+
+          container.style.backgroundColor = "#5173B4";
+
+          plus.style.backgroundColor = "#904CF4";
+          plus.style.color = "#C7DBFB";
+          plus.style.borderRadius = "10px";
+          plus.style.border = "1px solid #904CF4 ";
+          plus.style.cursor = "pointer";
+
+          input.style.border = "1px solid #29679A";
+          input.style.borderRadius = "10px";
+          input.style.color = "#F8F8F2";
+          input.style.backgroundColor = "#272935";
+
+          delt.style.backgroundColor = "#904CF4";
+          delt.style.borderRadius = "10px";
+          delt.style.color = "#231352";
+          delt.style.border = "1px solid #904CF4";
+          delt.style.cursor = "pointer";
+
+          palette.style.backgroundColor = "#343746";
+          palette.style.borderRadius = "10px";
+          palette.style.padding = "8px";
+
+          dropdown.style.backgroundColor = "#343746";
+          dropdown.style.borderRadius = "10px";
+          iPalette.style.color = "#C2CAF5";
+          for (let edit of editBotton) {
+            edit.style.borderRadius = "10px";
+            edit.style.backgroundColor = "#79F47C";
+            edit.style.cursor = "pointer";
+          }
+
+          for (let del of deletBotton) {
+            del.style.borderRadius = "10px";
+            del.style.backgroundColor = "#E93F36";
+            del.style.color = "#F8DBDA";
+            del.style.cursor = "pointer";
+          }
         } else if (a.innerHTML == "luxury") {
         } else if (a.innerHTML == "night") {
         } else {
@@ -536,7 +588,7 @@ function paletteColorList() {
 
         //work on hover later
         Array.from(themeItems).map((e) => {
-          e.style.backgroundColorHover = "#2A303C";
+          e.style.backgroundColorHover = "#272935";
         });
       });
       li.appendChild(a);
