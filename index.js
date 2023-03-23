@@ -23,7 +23,7 @@ let editBotton = document.getElementsByClassName("edit-btn");
 let btns = document.querySelector(".btn-div");
 let palette = document.querySelector(".palette");
 let iPalette = document.querySelector(".fa-palette");
-console.log(palette);
+
 alertMessage.style.display = "none";
 
 let arrayElement = [];
@@ -169,8 +169,6 @@ function paletteColorList() {
         }
 
         if (a.innerHTML == "dark") {
-          // console.log("dark is clicked");
-
           a.style.color = "#A6ADBA";
           let body = document.querySelector("body");
           body.style.backgroundColor = "#2A303C";
@@ -209,47 +207,39 @@ function paletteColorList() {
           //h2.style.color = "#A6ADBA";
 
           for (item of containerListItems) {
-            // item.style.backgroundColor = "green";
             let dataItem = document.querySelector(".dataItem");
-            //console.log(dataItem);
+
             item.style.backgroundColor = "#4A4E5A";
             item.style.color = "#A6ADBA";
             item.style.borderBottom = "1px solid #A6ADBA ";
           }
 
           Array.from(themes).map((i) => {
-            // console.log("this is themes u");
             i.style.backgroundColor = "#2A303C";
             i.style.border = "1px solid #2A303C";
             i.style.color = "#A6ADBA";
-            i.style.fontFamily = "arial";
+
             i.style.fontSize = "20px";
           });
 
           for (let edit of editBotton) {
             edit.style.borderRadius = "10px";
           }
-          // console.log("editBotton", editBotton[0]);
-          // console.log("deletBotton", deletBotton[0]);
+
           for (let del of deletBotton) {
             del.style.borderRadius = "10px";
           }
         } else if (a.innerHTML == "cupcake") {
-          // console.log("dark is clicked");
-
-          // a.style.color = "#A6ADBA";
           body.style.backgroundColor = "#faf7f5";
-
           plus.style.backgroundColor = "#ef9fbc";
           plus.style.borderRadius = "20px";
           plus.style.border = "1px solid pink ";
-          // plus.style.color = "white";
 
           delt.style.borderRadius = "20px";
           delt.style.border = "1px solid pink ";
           //delt.style.backgroundColorHover = "#ea407e";
-          delt.backgroundColor = "#da5d8b";
-          // delt.style.color = "white";
+          delt.backgroundColor = "#ef9fbc";
+          delt.style.color = "black";
 
           container.style.backgroundColor = "#FBF8F6";
 
@@ -258,46 +248,34 @@ function paletteColorList() {
           input.style.borderRadius = "25px";
           input.style.placeHolder = "#A6ADBA";
 
-          //listData.style.backgroundColor = "#4A4E5A";
-          //listData[0].style.backgroundColor = "#4A4E5A";
-          //h2.style.color = "#A6ADBA";
-
           for (item of containerListItems) {
-            // item.style.backgroundColor = "green";
             let dataItem = document.querySelector(".dataItem");
-            //console.log(dataItem);
-            item.style.backgroundColor = "#4A4E5A";
-            // item.style.color = "#A6ADBA";
-            item.style.borderBottom = "1px solid #A6ADBA ";
+
+            item.style.backgroundColor = "#FBF8F6";
             item.style.padding = "10px";
           }
 
           Array.from(themes).map((i) => {
-            // console.log("this is themes u");
             i.style.backgroundColor = "#FAF7F5";
             i.style.border = "3px solid #efe8eb";
             i.style.borderRadius = "10px";
+            i.style.color = "black";
           });
 
           for (let edit of editBotton) {
             edit.style.borderRadius = "10px";
           }
-          // console.log("editBotton", editBotton[0]);
-          // console.log("deletBotton", deletBotton[0]);
+
           for (let del of deletBotton) {
             del.style.borderRadius = "10px";
           }
         } else if (a.innerHTML == "light") {
-          // console.log("dark is clicked");
-
-          // a.style.color = "#A6ADBA";
-
+          h1.style.color = "black";
           body.style.backgroundColor = "#faf7f5";
 
           palette.style.backgroundColor = "#303540";
           palette.style.borderRadius = "10px";
           palette.style.padding = "8px";
-          // palette.i.style.color = "#FFFFFF";
 
           dropdown.style.backgroundColor = "#303540";
           dropdown.style.borderRadius = "10px";
@@ -318,7 +296,6 @@ function paletteColorList() {
           input.style.border = "1px solid #AF3888";
           input.style.backgroundColor = "#FFFFFF";
           input.style.borderRadius = "10px";
-          //input.style.color = "#A6ADBA";
           input.style.placeHolder = "#A6ADBA";
 
           for (item of containerListItems) {
@@ -341,11 +318,51 @@ function paletteColorList() {
           for (let del of deletBotton) {
             del.style.borderRadius = "10px";
           }
+        } else if (a.innerHTML == "bumblebee") {
+          body.backgroundColor = "#FFFFFF";
+          h1.backgroundColor = "#333333";
+
+          container.style.backgroundColor = "#FFFFFF";
+
+          plus.style.backgroundColor = "#E4BF45";
+          plus.style.color = "black";
+          plus.style.borderRadius = "10px";
+          plus.style.border = "1px solid #E4BF45 ";
+
+          input.style.border = "1px solid #E4BF45";
+          input.style.borderRadius = "10px";
+          input.style.backgroundColor = "#FFFFFF";
+
+          delt.style.backgroundColor = "#E4BF45";
+          delt.style.borderRadius = "10px";
+          delt.style.color = "black";
+
+          palette.style.backgroundColor = "#131325";
+          palette.style.borderRadius = "10px";
+          palette.style.padding = "8px";
+
+          dropdown.style.backgroundColor = "#131325";
+          dropdown.style.borderRadius = "10px";
+          iPalette.style.color = "#BABAEE";
+          for (let edit of editBotton) {
+            edit.style.borderRadius = "10px";
+          }
+
+          for (let del of deletBotton) {
+            del.style.borderRadius = "10px";
+          }
+        } else if (a.innerHTML == "synthwave") {
+        } else if (a.innerHTML == "halloween") {
+        } else if (a.innerHTML == "fantasy") {
+        } else if (a.innerHTML == "dracula") {
+        } else if (a.innerHTML == "aqua") {
+        } else if (a.innerHTML == "luxury") {
+        } else if (a.innerHTML == "night") {
+        } else {
         }
 
         //work on hover later
         Array.from(themeItems).map((e) => {
-          // console.log("this is list ", e);
           e.style.backgroundColorHover = "#2A303C";
         });
       });

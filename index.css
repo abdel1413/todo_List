@@ -23,64 +23,55 @@ body {
   border-radius: 30px;
   border: 1px solid #200f29;
   float: right;
-  margin-right: 25px;
+  margin-right: 5px;
   margin-left: 0;
-  margin-top: 30px;
+  margin-top: 10px;
   padding: 0 5px;
   background-color: #200f29;
 }
 
 .dropdown-container {
-  /* border: 1px solid red; */
   float: right;
   width: 250px;
   margin-right: 16px;
+  position: absolute;
   /* clear: both; */
 }
 .themes {
-  width: 55%;
+  width: 60%;
   transform-origin: 100%;
-  top: 10;
+  top: 0;
   bottom: auto;
   right: 100%;
   border: 1px solid #edeae8;
-  /* border: 2px solid blue; */
   float: left;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-right: 0;
   padding: 5px;
-
   background-color: #faf7f5;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 .dropdown-container .themes-data {
-  /* border: 1px solid #e4dfe1; */
   list-style: none;
   display: flex;
   flex-direction: column;
-  /* transform-origin: 100%; */
   top: 0;
   padding: 10px;
   bottom: auto;
-  /* right: 100%; */
-  /* border: 1px solid coral; */
-  /* width: 100%; */
 }
 .themes-data:hover {
-  /* border: 3px solid #faf7f5; */
   background-color: #e4dfe1;
-  /* background-color: chartreuse; */
+
   border-radius: 25px;
-  /* transform-origin: 100%; */
+
   top: 0;
   padding: 10px;
   bottom: auto;
   right: 100%;
-  /* padding: 10px; */
-  /* width: 70%; */
+
   cursor: pointer;
 }
 .alert-message {
@@ -141,15 +132,15 @@ body {
 .container {
   width: 500px;
   margin: auto;
-  /* display: flex;
+  /* margin-top: 100px; */
+  /* display: flex; */
   min-width: 400px;
-  justify-content: center;
-  flex-direction: column; */
+  /* border: 1px solid blue; */
   text-align: center;
   box-shadow: 0 8px 32px 0 rgb(31, 38, 135, 0.6);
-  /* border: 4px solid red; */
   background-color: #fbf8f6;
   padding: 20px;
+  /* background-color: #FBF8F6; */
 }
 ul {
   /* border: 2px solid red; */
@@ -157,19 +148,19 @@ ul {
   padding: 0;
 }
 
+.dropdown-container {
+  float: right;
+  /* border: 1px solid green; */
+  /* background-color: yellow; */
+  position: static;
+}
+
 .data-container {
-  /* border: 1px solid blue; */
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* border-radius: 30px; */
-  /* background-color: lightcoral; */
   padding: 5px;
   /* padding: 0; */
   /* margin: 10px; */
 }
-/* .data-container ul {
-  border: 2px solid green;
-} */
+
 .data-container li {
   /* border: 2px solid yellow; */
   list-style: none;
