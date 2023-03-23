@@ -336,14 +336,15 @@ function paletteColorList() {
           delt.style.backgroundColor = "#E4BF45";
           delt.style.borderRadius = "10px";
           delt.style.color = "black";
+          delt.style.border = "1px solid #E4BF45";
 
-          palette.style.backgroundColor = "#131325";
+          palette.style.backgroundColor = "#181F2B";
           palette.style.borderRadius = "10px";
           palette.style.padding = "8px";
 
-          dropdown.style.backgroundColor = "#131325";
+          dropdown.style.backgroundColor = "#181F2B";
           dropdown.style.borderRadius = "10px";
-          iPalette.style.color = "#BABAEE";
+          iPalette.style.color = "#B9CFEF";
           for (let edit of editBotton) {
             edit.style.borderRadius = "10px";
           }
@@ -404,12 +405,129 @@ function paletteColorList() {
             i.style.border = "2px solid #2D1B69";
             i.style.borderRadius = "10px";
             i.style.color = "#F9F7FD";
-
             i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
           });
         } else if (a.innerHTML == "halloween") {
+          body.style.backgroundColor = "#212121";
+          h1.style.color = "#D4D4D4";
+
+          container.style.backgroundColor = "#424242";
+
+          plus.style.backgroundColor = "#582F7F";
+          plus.style.color = "#E1C2FB";
+          plus.style.borderRadius = "10px";
+          plus.style.border = "1px solid #582F7F";
+
+          input.style.border = "1px solid #582F7F";
+          input.style.borderRadius = "10px";
+          input.style.backgroundColor = "#212121";
+
+          delt.style.backgroundColor = "#582F7F";
+          delt.style.borderRadius = "10px";
+          delt.style.color = "#E1C2FB";
+          delt.style.border = "1px solid #582F7F";
+
+          palette.style.backgroundColor = "#161818";
+          palette.style.borderRadius = "10px";
+          palette.style.padding = "8px";
+
+          dropdown.style.backgroundColor = "#161818";
+          dropdown.style.borderRadius = "10px";
+          iPalette.style.color = "#F9F7FD";
+          for (let edit of editBotton) {
+            let editIcon = document.querySelector(".fa-pen");
+            console.log(editIcon);
+            edit.style.borderRadius = "10px";
+            edit.style.backgroundColor = "#4EA24B";
+            edit.style.border = "1px solid #4EA24B";
+            // editIcon.style.color = '#27476D'
+          }
+
+          for (let del of deletBotton) {
+            let DeltIcon = document.querySelector(".fa-trash-can");
+            console.log(DeltIcon);
+
+            del.style.borderRadius = "10px";
+            del.style.backgroundColor = "#E34056";
+            del.style.border = "1px solid #E34056";
+            DeltIcon.style.color = "#F9F7FD";
+          }
+
+          Array.from(themes).map((i) => {
+            i.style.backgroundColor = "#212121";
+            i.style.border = "2px solid #212121";
+            i.style.borderRadius = "10px";
+            i.style.color = "#F9F7FD";
+            i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
+          });
         } else if (a.innerHTML == "fantasy") {
+          body.backgroundColor = "#FFFFFF";
+          h1.backgroundColor = "#333333";
+
+          container.style.backgroundColor = "#FFFFFF";
+
+          plus.style.backgroundColor = "#29679A";
+          plus.style.color = "#BDE9FB";
+          plus.style.borderRadius = "10px";
+          plus.style.border = "1px solid #29679A ";
+
+          input.style.border = "1px solid #29679A";
+          input.style.borderRadius = "10px";
+          input.style.backgroundColor = "#FFFFFF";
+
+          delt.style.backgroundColor = "#29679A";
+          delt.style.borderRadius = "10px";
+          delt.style.color = "#B3E2F6";
+          delt.style.border = "1px solid #29679A";
+
+          palette.style.backgroundColor = "#131325";
+          palette.style.borderRadius = "10px";
+          palette.style.padding = "8px";
+
+          dropdown.style.backgroundColor = "#131325";
+          dropdown.style.borderRadius = "10px";
+          iPalette.style.color = "#BABAEE";
+          for (let edit of editBotton) {
+            edit.style.borderRadius = "10px";
+          }
+
+          for (let del of deletBotton) {
+            del.style.borderRadius = "10px";
+          }
         } else if (a.innerHTML == "dracula") {
+          body.backgroundColor = "#272935";
+          h1.backgroundColor = "#333333";
+
+          container.style.backgroundColor = "#FFFFFF";
+
+          plus.style.backgroundColor = "#29679A";
+          plus.style.color = "#BDE9FB";
+          plus.style.borderRadius = "10px";
+          plus.style.border = "1px solid #29679A ";
+
+          input.style.border = "1px solid #29679A";
+          input.style.borderRadius = "10px";
+          input.style.backgroundColor = "#FFFFFF";
+
+          delt.style.backgroundColor = "#29679A";
+          delt.style.borderRadius = "10px";
+          delt.style.color = "#B3E2F6";
+          delt.style.border = "1px solid #29679A";
+
+          palette.style.backgroundColor = "#131325";
+          palette.style.borderRadius = "10px";
+          palette.style.padding = "8px";
+
+          dropdown.style.backgroundColor = "#131325";
+          dropdown.style.borderRadius = "10px";
+          iPalette.style.color = "#BABAEE";
+          for (let edit of editBotton) {
+            edit.style.borderRadius = "10px";
+          }
+
+          for (let del of deletBotton) {
+            del.style.borderRadius = "10px";
+          }
         } else if (a.innerHTML == "aqua") {
         } else if (a.innerHTML == "luxury") {
         } else if (a.innerHTML == "night") {
