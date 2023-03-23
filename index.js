@@ -537,51 +537,84 @@ function paletteColorList() {
             del.style.color = "#F8DBDA";
             del.style.cursor = "pointer";
           }
+          Array.from(themes).map((i) => {
+            i.style.backgroundColor = "#212121";
+            i.style.border = "2px solid #212121";
+            i.style.borderRadius = "10px";
+            i.style.color = "#F9F7FD";
+            i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
+          });
         } else if (a.innerHTML == "aqua") {
           //#335CA8
           body.style.backgroundColor = "#335CA8";
-          h1.style.backgroundColor = "#474853";
+          h1.style.backgroundColor = "#5173B4";
           h1.style.color = "#C7DBFB";
 
           container.style.backgroundColor = "#5173B4";
 
-          plus.style.backgroundColor = "#904CF4";
-          plus.style.color = "#C7DBFB";
+          plus.style.backgroundColor = "#784F97";
+          plus.style.color = "#EAD0FB";
           plus.style.borderRadius = "10px";
-          plus.style.border = "1px solid #904CF4 ";
+          plus.style.border = "1px solid #784F97 ";
           plus.style.cursor = "pointer";
 
-          input.style.border = "1px solid #29679A";
+          input.style.border = "1px solid #784F97";
           input.style.borderRadius = "10px";
-          input.style.color = "#F8F8F2";
-          input.style.backgroundColor = "#272935";
+          input.style.color = "#C7DBFB";
+          input.style.backgroundColor = "#335CA8";
 
-          delt.style.backgroundColor = "#904CF4";
+          delt.style.backgroundColor = "#784F97";
           delt.style.borderRadius = "10px";
-          delt.style.color = "#231352";
-          delt.style.border = "1px solid #904CF4";
+          delt.style.color = "#EAD0FB";
+          delt.style.border = "1px solid #784F97";
           delt.style.cursor = "pointer";
 
-          palette.style.backgroundColor = "#343746";
+          palette.style.backgroundColor = "#2F6F9D";
           palette.style.borderRadius = "10px";
           palette.style.padding = "8px";
 
-          dropdown.style.backgroundColor = "#343746";
+          dropdown.style.backgroundColor = "#2F6F9D";
+          dropdown.style.border = "1px solid  #2F6F9D";
           dropdown.style.borderRadius = "10px";
-          iPalette.style.color = "#C2CAF5";
+
+          iPalette.style.color = "#CCE9FC";
           for (let edit of editBotton) {
             edit.style.borderRadius = "10px";
-            edit.style.backgroundColor = "#79F47C";
+            edit.style.backgroundColor = "#4EA24B";
+            edit.style.border = "1px solid #4EA24B";
             edit.style.cursor = "pointer";
+            edit.style.color = "#A1E8BB";
           }
 
           for (let del of deletBotton) {
             del.style.borderRadius = "10px";
             del.style.backgroundColor = "#E93F36";
             del.style.color = "#F8DBDA";
+            del.style.border = "1px solid #E93F36";
             del.style.cursor = "pointer";
           }
+          Array.from(themes).map((i) => {
+            i.style.backgroundColor = "#335CA8";
+            i.style.border = "2px solid #335CA8";
+            i.style.borderRadius = "10px";
+            i.style.color = "#F9F7FD";
+            i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
+          });
+
+          for (item of containerListItems) {
+            let dataItem = document.querySelector(".dataItem");
+
+            // item.style.backgroundColor = "#C7DBFB";
+            let b = document.createElement("hr");
+            console.log("h", b);
+            b.style.color = "#C7DBFB";
+            item.style.borderBottom = ".1px solid #C7DBFB";
+            item.style.padding = "7px";
+
+            //item.appendChild(b);
+          }
         } else if (a.innerHTML == "luxury") {
+          //#09090B
         } else if (a.innerHTML == "night") {
         } else {
         }
