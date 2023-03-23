@@ -352,6 +352,61 @@ function paletteColorList() {
             del.style.borderRadius = "10px";
           }
         } else if (a.innerHTML == "synthwave") {
+          //#2D1B69
+          console.log("sunthwave");
+          body.style.backgroundColor = "#2D1B69";
+          h1.style.color = "#F9F7FD";
+
+          container.style.backgroundColor = "#4B357F";
+
+          plus.style.backgroundColor = "#4FB4F0";
+          plus.style.color = "black";
+          plus.style.borderRadius = "10px";
+          plus.style.border = "1px solid #4FB4F0";
+
+          input.style.border = "1px solid #4FB4F0";
+          input.style.borderRadius = "10px";
+          input.style.backgroundColor = "#2D1B69";
+
+          delt.style.backgroundColor = "#4FB4F0";
+          delt.style.borderRadius = "10px";
+          delt.style.color = "black";
+          delt.style.border = "1px solid #4FB4F0";
+
+          palette.style.backgroundColor = "#131325";
+          palette.style.borderRadius = "10px";
+          palette.style.padding = "8px";
+
+          dropdown.style.backgroundColor = "#131325";
+          dropdown.style.borderRadius = "10px";
+          iPalette.style.color = "#F9F7FD";
+          for (let edit of editBotton) {
+            let editIcon = document.querySelector(".fa-pen");
+            console.log(editIcon);
+            edit.style.borderRadius = "10px";
+            edit.style.backgroundColor = "#71EAD2";
+            edit.style.border = "1px solid #71EAD2";
+            // editIcon.style.color = '#27476D'
+          }
+
+          for (let del of deletBotton) {
+            let DeltIcon = document.querySelector(".fa-trash-can");
+            console.log(DeltIcon);
+
+            del.style.borderRadius = "10px";
+            del.style.backgroundColor = "#E34056";
+            del.style.border = "1px solid #E34056";
+            DeltIcon.style.color = "#F9F7FD";
+          }
+
+          Array.from(themes).map((i) => {
+            i.style.backgroundColor = "#2D1B69";
+            i.style.border = "2px solid #2D1B69";
+            i.style.borderRadius = "10px";
+            i.style.color = "#F9F7FD";
+
+            i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
+          });
         } else if (a.innerHTML == "halloween") {
         } else if (a.innerHTML == "fantasy") {
         } else if (a.innerHTML == "dracula") {
