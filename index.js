@@ -620,6 +620,9 @@ function paletteColorList() {
           h1.style.color = "#DCA54C";
 
           container.style.backgroundColor = "#2E2E2F";
+          container.style.border = "1px solid gray";
+          container.style.borderRadius = "10px";
+          container.style.boxShadow = "0 8px 32px 0 rgb(31, 38, 135, 0.3";
 
           plus.style.backgroundColor = "#111F37";
           plus.style.color = "#ADCBFA";
@@ -675,12 +678,82 @@ function paletteColorList() {
             let dataItem = document.querySelector(".dataItem");
 
             //  item.style.backgroundColor = "#C7DBFB";
-            item.style.borderBottom = "1px solid  gray";
-            item.style.padding = "7px";
 
             //item.appendChild(b);
+            item.style.borderBottom = "1px solid  gray";
+            item.style.padding = "7px";
           }
         } else if (a.innerHTML == "night") {
+          //#0F1729
+
+          body.style.backgroundColor = "#0F1729";
+          h1.style.backgroundColor = "#323949";
+          h1.style.color = "#B3C5EF";
+
+          container.style.backgroundColor = "#323949";
+          container.style.border = "1px solid gray";
+          container.style.borderRadius = "10px";
+          container.style.boxShadow = "0 8px 32px 0 rgb(31, 38, 135, 0.3";
+
+          plus.style.backgroundColor = "#3A4CF4";
+          plus.style.color = "#020F4D";
+          plus.style.borderRadius = "10px";
+          plus.style.border = "1px solid #3A4CF4 ";
+          plus.style.cursor = "pointer";
+
+          input.style.border = "1px solid #3A4CF4";
+          input.style.borderRadius = "10px";
+          input.style.color = "#C7DBFB";
+          input.style.backgroundColor = "#09090B";
+
+          delt.style.backgroundColor = "#3A4CF4";
+          delt.style.borderRadius = "10px";
+          delt.style.color = "#020F4D";
+          delt.style.border = "1px solid #3A4CF4";
+          delt.style.cursor = "pointer";
+
+          palette.style.backgroundColor = "#273449";
+          palette.style.borderRadius = "10px";
+          palette.style.padding = "8px";
+
+          dropdown.style.backgroundColor = "#273449";
+          dropdown.style.border = "1px solid  #273449";
+          dropdown.style.borderRadius = "10px";
+
+          iPalette.style.color = "#B3CCF5";
+
+          for (let edit of editBotton) {
+            edit.style.borderRadius = "10px";
+            edit.style.backgroundColor = "#66D5BE";
+            edit.style.border = "1px solid #66D5BE";
+            edit.style.cursor = "pointer";
+            edit.style.color = "#1A3307";
+          }
+
+          for (let del of deletBotton) {
+            del.style.borderRadius = "10px";
+            del.style.backgroundColor = "#EB6C83";
+            del.style.color = "#470D0B";
+            del.style.border = "1px solid #EB6C83";
+            del.style.cursor = "pointer";
+          }
+          Array.from(themes).map((i) => {
+            i.style.backgroundColor = "#0F1729";
+            i.style.border = "2px solid #0F1729";
+            i.style.borderRadius = "10px";
+            i.style.color = "#B3C5EF";
+            i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
+          });
+
+          for (item of containerListItems) {
+            let dataItem = document.querySelector(".dataItem");
+
+            //  item.style.backgroundColor = "#C7DBFB";
+
+            //item.appendChild(b);
+            item.style.borderBottom = "1px solid  gray";
+            item.style.padding = "7px";
+          }
         } else {
         }
 
