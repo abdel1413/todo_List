@@ -834,9 +834,8 @@ let luxury = () => {
   for (item of containerListItems) {
     let dataItem = document.querySelector(".dataItem");
 
-    //  item.style.backgroundColor = "#C7DBFB";
-
-    //item.appendChild(b);
+    item.style.backgroundColor = "#2E2E2F";
+    item.style.color = "#DCA54C";
     item.style.borderBottom = "1px solid  gray";
     item.style.padding = "7px";
   }
