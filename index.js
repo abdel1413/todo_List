@@ -31,7 +31,6 @@ let arrayElement = [];
 dropdown.addEventListener("click", paletteColorList);
 
 const addingTask = () => {
-  //let u = document.getElementsByTagName("li");
   let e = null;
 
   plus.addEventListener("click", () => {
@@ -40,7 +39,6 @@ const addingTask = () => {
       console.log("isEditing", isEditing);
 
       if (isEditing && e) {
-        let h2 = document.querySelector(".data-item");
         //h2.textContent = input.value;
         // e.target.parentElement.parentElement.previousSibling.textContent =
         //   input.value;
@@ -89,7 +87,17 @@ const addingTask = () => {
 
         li.appendChild(btnDivs);
         // console.log(li);
-        ul.appendChild(li);
+
+        // localStorage.setItem("name", name);
+        // let storage =
+
+        // ul.appendChild(li);
+
+        if (localStorage) {
+          localStorage.setItem("task", li.innerHTML);
+          console.log("t", localStorage.getItem("task"));
+        }
+        // ul.appendChild(localStorage.getItem("task"));
       }
       input.value = "";
     } else {
@@ -201,11 +209,12 @@ function paletteColorList() {
         } else {
         }
 
-        //work on hover later
-        Array.from(themeItems).map((e) => {
-          e.style.backgroundColorHover = "#272935";
-        });
+        // //work on hover later
+        // Array.from(themeItems).map((e) => {
+        //   e.style.backgroundColorHover = "#272935";
+        // });
       });
+
       li.appendChild(a);
       colorTheme.appendChild(li);
     }
@@ -241,6 +250,7 @@ function paletteColorList() {
 
 let cupcake = () => {
   body.style.backgroundColor = "#faf7f5";
+
   plus.style.backgroundColor = "#ef9fbc";
   plus.style.borderRadius = "20px";
   plus.style.border = "1px solid pink ";
@@ -350,7 +360,6 @@ let dark = () => {
 let light = () => {
   h1.style.color = "black";
   h1.style.backgroundColor = "#FAF7F5";
-
   body.style.backgroundColor = "#faf7f5";
 
   palette.style.backgroundColor = "#303540";
@@ -403,7 +412,7 @@ let light = () => {
 let bumblebee = () => {
   body.style.backgroundColor = "#FFFFFF";
   h1.style.backgroundColor = "#FFFFFF";
-  h1.style.color = "#00000";
+  h1.style.color = "#333333";
 
   container.style.backgroundColor = "#FFFFFF";
 
@@ -438,7 +447,7 @@ let bumblebee = () => {
 
   for (let item of containerListItems) {
     item.style.backgroundColor = "#FFFFFF";
-    // item.style.color = "#000000";
+    item.style.color = "#333333";
     item.style.borderBottom = "";
   }
 
@@ -587,6 +596,7 @@ let halloween = () => {
 let fantasy = () => {
   body.style.backgroundColor = "#FFFFFF";
   h1.style.backgroundColor = "#FFFFFF";
+  h1.style.color = "#1F2937";
 
   container.style.backgroundColor = "#FFFFFF";
 
@@ -636,7 +646,7 @@ let fantasy = () => {
     console.log("delete", deltBtn);
     // deltBtn.style.color = "white";
     item.style.color = "";
-    // item.style.borderBottom = "1px solid lightgray";
+    item.style.borderBottom = "";
     item.style.padding = "7px";
   }
 };
@@ -902,14 +912,8 @@ let night = () => {
   });
 
   for (item of containerListItems) {
-    let dataItem = document.querySelector(".dataItem");
-
-    //  item.style.backgroundColor = "#C7DBFB";
-
-    //item.appendChild(b);
-    // item.style.backgroundColor = "#4A4E5A";
+    item.style.backgroundColor = "#323949";
     item.style.color = "#B3C5EF";
-    // item.style.borderBottom = "1px solid #A6ADBA ";
     item.style.borderBottom = "1px solid  gray";
     item.style.padding = "7px";
   }
