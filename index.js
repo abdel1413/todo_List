@@ -174,7 +174,8 @@ function paletteColorList() {
         }
 
         if (a.innerHTML == "dark") {
-          a.style.color = "#A6ADBA";
+          console.log("a", a);
+          // a.style.color = "#A6ADBA";
           dark();
         } else if (a.innerHTML == "cupcake") {
           cupcake();
@@ -247,8 +248,11 @@ let cupcake = () => {
   delt.style.borderRadius = "20px";
   delt.style.border = "1px solid pink ";
   //delt.style.backgroundColorHover = "#ea407e";
-  delt.backgroundColor = "#ef9fbc";
+  delt.backgroundColor = "#E2598C";
   delt.style.color = "black";
+
+  h1.style.backgroundColor = "#FBF8F6";
+  h1.style.color = "#1F2937";
 
   container.style.backgroundColor = "#FBF8F6";
 
@@ -259,7 +263,7 @@ let cupcake = () => {
 
   for (item of containerListItems) {
     let dataItem = document.querySelector(".dataItem");
-
+    item.style.color = "#4A4E5A";
     item.style.backgroundColor = "#FBF8F6";
     item.style.padding = "10px";
   }
@@ -302,6 +306,7 @@ let dark = () => {
   input.style.color = "#A6ADBA";
   input.style.placeHolder = "#A6ADBA";
 
+  h1.style.backgroundColor = "#4A4E5A";
   h1.style.color = "#A6ADBA";
 
   palette.style.backgroundColor = "#111318";
@@ -344,6 +349,8 @@ let dark = () => {
 
 let light = () => {
   h1.style.color = "black";
+  h1.style.backgroundColor = "#FAF7F5";
+
   body.style.backgroundColor = "#faf7f5";
 
   palette.style.backgroundColor = "#303540";
@@ -369,18 +376,12 @@ let light = () => {
   input.style.border = "1px solid #AF3888";
   input.style.backgroundColor = "#FFFFFF";
   input.style.borderRadius = "10px";
-  input.style.placeHolder = "#A6ADBA";
-
-  for (item of containerListItems) {
-    let dataItem = document.querySelector(".dataItem");
-
-    item.style.backgroundColor = "#FAF7F5";
-  }
 
   Array.from(themes).map((i) => {
     i.style.backgroundColor = "#faf7f5";
     i.style.border = "2px solid #E8E9EB";
     i.style.borderRadius = "10px";
+    i.style.color = "#000000";
     i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
   });
 
@@ -391,11 +392,18 @@ let light = () => {
   for (let del of deletBotton) {
     del.style.borderRadius = "10px";
   }
+
+  for (let item of containerListItems) {
+    item.style.backgroundColor = "#FAF7F5";
+    item.style.color = "#000000";
+    item.style.borderBottom = "";
+  }
 };
 
 let bumblebee = () => {
-  body.backgroundColor = "#FFFFFF";
-  h1.backgroundColor = "#333333";
+  body.style.backgroundColor = "#FFFFFF";
+  h1.style.backgroundColor = "#FFFFFF";
+  h1.style.color = "#00000";
 
   container.style.backgroundColor = "#FFFFFF";
 
@@ -427,11 +435,25 @@ let bumblebee = () => {
   for (let del of deletBotton) {
     del.style.borderRadius = "10px";
   }
+
+  for (let item of containerListItems) {
+    item.style.backgroundColor = "#FFFFFF";
+    // item.style.color = "#000000";
+    item.style.borderBottom = "";
+  }
+
+  Array.from(themes).map((i) => {
+    i.style.backgroundColor = "#FFFFFF";
+    i.style.border = "1px solid #efe8eb";
+    i.style.borderRadius = "10px";
+    i.style.color = "black";
+  });
 };
 
 let synthwave = () => {
   body.style.backgroundColor = "#2D1B69";
   h1.style.color = "#F9F7FD";
+  h1.style.backgroundColor = "#4B357F";
 
   container.style.backgroundColor = "#4B357F";
 
@@ -456,6 +478,7 @@ let synthwave = () => {
   dropdown.style.backgroundColor = "#131325";
   dropdown.style.borderRadius = "10px";
   iPalette.style.color = "#F9F7FD";
+
   for (let edit of editBotton) {
     let editIcon = document.querySelector(".fa-pen");
     console.log(editIcon);
@@ -477,16 +500,25 @@ let synthwave = () => {
 
   Array.from(themes).map((i) => {
     i.style.backgroundColor = "#2D1B69";
-    i.style.border = "2px solid #2D1B69";
+    i.style.border = "3px solid #2D1B69";
     i.style.borderRadius = "10px";
     i.style.color = "#F9F7FD";
     i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
   });
+
+  for (item of containerListItems) {
+    let dataItem = document.querySelector(".dataItem");
+    item.style.backgroundColor = "#4B357F";
+    item.style.color = "#F9F7FD";
+    item.style.borderBottom = "";
+    item.style.padding = "7px";
+  }
 };
 
 let halloween = () => {
   body.style.backgroundColor = "#212121";
   h1.style.color = "#D4D4D4";
+  h1.style.backgroundColor = "#424242";
 
   container.style.backgroundColor = "#424242";
 
@@ -537,11 +569,24 @@ let halloween = () => {
     i.style.color = "#F9F7FD";
     i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
   });
+
+  for (item of containerListItems) {
+    console.log("item", item);
+    let dataItem = document.getElementsByClassName("data-item");
+    console.log("dataitem", dataItem);
+    let deltBtn = document.querySelector(".delete-btn");
+    item.style.backgroundColor = "#424242";
+    console.log("delete", deltBtn);
+    // deltBtn.style.color = "white";
+    item.style.color = "#F9F7FD";
+    item.style.borderBottom = "1px solid lightgray";
+    item.style.padding = "7px";
+  }
 };
 
 let fantasy = () => {
   body.style.backgroundColor = "#FFFFFF";
-  h1.style.backgroundColor = "#333333";
+  h1.style.backgroundColor = "#FFFFFF";
 
   container.style.backgroundColor = "#FFFFFF";
 
@@ -572,6 +617,27 @@ let fantasy = () => {
 
   for (let del of deletBotton) {
     del.style.borderRadius = "10px";
+  }
+
+  Array.from(themes).map((i) => {
+    i.style.backgroundColor = "#FFFFFF";
+    i.style.border = "2px solid #FFFFFF";
+    i.style.borderRadius = "10px";
+    i.style.color = "";
+    i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
+  });
+
+  for (item of containerListItems) {
+    console.log("item", item);
+    let dataItem = document.getElementsByClassName("data-item");
+    console.log("dataitem", dataItem);
+    let deltBtn = document.querySelector(".delete-btn");
+    item.style.backgroundColor = "#FFFFFF";
+    console.log("delete", deltBtn);
+    // deltBtn.style.color = "white";
+    item.style.color = "";
+    // item.style.borderBottom = "1px solid lightgray";
+    item.style.padding = "7px";
   }
 };
 
