@@ -648,21 +648,21 @@ let dracula = () => {
 
   container.style.backgroundColor = "#474853";
 
-  plus.style.backgroundColor = "#904CF4";
+  plus.style.backgroundColor = "#b892f0";
   plus.style.color = "#231352";
   plus.style.borderRadius = "10px";
-  plus.style.border = "1px solid #904CF4 ";
+  plus.style.border = "1px solid #b892f0 ";
   plus.style.cursor = "pointer";
 
-  input.style.border = "1px solid #29679A";
+  input.style.border = "1px solid #b892f0";
   input.style.borderRadius = "10px";
   input.style.color = "#F8F8F2";
   input.style.backgroundColor = "#272935";
 
-  delt.style.backgroundColor = "#904CF4";
+  delt.style.backgroundColor = "#b892f0";
   delt.style.borderRadius = "10px";
   delt.style.color = "#231352";
-  delt.style.border = "1px solid #904CF4";
+  delt.style.border = "1px solid #b892f0";
   delt.style.cursor = "pointer";
 
   palette.style.backgroundColor = "#343746";
@@ -685,12 +685,17 @@ let dracula = () => {
     del.style.cursor = "pointer";
   }
   Array.from(themes).map((i) => {
-    i.style.backgroundColor = "#212121";
-    i.style.border = "2px solid #212121";
+    i.style.backgroundColor = "#272935";
+    i.style.border = "2px solid #272935";
     i.style.borderRadius = "10px";
     i.style.color = "#F9F7FD";
     i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
   });
+
+  for (let item of containerListItems) {
+    item.style.backgroundColor = "#474853";
+    item.style.color = "#F8F8F2";
+  }
 };
 
 let aqua = () => {
@@ -758,6 +763,8 @@ let aqua = () => {
     b.style.color = "#C7DBFB";
     item.style.borderBottom = ".1px solid #C7DBFB";
     item.style.padding = "7px";
+    item.style.color = "#C7DBFB";
+    item.style.backgroundColor = "#5173B4";
 
     //item.appendChild(b);
   }
