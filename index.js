@@ -31,7 +31,6 @@ dropdown.addEventListener("click", paletteColorList);
 
 const addingTask = () => {
   let e = null;
-
   plus.addEventListener("click", (e) => {
     e.preventDefault();
     if (input.value) {
@@ -168,15 +167,16 @@ function paletteColorList() {
       // console.log("a", a);
       a.addEventListener("click", () => {
         //  console.log(a.innerHTML);
-        if (input.value != null) {
-          plus.addEventListener("click", function () {
-            console.log("imputval", input.value);
-          });
-        }
+        // if (input.value != null) {
+        //   plus.addEventListener("click", function () {
+        //     console.log("imputval", input.value);
+        //   });
+        // }
 
         if (a.innerHTML == "dark") {
           console.log("a", a);
           // a.style.color = "#A6ADBA";
+
           dark();
         } else if (a.innerHTML == "cupcake") {
           cupcake();
@@ -200,6 +200,7 @@ function paletteColorList() {
         } else if (a.innerHTML == "night") {
           night();
         } else {
+          defaultFunction();
         }
 
         // //work on hover later
@@ -910,4 +911,17 @@ let night = () => {
     item.style.borderBottom = "1px solid  gray";
     item.style.padding = "7px";
   }
+};
+
+const defaultFunction = () => {
+  body.style.margin = "0";
+  body.style.backgroundColor = "#faf7f5";
+
+  h1.style.color = "black";
+  h1.style.textAlign = "center";
+
+  palette.style.backgroundColor = "#200f29";
+  palette.style.borderRadius = "20px";
+  palette.style.float = "right";
+  palette.style.marginLeft = "0";
 };
