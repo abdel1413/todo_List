@@ -23,6 +23,7 @@ let editBotton = document.getElementsByClassName("edit-btn");
 let btns = document.querySelector(".btn-div");
 let palette = document.querySelector(".palette");
 let iPalette = document.querySelector(".fa-palette");
+let saveTask = document.querySelector("#save-task");
 
 alertMessage.style.display = "none";
 
@@ -89,36 +90,36 @@ const addingTask = () => {
         localStorage.setItem("task", li);
         let storage = localStorage.getItem("task");
 
-        // ul.appendChild(li);
-        //ul.appendChild(li);
+        ul.appendChild(li);
 
-        ul.innerHTML += `<li class=list-data> 
-         <h2>${input.value}</h2>
-         <div class=btn-div>
-         <button class=edit-btn>
-         <i class= fa-solid fa-pen>
-         </button>
-         <button class=delete-btn>
-         <i class=fa-regular fa-trash-can>
-          </button>
-          </div>
-           </li>`;
+        // ul.innerHTML += `<li class=list-data>
+        //  <h2>${input.value}</h2>
+        //  <div class=btn-div>
+        //  <button class=edit-btn>
+        //  <i class= fa-solid fa-pen>
+        //  </button>
+        //  <button class=delete-btn>
+        //  <i class=fa-regular fa-trash-can>
+        //   </button>
+        //   </div>
+        //    </li>`;
+
         //console.log(dataContainer);
         localStorage.setItem("task", ul.innerHTML);
         // console.log("t", localStorage.getItem("task"));
       }
       input.value = "";
-      let saveItems = localStorage.getItem("task");
-      // ul.appendChild(localStorage.getItem("task"));
-      console.log(saveItems);
-      if (saveItems) {
-        ul.innerHTML = saveItems;
-      }
     } else {
       let modal = document.createElement("modal");
       alert("you have to enter a task!!!");
     }
   });
+
+  let saveItems = localStorage.getItem("task");
+  console.log(saveItems);
+  if (saveItems) {
+    ul.innerHTML = saveItems;
+  }
 };
 
 addingTask();
@@ -140,7 +141,8 @@ function editTask(e) {
 
 function deletAll() {
   delt.addEventListener("click", function () {
-    ul.innerHTML = "";
+    // ul.innerHTML = "";
+    localStorage.clear();
   });
 }
 deletAll();
