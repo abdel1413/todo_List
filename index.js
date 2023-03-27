@@ -248,17 +248,37 @@ let cupcake = () => {
   plus.style.backgroundColor = "#ef9fbc";
   plus.style.borderRadius = "20px";
   plus.style.border = "1px solid pink ";
+  plus.style.padding = "17px";
 
-  delt.style.borderRadius = "20px";
+  /**
+   * for hover
+   * background-color: #e2598c;
+  cursor: pointer;
+   */
+
+  delt.style.borderRadius = "30px";
   delt.style.border = "1px solid pink ";
-  //delt.style.backgroundColorHover = "#ea407e";
-  delt.backgroundColor = "#E2598C";
+  delt.backgroundColor = "#ef9fbc";
   delt.style.color = "black";
+  delt.style.padding = "10px 5px";
+  delt.style.textTransform = "uppercase";
+
+  /**
+   * #delete-all:hover {
+  background-color: #e2598c;
+  cursor: pointer;
+}
+   */
 
   h1.style.backgroundColor = "#FBF8F6";
   h1.style.color = "#1F2937";
 
-  container.style.backgroundColor = "#FBF8F6";
+  container.style.backgroundColor = "#fbf8f6";
+  container.style.width = "500px";
+  container.style.margin = "auto";
+  container.textAlign = "center";
+  container.style.boxShadow = "0 8px 32px 0 rgb(31, 38, 135, 0.6)";
+  container.style.padding = "20px";
 
   input.style.border = "1px solid #da5d8b";
   input.style.backgroundColor = "#FAF7F5";
