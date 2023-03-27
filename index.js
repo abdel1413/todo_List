@@ -27,22 +27,18 @@ let saveTask = document.querySelector("#save-task");
 
 alertMessage.style.display = "none";
 
-let arrayElement = [];
 dropdown.addEventListener("click", paletteColorList);
 
 const addingTask = () => {
   let e = null;
 
-  plus.addEventListener("click", () => {
+  plus.addEventListener("click", (e) => {
+    e.preventDefault();
     if (input.value) {
       let isEditing = plus.classList.contains("fa-check");
       console.log("isEditing", isEditing);
 
       if (isEditing && e) {
-        //h2.textContent = input.value;
-        // e.target.parentElement.parentElement.previousSibling.textContent =
-        //   input.value;
-        console.log("p", e.target.parentElement.previousSibling);
         e.target.parentElement.parentElement.previousSibling.innerHTML =
           input.value;
         plus.classList.remove("fa-check");
@@ -53,6 +49,7 @@ const addingTask = () => {
         let h2 = document.createElement("h2");
         h2.classList.add("data-item");
         h2.textContent = input.value;
+
         li.appendChild(h2);
 
         let editBtn = document.createElement("button");
@@ -92,21 +89,7 @@ const addingTask = () => {
 
         ul.appendChild(li);
 
-        // ul.innerHTML += `<li class=list-data>
-        //  <h2>${input.value}</h2>
-        //  <div class=btn-div>
-        //  <button class=edit-btn>
-        //  <i class= fa-solid fa-pen>
-        //  </button>
-        //  <button class=delete-btn>
-        //  <i class=fa-regular fa-trash-can>
-        //   </button>
-        //   </div>
-        //    </li>`;
-
-        //console.log(dataContainer);
         localStorage.setItem("task", ul.innerHTML);
-        // console.log("t", localStorage.getItem("task"));
       }
       input.value = "";
     } else {
@@ -128,15 +111,9 @@ function deleteTask() {
   this.parentNode.parentNode.remove();
 }
 function editTask(e) {
-  // console.log(e.targe);
-
+  console.log(e.target);
   input.value = e.parentNode.parentNode.firstChild.innerHTML;
-  console.log(plus.className);
-
   plus.classList.add("fa-check");
-
-  // console.log("etGE", e.target);
-  //<i class="fa-solid fa-check"></i>
 }
 
 function deletAll() {
