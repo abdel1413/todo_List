@@ -572,20 +572,36 @@ let synthwave = () => {
 
   container.style.backgroundColor = "#4B357F";
 
-  plus.style.backgroundColor = "#4FB4F0";
+  plus.style.backgroundColor = "#86c6eb";
   plus.style.color = "black";
   plus.style.borderRadius = "10px";
-  plus.style.border = "1px solid #4FB4F0";
+  plus.style.border = "1px solid #86c6eb";
+
+  plus.onmouseover = function () {
+    plus.style.backgroundColor = "#4FB4F0";
+  };
+
+  plus.onmouseout = function () {
+    plus.style.backgroundColor = "#86c6eb";
+  };
 
   input.style.border = "1px solid #4FB4F0";
   input.style.borderRadius = "10px";
   input.style.backgroundColor = "#2D1B69";
 
-  delt.style.backgroundColor = "#4FB4F0";
+  delt.style.backgroundColor = " #86c6eb";
+  delt.style.border = "1px solid  #86c6eb";
   delt.style.borderRadius = "10px";
   delt.style.color = "black";
-  delt.style.border = "1px solid #4FB4F0";
 
+  delt.onmouseover = function () {
+    delt.style.backgroundColor = "#4FB4F0";
+    delt.style.border = "1px solid #4FB4F0";
+  };
+  delt.onmouseout = function () {
+    delt.style.backgroundColor = " #86c6eb";
+    delt.style.border = "1px solid  #86c6eb";
+  };
   palette.style.backgroundColor = "#131325";
   palette.style.borderRadius = "10px";
   palette.style.padding = "8px";
