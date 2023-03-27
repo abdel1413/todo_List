@@ -300,11 +300,18 @@ let cupcake = () => {
   });
 
   for (let edit of editBotton) {
-    edit.style.borderRadius = "10px";
+    edit.style.borderRadius = "20px";
+    edit.style.backgroundColor = "#67d49b";
+    edit.style.border = " 1px solid #67d49b";
+    edit.style.marginRight = "10px";
+    edit.style.padding = "17px";
   }
 
   for (let del of deletBotton) {
-    del.style.borderRadius = "10px";
+    del.style.borderRadius = "20px";
+    del.style.backgroundColor = "#ec7071";
+    del.style.padding = "17px";
+    del.style.border = "solid 1px #ec7071";
   }
 };
 
