@@ -7,9 +7,69 @@
     <title>Document</title>
 </head>
 <body>
-    <form  id="add-to-list"></form>
-    <label for="input"> add wish list</label>
-    <input type="text" name="wish-list-item" id="item">
-    <button type="submit"> Add to list</button>
+    <form  id="add-to-list">
+        <label for="input"> add wish list</label>
+        <input type="text" name="wish-list-item" id="item">
+        <button type="submit"> Add to list</button>
+    </form>
+   <div class="container">
+        <button class="delete-all"> delete All</button>
+         <ol id='data-item'></ol>
+    </div>
 </body>
+
+<!-- <script src="form.js"></script> -->
+<script>
+
+    let input = document.querySelector('#item')
+    let wishList = document.querySelector('#add-to-list')
+    let listItem  = document.querySelector('#data-item')
+
+   wishList.addEventListener('submit', function(e){
+       e.preventDefault()
+       if(input.value == '') return ;
+       let li =document.createElement('li')
+       let btn = document.createElement('button')
+       btn.classList.add('btn-to')
+       btn.style.margin = '5px'
+       btn.textContent ='delete'
+
+       li.textContent = input.value
+       li.style.color = 'red'
+       li.appendChild(btn);
+    
+        //listItem.innerHTML += `<li> ${input.value}</li>`
+        listItem.appendChild(li)
+        input.value = ''
+        //set item
+        console.log(listItem.innerHTML)
+         localStorage.setItem('ulData', listItem.innerHTML)
+    
+    })
+
+      //get item
+        let savedItem = localStorage.getItem('ulData')
+        if (savedItem) {
+          
+        }
+
+         listItem.innerHTML = savedItem
+
+          if(listItem.innerHTML){
+              let b = document.querySelector('.btn-to')
+             
+              b.addEventListener('click', function (e) {
+                  console.log('e',e.target.previousSibling)
+                  localStorage.removeItem('ulData')
+                  console.log('clicked')
+              })
+
+          }
+            
+            let deleteAll = document.querySelector('.delete-all')
+            deleteAll.onclick = function(){
+                localStorage.clear();
+            }
+  
+</script>
 </html>

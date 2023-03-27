@@ -27,7 +27,6 @@ let iPalette = document.querySelector(".fa-palette");
 alertMessage.style.display = "none";
 
 let arrayElement = [];
-
 dropdown.addEventListener("click", paletteColorList);
 
 const addingTask = () => {
@@ -65,8 +64,7 @@ const addingTask = () => {
 
         editBtn.addEventListener("click", function (ev) {
           e = ev;
-          // console.log("ev", e.target.parentNode.parentNode);
-          //console.log("test", this);
+
           editTask(this);
         });
 
@@ -86,20 +84,36 @@ const addingTask = () => {
         btnDivs.appendChild(delBtn);
 
         li.appendChild(btnDivs);
-        // console.log(li);
+        //console.log(li);
 
-        // localStorage.setItem("name", name);
-        // let storage =
+        localStorage.setItem("task", li);
+        let storage = localStorage.getItem("task");
 
         // ul.appendChild(li);
+        //ul.appendChild(li);
 
-        if (localStorage) {
-          localStorage.setItem("task", li.innerHTML);
-          console.log("t", localStorage.getItem("task"));
-        }
-        // ul.appendChild(localStorage.getItem("task"));
+        ul.innerHTML += `<li class=list-data> 
+         <h2>${input.value}</h2>
+         <div class=btn-div>
+         <button class=edit-btn>
+         <i class= fa-solid fa-pen>
+         </button>
+         <button class=delete-btn>
+         <i class=fa-regular fa-trash-can>
+          </button>
+          </div>
+           </li>`;
+        //console.log(dataContainer);
+        localStorage.setItem("task", ul.innerHTML);
+        // console.log("t", localStorage.getItem("task"));
       }
       input.value = "";
+      let saveItems = localStorage.getItem("task");
+      // ul.appendChild(localStorage.getItem("task"));
+      console.log(saveItems);
+      if (saveItems) {
+        ul.innerHTML = saveItems;
+      }
     } else {
       let modal = document.createElement("modal");
       alert("you have to enter a task!!!");
