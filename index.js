@@ -250,11 +250,21 @@ let cupcake = () => {
   plus.style.border = "1px solid pink ";
   plus.style.padding = "17px";
 
-  /**
-   * for hover
-   * background-color: #e2598c;
-  cursor: pointer;
-   */
+  plus.onmouseover = function () {
+    console.log("mousin");
+    plus.style.backgroundColor = "#e2598c";
+    plus.style.borderRadius = "20px";
+    plus.style.border = "1px solid pink ";
+    plus.style.padding = "17px";
+    plus.style.cursor = "pointer";
+  };
+  plus.onmouseout = function mouseOut() {
+    console.log("mouse out ");
+    plus.style.backgroundColor = "#ef9fbc";
+    plus.style.borderRadius = "20px";
+    plus.style.border = "1px solid pink ";
+    plus.style.padding = "17px";
+  };
 
   delt.style.borderRadius = "30px";
   delt.style.border = "1px solid pink ";
@@ -284,6 +294,24 @@ let cupcake = () => {
   input.style.backgroundColor = "#FAF7F5";
   input.style.borderRadius = "25px";
   input.style.placeHolder = "#A6ADBA";
+
+  palette.style.backgroundColor = "#200f29";
+  palette.style.borderRadius = "20px";
+  palette.style.padding = "10px";
+  palette.style.float = "right";
+  palette.style.marginLeft = "0";
+
+  dropdown.style.backgroundColor = "#200f29";
+  dropdown.style.borderRadius = "30px";
+  dropdown.style.border = "1px solid #200f29";
+  dropdown.style.float = "right";
+  dropdown.style.padding = "0 5px";
+  dropdown.style.marginLeft = "0";
+  dropdown.style.marginTop = "10px";
+
+  iPalette.style.color = "#e0b0f8";
+  iPalette.style.size = "1.5rem";
+  iPalette.style.padding = "5px";
 
   for (item of containerListItems) {
     let dataItem = document.querySelector(".dataItem");
