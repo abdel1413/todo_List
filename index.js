@@ -230,24 +230,17 @@ let cupcake = () => {
   body.style.backgroundColor = "#faf7f5";
 
   plus.style.backgroundColor = "#ef9fbc";
-  plus.style.borderRadius = "20px";
+  plus.style.borderRadius = "25px";
   plus.style.border = "1px solid pink ";
-  plus.style.padding = "17px";
+  plus.style.padding = "15px 20px";
 
   plus.onmouseover = function () {
-    console.log("mousin");
     plus.style.backgroundColor = "#e2598c";
-    plus.style.borderRadius = "20px";
-    plus.style.border = "1px solid pink ";
-    plus.style.padding = "17px";
+
     plus.style.cursor = "pointer";
   };
   plus.onmouseout = function mouseOut() {
-    console.log("mouse out ");
     plus.style.backgroundColor = "#ef9fbc";
-    plus.style.borderRadius = "20px";
-    plus.style.border = "1px solid pink ";
-    plus.style.padding = "17px";
   };
 
   delt.style.borderRadius = "30px";
@@ -314,16 +307,22 @@ let cupcake = () => {
   for (let edit of editBotton) {
     edit.style.borderRadius = "20px";
     edit.style.backgroundColor = "#67d49b";
-    edit.style.border = " 1px solid #67d49b";
+    edit.style.fontSize = "17px";
+    edit.style.padding = "10px 15px";
+    edit.style.border = "1px solid #67d49b";
+    edit.style.cursor = "pointer";
+    edit.style.color = "#183B27";
     edit.style.marginRight = "10px";
-    edit.style.padding = "17px";
   }
 
   for (let del of deletBotton) {
     del.style.borderRadius = "20px";
-    del.style.backgroundColor = "#ec7071";
-    del.style.padding = "17px";
-    del.style.border = "solid 1px #ec7071";
+    del.style.backgroundColor = "#EC7071";
+    del.style.color = "#5B1917";
+    del.style.border = "1px solid #EC7071";
+    del.style.cursor = "pointer";
+    del.style.fontSize = "17px";
+    del.style.padding = "10px 15px";
   }
 };
 
