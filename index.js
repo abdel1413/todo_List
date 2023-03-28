@@ -816,10 +816,20 @@ let dracula = () => {
   container.style.backgroundColor = "#474853";
 
   plus.style.backgroundColor = "#b892f0";
+  plus.style.border = "1px solid #b892f0 ";
   plus.style.color = "#231352";
   plus.style.borderRadius = "10px";
-  plus.style.border = "1px solid #b892f0 ";
+
   plus.style.cursor = "pointer";
+
+  plus.onmouseout = function () {
+    plus.style.backgroundColor = "#b892f0";
+    plus.style.border = "1px solid #b892f0 ";
+  };
+  plus.onmouseover = function () {
+    plus.style.backgroundColor = "#904CF4";
+    plus.style.border = "1px solid #904CF4";
+  };
 
   input.style.border = "1px solid #b892f0";
   input.style.borderRadius = "10px";
@@ -827,10 +837,19 @@ let dracula = () => {
   input.style.backgroundColor = "#272935";
 
   delt.style.backgroundColor = "#b892f0";
+  delt.style.border = "1px solid #b892f0";
   delt.style.borderRadius = "10px";
   delt.style.color = "#231352";
-  delt.style.border = "1px solid #b892f0";
+
   delt.style.cursor = "pointer";
+  delt.onmouseover = function () {
+    delt.style.backgroundColor = "#904CF4";
+    delt.style.border = "1px solid #904CF4";
+  };
+  delt.onmouseout = function () {
+    delt.style.backgroundColor = "#b892f0";
+    delt.style.border = "1px solid #b892f0";
+  };
 
   palette.style.backgroundColor = "#343746";
   palette.style.borderRadius = "10px";
@@ -872,23 +891,42 @@ let aqua = () => {
 
   container.style.backgroundColor = "#5173B4";
 
-  plus.style.backgroundColor = "#784F97";
+  plus.style.backgroundColor = "#a973d1";
+  plus.style.border = "1px solid #a973d1";
   plus.style.color = "#EAD0FB";
   plus.style.borderRadius = "10px";
-  plus.style.border = "1px solid #784F97 ";
+
   plus.style.cursor = "pointer";
+
+  plus.onmouseout = function () {
+    plus.style.backgroundColor = "#a973d1";
+    plus.style.border = "1px solid #a973d1";
+  };
+  plus.onmouseover = function () {
+    plus.style.backgroundColor = "#784F97";
+    plus.style.border = "1px solid #784F97 ";
+  };
 
   input.style.border = "1px solid #784F97";
   input.style.borderRadius = "10px";
   input.style.color = "#C7DBFB";
   input.style.backgroundColor = "#335CA8";
 
-  delt.style.backgroundColor = "#784F97";
+  delt.style.backgroundColor = "#a973d1";
+  delt.style.border = "1px solid #a973d1";
   delt.style.borderRadius = "10px";
   delt.style.color = "#EAD0FB";
-  delt.style.border = "1px solid #784F97";
-  delt.style.cursor = "pointer";
 
+  delt.style.cursor = "pointer";
+  delt.onmouseover = function () {
+    delt.style.backgroundColor = "#784F97";
+    delt.style.border = "1px solid #784F97";
+  };
+
+  delt.onmouseout = function () {
+    delt.style.backgroundColor = "#a973d1";
+    delt.style.border = "1px solid #a973d1";
+  };
   palette.style.backgroundColor = "#2F6F9D";
   palette.style.borderRadius = "10px";
   palette.style.padding = "8px";
@@ -948,22 +986,41 @@ let luxury = () => {
   container.style.borderRadius = "10px";
   container.style.boxShadow = "0 8px 32px 0 rgb(31, 38, 135, 0.3";
 
-  plus.style.backgroundColor = "#111F37";
+  plus.style.backgroundColor = "#182c4e";
+  plus.style.border = "1px solid #182c4e ";
   plus.style.color = "#ADCBFA";
   plus.style.borderRadius = "10px";
-  plus.style.border = "1px solid #111F37 ";
+
   plus.style.cursor = "pointer";
+  plus.onmouseout = function () {
+    plus.style.backgroundColor = "#182c4e";
+    plus.style.border = "1px solid #182c4e ";
+  };
+  plus.onmouseover = function () {
+    plus.style.backgroundColor = "#111F37";
+    plus.style.border = "1px solid #111F37 ";
+  };
 
   input.style.border = "1px solid #111F37";
   input.style.borderRadius = "10px";
   input.style.color = "#C7DBFB";
   input.style.backgroundColor = "#09090B";
 
-  delt.style.backgroundColor = "#111F37";
+  delt.style.backgroundColor = "#182c4e";
+  delt.style.border = "1px solid #182c4e";
   delt.style.borderRadius = "10px";
   delt.style.color = "#ADCBFA";
-  delt.style.border = "1px solid #111F37";
+
   delt.style.cursor = "pointer";
+
+  delt.onmouseout = function () {
+    delt.style.backgroundColor = "#182c4e";
+    delt.style.border = "1px solid #182c4e";
+  };
+  delt.onmouseover = function () {
+    delt.style.backgroundColor = "#111F37";
+    delt.style.border = "1px solid #111F37";
+  };
 
   palette.style.backgroundColor = "#121112";
   palette.style.borderRadius = "10px";
