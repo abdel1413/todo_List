@@ -1076,10 +1076,19 @@ let night = () => {
   container.style.boxShadow = "0 8px 32px 0 rgb(31, 38, 135, 0.3";
 
   plus.style.backgroundColor = "#8994f6";
+  plus.style.border = "1px solid #8994f6 ";
   plus.style.color = "#020F4D";
   plus.style.borderRadius = "10px";
-  plus.style.border = "1px solid #8994f6 ";
+
   plus.style.cursor = "pointer";
+  plus.onmouseout = function () {
+    plus.style.backgroundColor = "#8994f6";
+    plus.style.border = "1px solid #8994f6 ";
+  };
+  plus.onmouseover = function () {
+    plus.style.backgroundColor = "#3A4CF4";
+    plus.style.border = "1px solid #3A4CF4";
+  };
 
   input.style.border = "1px solid #8994f6";
   input.style.borderRadius = "10px";
@@ -1087,11 +1096,20 @@ let night = () => {
   input.style.backgroundColor = "#09090B";
 
   delt.style.backgroundColor = "#8994f6";
+  delt.style.border = "1px solid #8994f6";
   delt.style.borderRadius = "10px";
   delt.style.color = "#020F4D";
-  delt.style.border = "1px solid #8994f6";
-  delt.style.cursor = "pointer";
 
+  delt.style.cursor = "pointer";
+  delt.onmouseover = function () {
+    delt.style.backgroundColor = "#3A4CF4";
+    delt.style.border = "1px solid #3A4CF4";
+  };
+
+  delt.onmouseout = function () {
+    delt.style.backgroundColor = "#8994f6";
+    delt.style.border = "1px solid #8994f6";
+  };
   palette.style.backgroundColor = "#273449";
   palette.style.borderRadius = "10px";
   palette.style.padding = "8px";
