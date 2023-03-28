@@ -138,9 +138,9 @@ body {
   /* border: 1px solid blue; */
   text-align: center;
   box-shadow: 0 8px 32px 0 rgb(31, 38, 135, 0.6);
-  background-color: #fbf8f6;
+
   padding: 20px;
-  /* background-color: #F8F8F2; */
+  background-color: #fbf8f6;
 }
 ul {
   /* border: 2px solid red; */
@@ -168,7 +168,7 @@ ul {
   /* padding-left: 10px; */
   flex-direction: row;
   justify-content: space-between;
-  /* background-color: rgb(186, 186, 212); */
+  background-color: #fbf8f6;
   /* width: 100%; */
   padding: 10px;
   /* margin: 10px; */

@@ -98,7 +98,6 @@ const addingTask = () => {
   });
 
   let saveItems = localStorage.getItem("task");
-  console.log(saveItems);
   if (saveItems) {
     ul.innerHTML = saveItems;
   }
@@ -166,17 +165,7 @@ function paletteColorList() {
 
       // console.log("a", a);
       a.addEventListener("click", () => {
-        //  console.log(a.innerHTML);
-        // if (input.value != null) {
-        //   plus.addEventListener("click", function () {
-        //     console.log("imputval", input.value);
-        //   });
-        // }
-
         if (a.innerHTML == "dark") {
-          console.log("a", a);
-          // a.style.color = "#A6ADBA";
-
           dark();
         } else if (a.innerHTML == "cupcake") {
           cupcake();
@@ -202,11 +191,6 @@ function paletteColorList() {
         } else {
           defaultFunction();
         }
-
-        // //work on hover later
-        // Array.from(themeItems).map((e) => {
-        //   e.style.backgroundColorHover = "#272935";
-        // });
       });
 
       li.appendChild(a);
@@ -420,10 +404,15 @@ let dark = () => {
 
   for (let edit of editBotton) {
     edit.style.borderRadius = "10px";
+    edit.style.fontSize = "20px";
+    edit.style.padding = "10px 15px";
   }
 
   for (let del of deletBotton) {
     del.style.borderRadius = "10px";
+    del.style.fontSize = "20px";
+    del.style.padding = "10px 15px";
+    del.style.color = "#470C0A";
   }
 };
 
@@ -484,10 +473,15 @@ let light = () => {
 
   for (let edit of editBotton) {
     edit.style.borderRadius = "10px";
+    edit.style.fontSize = "20px";
+    edit.style.padding = "10px 15px";
   }
 
   for (let del of deletBotton) {
     del.style.borderRadius = "10px";
+    del.style.fontSize = "20px";
+    del.style.padding = "10px 15px";
+    del.style.color = "#470C0A";
   }
 
   for (let item of containerListItems) {
@@ -543,12 +537,18 @@ let bumblebee = () => {
   dropdown.style.backgroundColor = "#181F2B";
   dropdown.style.borderRadius = "10px";
   iPalette.style.color = "#B9CFEF";
+
   for (let edit of editBotton) {
     edit.style.borderRadius = "10px";
+    edit.style.fontSize = "20px";
+    edit.style.padding = "10px 15px";
   }
 
   for (let del of deletBotton) {
     del.style.borderRadius = "10px";
+    del.style.fontSize = "20px";
+    del.style.padding = "10px 15px";
+    del.style.color = "#470C0A";
   }
 
   for (let item of containerListItems) {
@@ -611,22 +611,18 @@ let synthwave = () => {
   iPalette.style.color = "#F9F7FD";
 
   for (let edit of editBotton) {
-    let editIcon = document.querySelector(".fa-pen");
-    console.log(editIcon);
     edit.style.borderRadius = "10px";
     edit.style.backgroundColor = "#71EAD2";
-    edit.style.border = "1px solid #71EAD2";
-    // editIcon.style.color = '#27476D'
+    edit.style.fontSize = "20px";
+    edit.style.padding = "10px 15px";
   }
 
   for (let del of deletBotton) {
-    let DeltIcon = document.querySelector(".fa-trash-can");
-    console.log(DeltIcon);
-
     del.style.borderRadius = "10px";
     del.style.backgroundColor = "#E34056";
-    del.style.border = "1px solid #E34056";
-    DeltIcon.style.color = "#F9F7FD";
+    del.style.fontSize = "20px";
+    del.style.padding = "10px 15px";
+    del.style.color = "#F9F7FD";
   }
 
   Array.from(themes).map((i) => {
@@ -691,23 +687,22 @@ let halloween = () => {
   dropdown.style.backgroundColor = "#161818";
   dropdown.style.borderRadius = "10px";
   iPalette.style.color = "#F9F7FD";
+
   for (let edit of editBotton) {
-    let editIcon = document.querySelector(".fa-pen");
-    console.log(editIcon);
-    edit.style.borderRadius = "10px";
     edit.style.backgroundColor = "#4EA24B";
     edit.style.border = "1px solid #4EA24B";
-    // editIcon.style.color = '#27476D'
+    edit.style.borderRadius = "10px";
+    edit.style.fontSize = "20px";
+    edit.style.padding = "10px 15px";
+    edit.style.color = "#BBF9D5";
   }
 
   for (let del of deletBotton) {
-    let DeltIcon = document.querySelector(".fa-trash-can");
-    console.log(DeltIcon);
-
+    del.style.backgroundColor = "#DD3B33";
+    del.style.color = "#F6CBCB";
     del.style.borderRadius = "10px";
-    del.style.backgroundColor = "#E34056";
-    del.style.border = "1px solid #E34056";
-    DeltIcon.style.color = "#F9F7FD";
+    del.style.fontSize = "20px";
+    del.style.padding = "10px 15px";
   }
 
   Array.from(themes).map((i) => {
@@ -725,7 +720,7 @@ let halloween = () => {
     let deltBtn = document.querySelector(".delete-btn");
     item.style.backgroundColor = "#424242";
     console.log("delete", deltBtn);
-    // deltBtn.style.color = "white";
+
     item.style.color = "#F9F7FD";
     item.style.borderBottom = "1px solid lightgray";
     item.style.padding = "7px";
@@ -778,12 +773,23 @@ let fantasy = () => {
   dropdown.style.backgroundColor = "#131325";
   dropdown.style.borderRadius = "10px";
   iPalette.style.color = "#BABAEE";
+
   for (let edit of editBotton) {
+    edit.style.backgroundColor = "#67D49B";
+    edit.style.border = "1px solid #67D49B";
     edit.style.borderRadius = "10px";
+    edit.style.fontSize = "20px";
+    edit.style.padding = "10px 15px";
+    edit.style.color = "#143321";
   }
 
   for (let del of deletBotton) {
+    del.style.backgroundColor = "#EC7071";
+    delt.style.border = "1px solid #EC7071";
+    del.style.color = "#470C0A";
     del.style.borderRadius = "10px";
+    del.style.fontSize = "20px";
+    del.style.padding = "10px 15px";
   }
 
   Array.from(themes).map((i) => {
@@ -859,17 +865,25 @@ let dracula = () => {
   dropdown.style.borderRadius = "10px";
   iPalette.style.color = "#C2CAF5";
   for (let edit of editBotton) {
+    edit.style.backgroundColor = "#5DB96C";
+    edit.style.border = "1px solid #5DB96C";
     edit.style.borderRadius = "10px";
-    edit.style.backgroundColor = "#79F47C";
+    edit.style.fontSize = "20px";
+    edit.style.padding = "10px 15px";
+    edit.style.color = "#1C4212";
     edit.style.cursor = "pointer";
   }
 
   for (let del of deletBotton) {
-    del.style.borderRadius = "10px";
-    del.style.backgroundColor = "#E93F36";
+    del.style.backgroundColor = "#EA5253";
+    delt.style.border = "1px solid #EA5253";
     del.style.color = "#F8DBDA";
+    del.style.borderRadius = "10px";
+    del.style.fontSize = "20px";
+    del.style.padding = "10px 15px";
     del.style.cursor = "pointer";
   }
+
   Array.from(themes).map((i) => {
     i.style.backgroundColor = "#272935";
     i.style.border = "2px solid #272935";
@@ -881,6 +895,7 @@ let dracula = () => {
   for (let item of containerListItems) {
     item.style.backgroundColor = "#474853";
     item.style.color = "#F8F8F2";
+    item.style.borderBottom = "1px solid lightgray";
   }
 };
 
@@ -1035,6 +1050,8 @@ let luxury = () => {
   for (let edit of editBotton) {
     edit.style.borderRadius = "10px";
     edit.style.backgroundColor = "#87D03A";
+    edit.style.fontSize = "20px";
+    edit.style.padding = "10px 15px";
     edit.style.border = "1px solid #87D03A";
     edit.style.cursor = "pointer";
     edit.style.color = "#1A3307";
@@ -1046,6 +1063,8 @@ let luxury = () => {
     del.style.color = "#470C0A";
     del.style.border = "1px solid #EB6D6E";
     del.style.cursor = "pointer";
+    del.style.fontSize = "20px";
+    del.style.padding = "10px 15px";
   }
   Array.from(themes).map((i) => {
     i.style.backgroundColor = "#09090B";
