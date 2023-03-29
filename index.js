@@ -34,10 +34,20 @@ const addingTask = () => {
   plus.addEventListener("click", (e) => {
     e.preventDefault();
     if (input.value) {
+      localStorage.setItem("t", input.value);
+      let tt = localStorage.getItem("t");
+      for (let i = 0; i < localStorage.length; i++) {
+        let key = localStorage.key(i);
+        let v = localStorage.getItem(key);
+        console.log(" v " + v);
+      }
+
       let isEditing = plus.classList.contains("fa-check");
-      console.log("isEditing", isEditing);
+      // console.log("isEditing", isEditing);
 
       if (isEditing && e) {
+        let h1 = document.querySelector(".data-item");
+        // console.log("h2", h1.previousSibling);
         e.target.parentElement.parentElement.previousSibling.innerHTML =
           input.value;
         plus.classList.remove("fa-check");
@@ -48,6 +58,7 @@ const addingTask = () => {
         let h2 = document.createElement("h2");
         h2.classList.add("data-item");
         h2.textContent = input.value;
+        // console.log(h2);
 
         li.appendChild(h2);
 
@@ -61,15 +72,16 @@ const addingTask = () => {
 
         editBtn.addEventListener("click", function (ev) {
           e = ev;
-
           editTask(this);
         });
 
         let delBtn = document.createElement("button");
         delBtn.classList.add("delete-btn");
+
         let delIcon = document.createElement("i");
         delIcon.classList.add("fa-regular");
         delIcon.classList.add("fa-trash-can");
+
         delBtn.appendChild(delIcon);
 
         delBtn.addEventListener("click", deleteTask);
@@ -81,15 +93,11 @@ const addingTask = () => {
         btnDivs.appendChild(delBtn);
 
         li.appendChild(btnDivs);
-        //console.log(li);
-
-        localStorage.setItem("task", li);
-        let storage = localStorage.getItem("task");
 
         ul.appendChild(li);
-
         localStorage.setItem("task", ul.innerHTML);
       }
+
       input.value = "";
     } else {
       let modal = document.createElement("modal");
@@ -97,7 +105,10 @@ const addingTask = () => {
     }
   });
 
-  let saveItems = localStorage.getItem("task");
+  let list = document.querySelectorAll(".list-data");
+  console.log("listdata", list);
+  let saveItems = window.localStorage.getItem("task");
+
   if (saveItems) {
     ul.innerHTML = saveItems;
   }
@@ -105,19 +116,27 @@ const addingTask = () => {
 
 addingTask();
 
-function deleteTask() {
+function deleteTask(e) {
+  console.log("clckeddd", e.target);
+  // console.log(localStorage.getItem("task"));
+  localStorage.removeItem("task");
   this.parentNode.parentNode.remove();
 }
-function editTask(e) {
-  console.log(e.target);
+function editTask() {
+  console.log("eee");
+  let inputV = localStorage.getItem("task");
+  //input.value = inputV;
   input.value = e.parentNode.parentNode.firstChild.innerHTML;
   plus.classList.add("fa-check");
 }
 
 function deletAll() {
   delt.addEventListener("click", function () {
-    // ul.innerHTML = "";
-    localStorage.clear();
+    // console.log("sto", window.localStorage.getItem("task"));
+    if (localStorage) {
+      localStorage.clear();
+      ul.innerHTML = "";
+    }
   });
 }
 deletAll();
@@ -165,36 +184,22 @@ function paletteColorList() {
 
       a.addEventListener("click", () => {
         if (a.innerHTML == "cupcake") {
-          cupcake();
           Array.from(themeItems).map((item) => {
             item.onmouseover = function () {
               item.style.backgroundColor = "#e4dfe1";
-              item.style.borderBottom = "20px";
-              //  background-color: #e4dfe1;
-              // border-radius: 25px;
-              // top: 0;
-              // padding: 10px;
-              // bottom: auto;
-              // right: 100%;
-              // cursor: pointer;
+              item.style.borderRadius = "20px";
             };
             item.onmouseout = function () {
               item.style.backgroundColor = "#FAF7F5";
             };
           });
+          cupcake();
         } else if (a.innerHTML == "dark") {
           dark();
           Array.from(themeItems).map((item) => {
             item.onmouseover = function () {
-              item.style.backgroundColor = "yellow";
+              item.style.backgroundColor = "#4A4E5B";
               item.style.borderRadius = "10px";
-              //  background-color: #e4dfe1;
-              // border-radius: 25px;
-              // top: 0;
-              // padding: 10px;
-              // bottom: auto;
-              // right: 100%;
-              // cursor: pointer;
             };
             item.onmouseout = function () {
               item.style.backgroundColor = "#2A303C";
@@ -353,18 +358,23 @@ function paletteColorList() {
 let cupcake = () => {
   body.style.backgroundColor = "#faf7f5";
 
+  h1.style.backgroundColor = "#FBF8F6";
+  h1.style.color = "#1F2937";
+
   plus.style.backgroundColor = "#ef9fbc";
   plus.style.borderRadius = "25px";
   plus.style.border = "1px solid pink ";
   plus.style.padding = "15px 20px";
+  plus.style.color = "black";
+  plus.style.cursor = "pointer";
 
   plus.onmouseover = function () {
     plus.style.backgroundColor = "#e2598c";
-
-    plus.style.cursor = "pointer";
+    plus.style.border = "1px solid #e2598c";
   };
-  plus.onmouseout = function mouseOut() {
+  plus.onmouseout = function () {
     plus.style.backgroundColor = "#ef9fbc";
+    plus.style.border = "1px solid #ef9fbc";
   };
 
   delt.style.borderRadius = "30px";
@@ -373,9 +383,18 @@ let cupcake = () => {
   delt.style.color = "black";
   delt.style.padding = "10px 5px";
   delt.style.textTransform = "uppercase";
+  delt.style.borderBottom = "";
+  delt.style.cursor = "pointer";
 
-  h1.style.backgroundColor = "#FBF8F6";
-  h1.style.color = "#1F2937";
+  delt.onmouseout = function () {
+    delt.style.backgroundColor = "#ef9fbc";
+    delt.style.border = "#ef9fbc";
+  };
+
+  delt.onmouseover = function () {
+    delt.style.backgroundColor = "#e2598c";
+    delt.style.border = "#e2598c";
+  };
 
   container.style.backgroundColor = "#fbf8f6";
   container.style.width = "500px";
@@ -419,9 +438,6 @@ let cupcake = () => {
     i.style.border = "3px solid #efe8eb";
     i.style.borderRadius = "10px";
     i.style.color = "black";
-    i.onmouseover = function () {
-      i.style.backgroundColor = "clear";
-    };
   });
 
   for (let edit of editBotton) {
@@ -473,11 +489,11 @@ let dark = () => {
   delt.style.color = "white";
   delt.style.border = "1px solid #f360c2";
   delt.style.backgroundColor = "#f360c2";
+  delt.style.cursor = "pointer";
 
   delt.onmouseover = function () {
     delt.style.border = "1px solid #4A4E5A ";
     delt.style.backgroundColor = "#AF3888";
-    delt.style.cursor = "pointer";
   };
   delt.onmouseout = function () {
     delt.style.border = "1px solid #f360c2";
@@ -545,6 +561,7 @@ let light = () => {
   plus.style.borderRadius = "10px";
   plus.style.border = "1px solid #f823b1 ";
   plus.style.color = "white";
+
   plus.onmouseover = function () {
     plus.style.backgroundColor = "#C43F95";
     plus.style.border = "1px solid #C43F95";
