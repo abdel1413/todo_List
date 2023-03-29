@@ -252,14 +252,66 @@ function paletteColorList() {
           });
         } else if (a.innerHTML == "fantasy") {
           fantasy();
+
+          Array.from(themeItems).map((item) => {
+            item.onmouseover = function () {
+              item.style.backgroundColor = "#e4dfe1";
+              item.style.borderRadius = "10px";
+            };
+
+            item.onmouseout = function () {
+              item.style.backgroundColor = "#FFFFFF";
+            };
+          });
         } else if (a.innerHTML == "dracula") {
           dracula();
+
+          Array.from(themeItems).map((item) => {
+            item.onmouseover = function () {
+              item.style.backgroundColor = "#474853";
+              item.style.borderRadius = "10px";
+            };
+
+            item.onmouseout = function () {
+              item.style.backgroundColor = "#272935";
+            };
+          });
         } else if (a.innerHTML == "aqua") {
           aqua();
+          Array.from(themeItems).map((item) => {
+            item.onmouseover = function () {
+              item.style.backgroundColor = "#5173B4";
+              item.style.borderRadius = "10px";
+            };
+
+            item.onmouseout = function () {
+              item.style.backgroundColor = "#335CA8";
+            };
+          });
         } else if (a.innerHTML == "luxury") {
           luxury();
+          Array.from(themeItems).map((item) => {
+            item.onmouseover = function () {
+              item.style.backgroundColor = "#2E2E2F";
+              item.style.borderRadius = "10px";
+            };
+
+            item.onmouseout = function () {
+              item.style.backgroundColor = "#09090B";
+            };
+          });
         } else if (a.innerHTML == "night") {
           night();
+          Array.from(themeItems).map((item) => {
+            item.onmouseover = function () {
+              item.style.backgroundColor = "#323949";
+              item.style.borderRadius = "10px";
+            };
+
+            item.onmouseout = function () {
+              item.style.backgroundColor = "#0F1729";
+            };
+          });
         } else {
           defaultFunction();
         }
