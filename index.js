@@ -163,21 +163,93 @@ function paletteColorList() {
       let a = document.createElement("a");
       a.textContent = colors[i];
 
-      // console.log("a", a);
       a.addEventListener("click", () => {
-        if (a.innerHTML == "dark") {
-          dark();
-        } else if (a.innerHTML == "cupcake") {
+        if (a.innerHTML == "cupcake") {
           cupcake();
+          Array.from(themeItems).map((item) => {
+            item.onmouseover = function () {
+              item.style.backgroundColor = "#e4dfe1";
+              item.style.borderBottom = "20px";
+              //  background-color: #e4dfe1;
+              // border-radius: 25px;
+              // top: 0;
+              // padding: 10px;
+              // bottom: auto;
+              // right: 100%;
+              // cursor: pointer;
+            };
+            item.onmouseout = function () {
+              item.style.backgroundColor = "#FAF7F5";
+            };
+          });
+        } else if (a.innerHTML == "dark") {
+          dark();
+          Array.from(themeItems).map((item) => {
+            item.onmouseover = function () {
+              item.style.backgroundColor = "yellow";
+              item.style.borderRadius = "10px";
+              //  background-color: #e4dfe1;
+              // border-radius: 25px;
+              // top: 0;
+              // padding: 10px;
+              // bottom: auto;
+              // right: 100%;
+              // cursor: pointer;
+            };
+            item.onmouseout = function () {
+              item.style.backgroundColor = "#2A303C";
+            };
+          });
         } else if (a.innerHTML == "light") {
           light();
+          Array.from(themeItems).map((item) => {
+            item.onmouseover = function () {
+              item.style.backgroundColor = "#E4DFE1";
+              item.style.borderRadius = "10px";
+            };
+
+            item.onmouseout = function () {
+              item.style.backgroundColor = "#FAF7F5";
+            };
+          });
         } else if (a.innerHTML == "bumblebee") {
           bumblebee();
+          Array.from(themeItems).map((item) => {
+            item.onmouseover = function () {
+              item.style.backgroundColor = "#E4DFE1";
+              item.style.borderRadius = "10px";
+            };
+
+            item.onmouseout = function () {
+              item.style.backgroundColor = "#FFFFFF";
+            };
+          });
         } else if (a.innerHTML == "synthwave") {
-          console.log("sunthwave");
           synthwave();
+
+          Array.from(themeItems).map((item) => {
+            item.onmouseover = function () {
+              item.style.backgroundColor = "#4B357F";
+              item.style.borderRadius = "10px";
+            };
+
+            item.onmouseout = function () {
+              item.style.backgroundColor = "#2D1B69";
+            };
+          });
         } else if (a.innerHTML == "halloween") {
           halloween();
+
+          Array.from(themeItems).map((item) => {
+            item.onmouseover = function () {
+              item.style.backgroundColor = "#424242";
+              item.style.borderRadius = "10px";
+            };
+
+            item.onmouseout = function () {
+              item.style.backgroundColor = "#212121";
+            };
+          });
         } else if (a.innerHTML == "fantasy") {
           fantasy();
         } else if (a.innerHTML == "dracula") {
@@ -250,13 +322,6 @@ let cupcake = () => {
   delt.style.padding = "10px 5px";
   delt.style.textTransform = "uppercase";
 
-  /**
-   * #delete-all:hover {
-  background-color: #e2598c;
-  cursor: pointer;
-}
-   */
-
   h1.style.backgroundColor = "#FBF8F6";
   h1.style.color = "#1F2937";
 
@@ -302,6 +367,9 @@ let cupcake = () => {
     i.style.border = "3px solid #efe8eb";
     i.style.borderRadius = "10px";
     i.style.color = "black";
+    i.onmouseover = function () {
+      i.style.backgroundColor = "clear";
+    };
   });
 
   for (let edit of editBotton) {
@@ -327,8 +395,10 @@ let cupcake = () => {
 };
 
 let dark = () => {
-  let body = document.querySelector("body");
   body.style.backgroundColor = "#2A303C";
+
+  h1.style.backgroundColor = "#4A4E5A";
+  h1.style.color = "#A6ADBA";
 
   plus.style.borderRadius = "10px";
   plus.style.padding = "17px";
@@ -363,14 +433,12 @@ let dark = () => {
   };
 
   container.style.backgroundColor = "#4A4E5A";
+
   input.style.border = "1px solid #AF3888";
   input.style.backgroundColor = "#2A303C";
   input.style.borderRadius = "10px";
   input.style.color = "#A6ADBA";
   input.style.placeHolder = "#A6ADBA";
-
-  h1.style.backgroundColor = "#4A4E5A";
-  h1.style.color = "#A6ADBA";
 
   palette.style.backgroundColor = "#111318";
   palette.style.borderRadius = "10px";
@@ -381,13 +449,7 @@ let dark = () => {
   dropdown.style.borderRadius = "10px";
   iPalette.style.color = "#A6ADBA";
 
-  //listData.style.backgroundColor = "#4A4E5A";
-  //listData[0].style.backgroundColor = "#4A4E5A";
-  //h2.style.color = "#A6ADBA";
-
   for (item of containerListItems) {
-    let dataItem = document.querySelector(".dataItem");
-
     item.style.backgroundColor = "#4A4E5A";
     item.style.color = "#A6ADBA";
     item.style.borderBottom = "1px solid #A6ADBA ";
@@ -397,7 +459,6 @@ let dark = () => {
     i.style.backgroundColor = "#2A303C";
     i.style.border = "1px solid #2A303C";
     i.style.color = "#A6ADBA";
-
     i.style.fontSize = "20px";
   });
 
@@ -652,6 +713,7 @@ let halloween = () => {
   plus.style.border = "1px solid #733da7";
   plus.style.color = "#E1C2FB";
   plus.style.borderRadius = "10px";
+
   plus.onmouseover = function () {
     plus.style.backgroundColor = "#582F7F";
     plus.style.border = "1px solid #582F7F";

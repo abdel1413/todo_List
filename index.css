@@ -64,14 +64,11 @@ body {
 }
 .themes-data:hover {
   background-color: #e4dfe1;
-
   border-radius: 25px;
-
   top: 0;
   padding: 10px;
   bottom: auto;
   right: 100%;
-
   cursor: pointer;
 }
 .alert-message {
@@ -143,35 +140,28 @@ body {
   background-color: #fbf8f6;
 }
 ul {
-  /* border: 2px solid red; */
   margin: 0;
   padding: 0;
 }
 
 .dropdown-container {
   float: right;
-  /* border: 1px solid green; */
-  /* background-color: yellow; */
   position: static;
 }
 
 .data-container {
   padding: 5px;
-  /* padding: 0; */
-  /* margin: 10px; */
 }
 
 .data-container li {
-  /* border: 2px solid yellow; */
   list-style: none;
   display: flex;
-  /* padding-left: 10px; */
+
   flex-direction: row;
   justify-content: space-between;
   background-color: #fbf8f6;
-  /* width: 100%; */
+
   padding: 10px;
-  /* margin: 10px; */
 }
 .data-item {
   padding: 0;
@@ -205,14 +195,12 @@ ul {
   border-radius: 20px;
   background-color: #67d49b;
   margin-right: 10px;
-  /* margin-left: 5px; */
 }
 .btn-div .delete-btn {
   border: solid 1px #ec7071;
   padding: 17px;
   border-radius: 20px;
   background-color: #ec7071;
-  /* margin-right: 10px; */
 }
 
 .author-text {
