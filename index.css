@@ -204,8 +204,8 @@ ul {
 }
 
 .author-text {
-  text-shadow: 0 0 8px #000;
-  color: transparent;
+  /* text-shadow: 0 0 8px #000; */
+  /* color: transparent; */
   position: absolute;
   display: flex;
   justify-content: center;
@@ -214,6 +214,7 @@ ul {
   left: 0;
   width: 100%;
   margin-bottom: 20px;
+  z-index: -1;
 }
 .author-text a {
   text-decoration: none;
