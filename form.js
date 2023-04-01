@@ -20,39 +20,42 @@ function storedItems() {
 }
 
 function viewItems() {
-  let display = document.querySelector("#display-items");
-  let ul = document.createElement("ul");
+  let display = document.querySelector("ul");
+
   let li = document.createElement("li");
   li.classList.add("data-item");
   li.style.backgroundColor = "yellow";
   li.style.display = "flex";
   li.style.flexDirection = "row";
   li.style.boxSizing = "boder box";
-  let span = document.createElement("span");
-  let i = document.createElement("i");
 
+  let i = document.createElement("i");
   i.classList.add("fa-light");
   i.classList.add("fa-delete-left");
   i.style.fontSize = "15px";
   i.style.fontFamily = "Font Awessome 6 Pro";
 
   i.style.lineHeight = "1em";
-  //i.style.marginBottom = "0px";
+
   i.style.marginLeft = "10px";
   i.style.backgroundColor = "pink";
   i.style.boxSizing = "border box";
 
-  //i.style.verticalAlign = "01em";
-  //span.appendChild(i);
   let data = JSON.parse(localStorage.getItem("data"));
-  console.log(data);
-  for (let d of data) {
-    li.textContent = d;
-    li.appendChild(i);
+  // console.log(data);
+  // for (let i of data) {
+  //   console.log(i);
+  // }
+
+  if (data) {
+    for (let d = data.length - 1; d >= 0; i--) {
+      li.textContent = data[d];
+      console.log(i);
+      //li.appendChild(i);
+      console.log(li);
+      //console.log(display.appendChild(li));
+    }
   }
-  console.log(li);
-  ul.appendChild(li);
-  display.appendChild(ul);
 }
 
 function deletAll() {
