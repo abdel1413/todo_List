@@ -30,17 +30,21 @@ alertMessage.style.display = "none";
 dropdown.addEventListener("click", paletteColorList);
 let data = [];
 const addingTask = () => {
-  let e = null;
+  let e2 = null;
   plus.addEventListener("click", (e) => {
     e.preventDefault();
     if (input.value) {
       let isEditing = plus.classList.contains("fa-check");
       console.log("isEditing", isEditing);
 
-      if (isEditing && e) {
-        console.log("eee", e.target.parentElement.parentElement.nextSibling);
-        e.target.parentElement.parentElement.previousSibling.innerHTML =
+      if (isEditing && e2) {
+        // console.log("eee", e.target.parentElement.parentElement.nextSibling);
+        // e.target.parentElement.parentElement.previousSibling.innerHTML =
+        //   input.value;
+        e2.target.parentNode.parentNode.previousSibling.textContent =
           input.value;
+        console.log(e2.target.parentNode.parentNode);
+
         plus.classList.remove("fa-check");
       } else {
         let li = document.createElement("li");
@@ -61,8 +65,8 @@ const addingTask = () => {
         editBtn.appendChild(editIcon);
 
         editBtn.addEventListener("click", function (ev) {
-          e = ev;
-          console.log(e);
+          e2 = ev;
+          console.log(e2);
           console.log(this);
           editTask(this);
         });
@@ -85,20 +89,18 @@ const addingTask = () => {
         li.appendChild(btnDivs);
         //console.log(li);
 
-        // localStorage.setItem("task", li);
-        // let storage = localStorage.getItem("task");
-
-        ul.appendChild(li);
         // if (localStorage.getItem("task") == null) {
         //   localStorage.setItem("task", "[]");
         // }
-        // //console.log("data", localStorage.getItem("task"));
-        // let data = JSON.parse(localStorage.getItem("task"));
-        // data.push(input.value);
-        // console.log("d", data);
-        //localStorage.setItem("task", ul.innerHTML);
-        localStorage.setItem("task", JSON.stringify(input.value));
-        console.log("data", localStorage.getItem("task"));
+        ul.appendChild(li);
+        let c = ul.childNodes;
+        let t = [];
+        for (let i = 0; i < c.length; i++) {
+          t.push(c[i].textContent);
+        }
+
+        console.log({ t });
+        localStorage.setItem("task", JSON.stringify(t));
       }
       input.value = "";
     } else {
@@ -107,7 +109,58 @@ const addingTask = () => {
     }
   });
 
-  // let saveItems = localStorage.getItem("task");
+  let saveItems = localStorage.getItem("task")
+    ? JSON.parse(localStorage.getItem("task"))
+    : [];
+
+  for (let i = 0; i < saveItems.length; i++) {
+    let text = saveItems[i];
+    // create the li with the edit and delete buttons as you're doing above
+    // append the li to the list
+    let li = document.createElement("li");
+    li.classList.add("list-data");
+
+    let h2 = document.createElement("h2");
+    h2.classList.add("data-item");
+    h2.textContent = text;
+
+    li.appendChild(h2);
+
+    let editBtn = document.createElement("button");
+    editBtn.classList.add("edit-btn");
+
+    let editIcon = document.createElement("i");
+    editIcon.classList.add("fa-solid");
+    editIcon.classList.add("fa-pen");
+    editBtn.appendChild(editIcon);
+
+    editBtn.addEventListener("click", function (ev) {
+      e = ev; // fix this
+      console.log(e);
+      console.log(this);
+      editTask(this);
+    });
+
+    let delBtn = document.createElement("button");
+    delBtn.classList.add("delete-btn");
+    let delIcon = document.createElement("i");
+    delIcon.classList.add("fa-regular");
+    delIcon.classList.add("fa-trash-can");
+    delBtn.appendChild(delIcon);
+
+    delBtn.addEventListener("click", deleteTask);
+
+    let btnDivs = document.createElement("div");
+    btnDivs.classList.add("btn-div");
+
+    btnDivs.appendChild(editBtn);
+    btnDivs.appendChild(delBtn);
+
+    li.appendChild(btnDivs);
+    ul.appendChild(li);
+  }
+
+  console.log("saved", saveItems);
   // if (saveItems) {
   //   ul.innerHTML = saveItems;
   // }
@@ -116,7 +169,16 @@ const addingTask = () => {
 addingTask();
 
 function deleteTask() {
+  const taskToRemove = this.parentNode.parentNode.textContent;
+  const tasks = localStorage.getItem("task")
+    ? JSON.parse(localStorage.getItem("task"))
+    : [];
+  const filt = tasks.filter((task) => task != taskToRemove);
+  localStorage.setItem("task", JSON.stringify(filt));
+
   this.parentNode.parentNode.remove();
+  // localStorage.clear();
+  // get the current tasks in local storage and return all of them except the one you want to delete.
 }
 function editTask(e) {
   input.value = e.parentNode.parentNode.firstChild.innerHTML;
@@ -125,7 +187,7 @@ function editTask(e) {
 
 function deletAll() {
   delt.addEventListener("click", function () {
-    // ul.innerHTML = "";
+    ul.innerHTML = "";
     localStorage.clear();
   });
 }
@@ -175,22 +237,6 @@ function paletteColorList() {
       a.addEventListener("click", () => {
         if (a.innerHTML == "cupcake") {
           cupcake();
-          Array.from(themeItems).map((item) => {
-            item.onmouseover = function () {
-              item.style.backgroundColor = "#e4dfe1";
-              item.style.borderBottom = "20px";
-              //  background-color: #e4dfe1;
-              // border-radius: 25px;
-              // top: 0;
-              // padding: 10px;
-              // bottom: auto;
-              // right: 100%;
-              // cursor: pointer;
-            };
-            item.onmouseout = function () {
-              item.style.backgroundColor = "#FAF7F5";
-            };
-          });
         } else if (a.innerHTML == "dark") {
           dark();
           Array.from(themeItems).map((item) => {
@@ -430,7 +476,6 @@ let cupcake = () => {
   iPalette.style.padding = "5px";
 
   for (item of containerListItems) {
-    let dataItem = document.querySelector(".dataItem");
     item.style.color = "#4A4E5A";
     item.style.backgroundColor = "#FBF8F6";
     item.style.padding = "10px";
@@ -441,8 +486,22 @@ let cupcake = () => {
     i.style.border = "3px solid #efe8eb";
     i.style.borderRadius = "10px";
     i.style.color = "black";
-    i.onmouseover = function () {
-      i.style.backgroundColor = "clear";
+  });
+
+  Array.from(themeItems).map((item) => {
+    item.onmouseover = function () {
+      item.style.backgroundColor = "#e4dfe1";
+      item.style.borderBottom = "20px";
+      //  background-color: #e4dfe1;
+      // border-radius: 25px;
+      // top: 0;
+      // padding: 10px;
+      // bottom: auto;
+      // right: 100%;
+      // cursor: pointer;
+    };
+    item.onmouseout = function () {
+      item.style.backgroundColor = "#FAF7F5";
     };
   });
 
@@ -470,7 +529,6 @@ let cupcake = () => {
 
 let dark = () => {
   body.style.backgroundColor = "#2A303C";
-
   h1.style.backgroundColor = "#4A4E5A";
   h1.style.color = "#A6ADBA";
 

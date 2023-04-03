@@ -1,4 +1,5 @@
-let displayItem = document.querySelector("#display-item");
+let displayItem = document.querySelector("#display-items");
+
 //let inputText = document.getElementById("input-text").value;
 
 function storedItems() {
@@ -18,11 +19,11 @@ function storedItems() {
 
   localStorage.setItem("data", JSON.stringify(oldData));
 }
+let li = document.createElement("li");
 
 function viewItems() {
   let display = document.querySelector("ul");
 
-  let li = document.createElement("li");
   li.classList.add("data-item");
   li.style.backgroundColor = "yellow";
   li.style.display = "flex";
@@ -34,27 +35,39 @@ function viewItems() {
   i.classList.add("fa-delete-left");
   i.style.fontSize = "15px";
   i.style.fontFamily = "Font Awessome 6 Pro";
-
   i.style.lineHeight = "1em";
-
   i.style.marginLeft = "10px";
   i.style.backgroundColor = "pink";
   i.style.boxSizing = "border box";
 
   let data = JSON.parse(localStorage.getItem("data"));
-  // console.log(data);
-  // for (let i of data) {
-  //   console.log(i);
-  // }
+
+  let ar = [];
+  data.map((e) => {
+    // console.log("e", e);
+    li.textContent = e;
+    // console.log(li);
+  });
+  for (let i = data.length - 1; i >= 0; i--) {
+    console.log("d", data[i]);
+    li.textContent = data[i];
+    console.log("dd", li);
+  }
 
   if (data) {
-    for (let d = data.length - 1; d >= 0; i--) {
-      li.textContent = data[d];
-      console.log(i);
-      //li.appendChild(i);
-      console.log(li);
-      //console.log(display.appendChild(li));
-    }
+    displayItem.innerHTML = data;
+    //console.log(displayItem.innerHTML);
+    //ar.push(data);
+
+    // for (let a = 0; a < ar.length; a++) {
+    //   ar[a].map((element) => {
+    //     console.log(element);
+    //     li.textContent = element;
+    //     li.appendChild(i);
+    //     // console.log(li);
+    //     return displayItem.appendChild(li);
+    //   });
+    // }
   }
 }
 
