@@ -28,9 +28,11 @@ let saveTask = document.querySelector("#save-task");
 alertMessage.style.display = "none";
 
 dropdown.addEventListener("click", paletteColorList);
-let data = [];
+let edited;
+
 const addingTask = () => {
   let e2 = null;
+
   plus.addEventListener("click", (e) => {
     e.preventDefault();
     if (input.value) {
@@ -38,12 +40,15 @@ const addingTask = () => {
       console.log("isEditing", isEditing);
 
       if (isEditing && e2) {
-        // console.log("eee", e.target.parentElement.parentElement.nextSibling);
-        // e.target.parentElement.parentElement.previousSibling.innerHTML =
+        // e2.target.parentNode.parentNode.parentNode.firstChild.innerHTML =
         //   input.value;
-        e2.target.parentNode.parentNode.previousSibling.textContent =
-          input.value;
-        console.log(e2.target.parentNode.parentNode);
+
+        if (e2.target.parentNode.className == "edit-btn") {
+          e2.target.parentNode.parentNode.previousSibling.innerHTML =
+            input.value;
+        } else if (e2.target.parentNode.className == "btn-div") {
+          e2.target.parentNode.previousSibling.innerHTML = input.value;
+        }
 
         plus.classList.remove("fa-check");
       } else {
@@ -66,8 +71,6 @@ const addingTask = () => {
 
         editBtn.addEventListener("click", function (ev) {
           e2 = ev;
-          console.log(e2);
-          console.log(this);
           editTask(this);
         });
 
@@ -87,19 +90,14 @@ const addingTask = () => {
         btnDivs.appendChild(delBtn);
 
         li.appendChild(btnDivs);
-        //console.log(li);
 
-        // if (localStorage.getItem("task") == null) {
-        //   localStorage.setItem("task", "[]");
-        // }
         ul.appendChild(li);
+
         let c = ul.childNodes;
         let t = [];
         for (let i = 0; i < c.length; i++) {
           t.push(c[i].textContent);
         }
-
-        console.log({ t });
         localStorage.setItem("task", JSON.stringify(t));
       }
       input.value = "";
@@ -113,9 +111,12 @@ const addingTask = () => {
     ? JSON.parse(localStorage.getItem("task"))
     : [];
 
+  console.log("sv", saveItems);
   for (let i = 0; i < saveItems.length; i++) {
     let text = saveItems[i];
-    // create the li with the edit and delete buttons as you're doing above
+    console.log("text", text);
+
+    // create the li with the edit and delete buttons as above
     // append the li to the list
     let li = document.createElement("li");
     li.classList.add("list-data");
@@ -135,9 +136,7 @@ const addingTask = () => {
     editBtn.appendChild(editIcon);
 
     editBtn.addEventListener("click", function (ev) {
-      e = ev; // fix this
-      console.log(e);
-      console.log(this);
+      e2 = ev;
       editTask(this);
     });
 
@@ -160,25 +159,25 @@ const addingTask = () => {
     ul.appendChild(li);
   }
 
-  console.log("saved", saveItems);
-  // if (saveItems) {
-  //   ul.innerHTML = saveItems;
-  // }
+  // console.log("after save", saveItems);
+  // console.log("edited text", edited);
 };
 
 addingTask();
 
 function deleteTask() {
+  //get the task to delete
   const taskToRemove = this.parentNode.parentNode.textContent;
   const tasks = localStorage.getItem("task")
     ? JSON.parse(localStorage.getItem("task"))
     : [];
-  const filt = tasks.filter((task) => task != taskToRemove);
-  localStorage.setItem("task", JSON.stringify(filt));
+
+  // get the current tasks in local storage and return all
+  //of them except the one you want to delete.
+  const filtered = tasks.filter((task) => task != taskToRemove);
+  localStorage.setItem("task", JSON.stringify(filtered));
 
   this.parentNode.parentNode.remove();
-  // localStorage.clear();
-  // get the current tasks in local storage and return all of them except the one you want to delete.
 }
 function editTask(e) {
   input.value = e.parentNode.parentNode.firstChild.innerHTML;
@@ -243,13 +242,6 @@ function paletteColorList() {
             item.onmouseover = function () {
               item.style.backgroundColor = "yellow";
               item.style.borderRadius = "10px";
-              //  background-color: #e4dfe1;
-              // border-radius: 25px;
-              // top: 0;
-              // padding: 10px;
-              // bottom: auto;
-              // right: 100%;
-              // cursor: pointer;
             };
             item.onmouseout = function () {
               item.style.backgroundColor = "#2A303C";
