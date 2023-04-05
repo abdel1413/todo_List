@@ -39,6 +39,8 @@ const addingTask = () => {
       let isEditing = plus.classList.contains("fa-check");
       console.log("isEditing", isEditing);
 
+      //if edite is active and there is an event
+      //then assign new values to list base on the event target;
       if (isEditing && e2) {
         if (e2.target.parentNode.className == "edit-btn") {
           e2.target.parentNode.parentNode.previousSibling.innerHTML =
@@ -49,20 +51,18 @@ const addingTask = () => {
 
         plus.classList.remove("fa-check");
 
-        console.log("iv", input.value);
+        //save new edited value into local storage by
+        // using ul nod child textContent
         let newValues = [];
         let ulChild = ul.childNodes;
-
-        // n.push(input.value);
-        console.log("ed ul", ul.childNodes);
         for (let i = 0; i < ulChild.length; i++) {
           newValues.push(ulChild[i].innerText);
         }
-        console.log(newValues);
         localStorage.setItem("task", JSON.stringify(newValues));
         let nw = JSON.parse(localStorage.getItem("task"));
-        console.log("nw", nw);
       } else {
+        // create the li with the edit and delete buttons and
+        // append the li to the ul
         let li = document.createElement("li");
         li.classList.add("list-data");
 
@@ -105,7 +105,6 @@ const addingTask = () => {
         ul.appendChild(li);
 
         let c = ul.childNodes;
-        console.log("c ul", c);
         let t = [];
         for (let i = 0; i < c.length; i++) {
           t.push(c[i].textContent);
@@ -119,14 +118,13 @@ const addingTask = () => {
     }
   });
 
+  //get local storage values using tanery operator
   let saveItems = localStorage.getItem("task")
     ? JSON.parse(localStorage.getItem("task"))
     : [];
 
-  console.log("sv", saveItems);
   for (let i = 0; i < saveItems.length; i++) {
     let text = saveItems[i];
-    console.log("text", text);
 
     // create the li with the edit and delete buttons as above
     // append the li to the list
