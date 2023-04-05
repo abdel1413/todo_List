@@ -249,65 +249,14 @@ function paletteColorList() {
           cupcake();
         } else if (a.innerHTML == "dark") {
           dark();
-          Array.from(themeItems).map((item) => {
-            item.onmouseover = function () {
-              item.style.backgroundColor = "yellow";
-              item.style.borderRadius = "10px";
-            };
-            item.onmouseout = function () {
-              item.style.backgroundColor = "#2A303C";
-            };
-          });
         } else if (a.innerHTML == "light") {
           light();
-          Array.from(themeItems).map((item) => {
-            item.onmouseover = function () {
-              item.style.backgroundColor = "#E4DFE1";
-              item.style.borderRadius = "10px";
-            };
-
-            item.onmouseout = function () {
-              item.style.backgroundColor = "#FAF7F5";
-            };
-          });
         } else if (a.innerHTML == "bumblebee") {
           bumblebee();
-          Array.from(themeItems).map((item) => {
-            item.onmouseover = function () {
-              item.style.backgroundColor = "#E4DFE1";
-              item.style.borderRadius = "10px";
-            };
-
-            item.onmouseout = function () {
-              item.style.backgroundColor = "#FFFFFF";
-            };
-          });
         } else if (a.innerHTML == "synthwave") {
           synthwave();
-
-          Array.from(themeItems).map((item) => {
-            item.onmouseover = function () {
-              item.style.backgroundColor = "#4B357F";
-              item.style.borderRadius = "10px";
-            };
-
-            item.onmouseout = function () {
-              item.style.backgroundColor = "#2D1B69";
-            };
-          });
         } else if (a.innerHTML == "halloween") {
           halloween();
-
-          Array.from(themeItems).map((item) => {
-            item.onmouseover = function () {
-              item.style.backgroundColor = "#424242";
-              item.style.borderRadius = "10px";
-            };
-
-            item.onmouseout = function () {
-              item.style.backgroundColor = "#212121";
-            };
-          });
         } else if (a.innerHTML == "fantasy") {
           fantasy();
 
@@ -495,13 +444,6 @@ let cupcake = () => {
     item.onmouseover = function () {
       item.style.backgroundColor = "#e4dfe1";
       item.style.borderBottom = "20px";
-      //  background-color: #e4dfe1;
-      // border-radius: 25px;
-      // top: 0;
-      // padding: 10px;
-      // bottom: auto;
-      // right: 100%;
-      // cursor: pointer;
     };
     item.onmouseout = function () {
       item.style.backgroundColor = "#FAF7F5";
@@ -609,6 +551,16 @@ let dark = () => {
     del.style.padding = "10px 15px";
     del.style.color = "#470C0A";
   }
+
+  Array.from(themeItems).map((item) => {
+    item.onmouseover = function () {
+      item.style.backgroundColor = "#4A4E5A";
+      item.style.borderRadius = "10px";
+    };
+    item.onmouseout = function () {
+      item.style.backgroundColor = "#2A303C";
+    };
+  });
 };
 
 let light = () => {
@@ -685,6 +637,17 @@ let light = () => {
     item.style.color = "#000000";
     item.style.borderBottom = "";
   }
+
+  Array.from(themeItems).map((item) => {
+    item.onmouseover = function () {
+      item.style.backgroundColor = "#E4DFE1";
+      item.style.borderRadius = "10px";
+    };
+
+    item.onmouseout = function () {
+      item.style.backgroundColor = "#FAF7F5";
+    };
+  });
 };
 
 let bumblebee = () => {
@@ -758,6 +721,17 @@ let bumblebee = () => {
     i.style.border = "1px solid #efe8eb";
     i.style.borderRadius = "10px";
     i.style.color = "black";
+  });
+
+  Array.from(themeItems).map((item) => {
+    item.onmouseover = function () {
+      item.style.backgroundColor = "#E4DFE1";
+      item.style.borderRadius = "10px";
+    };
+
+    item.onmouseout = function () {
+      item.style.backgroundColor = "#FFFFFF";
+    };
   });
 };
 
@@ -836,6 +810,17 @@ let synthwave = () => {
     item.style.borderBottom = "";
     item.style.padding = "7px";
   }
+
+  Array.from(themeItems).map((item) => {
+    item.onmouseover = function () {
+      item.style.backgroundColor = "#4B357F";
+      item.style.borderRadius = "10px";
+    };
+
+    item.onmouseout = function () {
+      item.style.backgroundColor = "#2D1B69";
+    };
+  });
 };
 
 let halloween = () => {
@@ -922,6 +907,16 @@ let halloween = () => {
     item.style.borderBottom = "1px solid lightgray";
     item.style.padding = "7px";
   }
+  Array.from(themeItems).map((item) => {
+    item.onmouseover = function () {
+      item.style.backgroundColor = "#424242";
+      item.style.borderRadius = "10px";
+    };
+
+    item.onmouseout = function () {
+      item.style.backgroundColor = "#212121";
+    };
+  });
 };
 
 let fantasy = () => {
