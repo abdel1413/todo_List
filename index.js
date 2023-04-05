@@ -259,66 +259,14 @@ function paletteColorList() {
           halloween();
         } else if (a.innerHTML == "fantasy") {
           fantasy();
-
-          Array.from(themeItems).map((item) => {
-            item.onmouseover = function () {
-              item.style.backgroundColor = "#e4dfe1";
-              item.style.borderRadius = "10px";
-            };
-
-            item.onmouseout = function () {
-              item.style.backgroundColor = "#FFFFFF";
-            };
-          });
         } else if (a.innerHTML == "dracula") {
           dracula();
-
-          Array.from(themeItems).map((item) => {
-            item.onmouseover = function () {
-              item.style.backgroundColor = "#474853";
-              item.style.borderRadius = "10px";
-            };
-
-            item.onmouseout = function () {
-              item.style.backgroundColor = "#272935";
-            };
-          });
         } else if (a.innerHTML == "aqua") {
           aqua();
-          Array.from(themeItems).map((item) => {
-            item.onmouseover = function () {
-              item.style.backgroundColor = "#5173B4";
-              item.style.borderRadius = "10px";
-            };
-
-            item.onmouseout = function () {
-              item.style.backgroundColor = "#335CA8";
-            };
-          });
         } else if (a.innerHTML == "luxury") {
           luxury();
-          Array.from(themeItems).map((item) => {
-            item.onmouseover = function () {
-              item.style.backgroundColor = "#2E2E2F";
-              item.style.borderRadius = "10px";
-            };
-
-            item.onmouseout = function () {
-              item.style.backgroundColor = "#09090B";
-            };
-          });
         } else if (a.innerHTML == "night") {
           night();
-          Array.from(themeItems).map((item) => {
-            item.onmouseover = function () {
-              item.style.backgroundColor = "#323949";
-              item.style.borderRadius = "10px";
-            };
-
-            item.onmouseout = function () {
-              item.style.backgroundColor = "#0F1729";
-            };
-          });
         } else {
           defaultFunction();
         }
@@ -1004,6 +952,17 @@ let fantasy = () => {
     item.style.borderBottom = "";
     item.style.padding = "7px";
   }
+
+  Array.from(themeItems).map((item) => {
+    item.onmouseover = function () {
+      item.style.backgroundColor = "#e4dfe1";
+      item.style.borderRadius = "10px";
+    };
+
+    item.onmouseout = function () {
+      item.style.backgroundColor = "#FFFFFF";
+    };
+  });
 };
 
 let dracula = () => {
@@ -1089,6 +1048,17 @@ let dracula = () => {
     item.style.color = "#F8F8F2";
     item.style.borderBottom = "1px solid lightgray";
   }
+
+  Array.from(themeItems).map((item) => {
+    item.onmouseover = function () {
+      item.style.backgroundColor = "#474853";
+      item.style.borderRadius = "10px";
+    };
+
+    item.onmouseout = function () {
+      item.style.backgroundColor = "#272935";
+    };
+  });
 };
 
 let aqua = () => {
@@ -1180,6 +1150,16 @@ let aqua = () => {
 
     //item.appendChild(b);
   }
+  Array.from(themeItems).map((item) => {
+    item.onmouseover = function () {
+      item.style.backgroundColor = "#5173B4";
+      item.style.borderRadius = "10px";
+    };
+
+    item.onmouseout = function () {
+      item.style.backgroundColor = "#335CA8";
+    };
+  });
 };
 
 let luxury = () => {
@@ -1274,6 +1254,16 @@ let luxury = () => {
     item.style.borderBottom = "1px solid  gray";
     item.style.padding = "7px";
   }
+  Array.from(themeItems).map((item) => {
+    item.onmouseover = function () {
+      item.style.backgroundColor = "#2E2E2F";
+      item.style.borderRadius = "10px";
+    };
+
+    item.onmouseout = function () {
+      item.style.backgroundColor = "#09090B";
+    };
+  });
 };
 
 let night = () => {
@@ -1360,6 +1350,16 @@ let night = () => {
     item.style.borderBottom = "1px solid  gray";
     item.style.padding = "7px";
   }
+  Array.from(themeItems).map((item) => {
+    item.onmouseover = function () {
+      item.style.backgroundColor = "#323949";
+      item.style.borderRadius = "10px";
+    };
+
+    item.onmouseout = function () {
+      item.style.backgroundColor = "#0F1729";
+    };
+  });
 };
 
 const defaultFunction = () => {
