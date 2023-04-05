@@ -386,6 +386,7 @@ let cupcake = () => {
     i.style.border = "3px solid #efe8eb";
     i.style.borderRadius = "10px";
     i.style.color = "black";
+    i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
   });
 
   Array.from(themeItems).map((item) => {
@@ -485,6 +486,7 @@ let dark = () => {
     i.style.border = "1px solid #2A303C";
     i.style.color = "#A6ADBA";
     i.style.fontSize = "20px";
+    i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
   });
 
   for (let edit of editBotton) {
@@ -669,6 +671,7 @@ let bumblebee = () => {
     i.style.border = "1px solid #efe8eb";
     i.style.borderRadius = "10px";
     i.style.color = "black";
+    i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
   });
 
   Array.from(themeItems).map((item) => {
@@ -752,7 +755,6 @@ let synthwave = () => {
   });
 
   for (item of containerListItems) {
-    let dataItem = document.querySelector(".dataItem");
     item.style.backgroundColor = "#4B357F";
     item.style.color = "#F9F7FD";
     item.style.borderBottom = "";
@@ -1137,8 +1139,6 @@ let aqua = () => {
   });
 
   for (item of containerListItems) {
-    let dataItem = document.querySelector(".dataItem");
-
     // item.style.backgroundColor = "#C7DBFB";
     let b = document.createElement("hr");
     console.log("h", b);
@@ -1247,8 +1247,6 @@ let luxury = () => {
   });
 
   for (item of containerListItems) {
-    let dataItem = document.querySelector(".dataItem");
-
     item.style.backgroundColor = "#2E2E2F";
     item.style.color = "#DCA54C";
     item.style.borderBottom = "1px solid  gray";
