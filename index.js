@@ -40,9 +40,6 @@ const addingTask = () => {
       console.log("isEditing", isEditing);
 
       if (isEditing && e2) {
-        // e2.target.parentNode.parentNode.parentNode.firstChild.innerHTML =
-        //   input.value;
-
         if (e2.target.parentNode.className == "edit-btn") {
           e2.target.parentNode.parentNode.previousSibling.innerHTML =
             input.value;
@@ -51,6 +48,20 @@ const addingTask = () => {
         }
 
         plus.classList.remove("fa-check");
+
+        console.log("iv", input.value);
+        let newValues = [];
+        let ulChild = ul.childNodes;
+
+        // n.push(input.value);
+        console.log("ed ul", ul.childNodes);
+        for (let i = 0; i < ulChild.length; i++) {
+          newValues.push(ulChild[i].innerText);
+        }
+        console.log(newValues);
+        localStorage.setItem("task", JSON.stringify(newValues));
+        let nw = JSON.parse(localStorage.getItem("task"));
+        console.log("nw", nw);
       } else {
         let li = document.createElement("li");
         li.classList.add("list-data");
@@ -94,6 +105,7 @@ const addingTask = () => {
         ul.appendChild(li);
 
         let c = ul.childNodes;
+        console.log("c ul", c);
         let t = [];
         for (let i = 0; i < c.length; i++) {
           t.push(c[i].textContent);
@@ -181,6 +193,7 @@ function deleteTask() {
 }
 function editTask(e) {
   input.value = e.parentNode.parentNode.firstChild.innerHTML;
+
   plus.classList.add("fa-check");
 }
 
