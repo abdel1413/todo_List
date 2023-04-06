@@ -443,25 +443,153 @@ let dark = () => {
     plus.style.border = "1px solid #f360c2 ";
   };
 
-  console.log("lisdata", listData);
+  // plus.addEventListener("click", () => {
+  //   let i = document.querySelector("input");
+  //   console.log("input", i.value);
+  //   let li = document.createElement("li");
+  //   li.textContent = i.value;
+  //   li.style.background = "blue";
+  //   li.style.border = "1px solid red";
+  //   ul.appendChild(li);
+  // });
 
-  Array.from(listData).map((i) => {
-    // console.log("li", i);
-    i.style.backgroundColor = "green";
-    i.style.color = "red";
-    i.style.border = "3px solid blue";
-    console.log("sss", i.className);
+  plus.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (input.value) {
+      let isEditing = plus.classList.contains("fa-check");
+      console.log("isEditing", isEditing);
+
+      //if edite is active and there is an event
+      //then assign new values to list base on the event target;
+      if (isEditing && e2) {
+        if (e2.target.parentNode.className == "edit-btn") {
+          e2.target.parentNode.parentNode.previousSibling.innerHTML =
+            input.value;
+        } else if (e2.target.parentNode.className == "btn-div") {
+          e2.target.parentNode.previousSibling.innerHTML = input.value;
+        }
+
+        plus.classList.remove("fa-check");
+
+        //save new edited value into local storage by
+        // using ul nod child textContent
+        let newValues = [];
+        let ulChild = ul.childNodes;
+        for (let i = 0; i < ulChild.length; i++) {
+          newValues.push(ulChild[i].innerText);
+        }
+        localStorage.setItem("task", JSON.stringify(newValues));
+        let nw = JSON.parse(localStorage.getItem("task"));
+      } else {
+        let li = document.createElement("li");
+        li.classList.add("list-data");
+        //NOTE : will come back to modify
+        let h2 = document.createElement("h2");
+        h2.classList.add("data-item");
+        h2.textContent = input.value;
+
+        li.style.backgroundColor = "#4A4E5B";
+        li.style.color = "#A6ADBA";
+        li.style.borderBottom = "1px solid #A6ADBA ";
+
+        li.appendChild(h2);
+
+        let editBtn = document.createElement("button");
+        editBtn.classList.add("edit-btn");
+
+        let editIcon = document.createElement("i");
+        editIcon.classList.add("fa-solid");
+        editIcon.classList.add("fa-pen");
+        editBtn.appendChild(editIcon);
+
+        editBtn.addEventListener("click", function (ev) {
+          e2 = ev;
+          editTask(this);
+        });
+
+        let delBtn = document.createElement("button");
+        delBtn.classList.add("delete-btn");
+        let delIcon = document.createElement("i");
+        delIcon.classList.add("fa-regular");
+        delIcon.classList.add("fa-trash-can");
+        delBtn.appendChild(delIcon);
+
+        delBtn.addEventListener("click", deleteTask);
+
+        let btnDivs = document.createElement("div");
+        btnDivs.classList.add("btn-div");
+
+        btnDivs.appendChild(editBtn);
+        btnDivs.appendChild(delBtn);
+
+        li.appendChild(btnDivs);
+
+        ul.appendChild(li);
+
+        let c = ul.childNodes;
+        let t = [];
+        for (let i = 0; i < c.length; i++) {
+          t.push(c[i].textContent);
+        }
+        localStorage.setItem("task", JSON.stringify(t));
+      }
+      input.value = "";
+    } else {
+      let modal = document.createElement("modal");
+      alert("you have to enter a task!!!");
+    }
   });
 
-  plus.addEventListener("click", () => {
-    let i = document.querySelector("input");
-    console.log("input", i.value);
+  //get local storage values using tanery operator
+  let saveItems = localStorage.getItem("task")
+    ? JSON.parse(localStorage.getItem("task"))
+    : [];
+
+  for (let i = 0; i < saveItems.length; i++) {
+    let text = saveItems[i];
+
+    // create the li with the edit and delete buttons as above
+    // append the li to the list
     let li = document.createElement("li");
-    li.textContent = i.value;
-    li.style.background = "blue";
-    li.style.border = "1px solid red";
+    li.classList.add("list-data");
+
+    let h2 = document.createElement("h2");
+    h2.classList.add("data-item");
+    h2.textContent = text;
+
+    li.appendChild(h2);
+
+    let editBtn = document.createElement("button");
+    editBtn.classList.add("edit-btn");
+
+    let editIcon = document.createElement("i");
+    editIcon.classList.add("fa-solid");
+    editIcon.classList.add("fa-pen");
+    editBtn.appendChild(editIcon);
+
+    editBtn.addEventListener("click", function (ev) {
+      e2 = ev;
+      editTask(this);
+    });
+
+    let delBtn = document.createElement("button");
+    delBtn.classList.add("delete-btn");
+    let delIcon = document.createElement("i");
+    delIcon.classList.add("fa-regular");
+    delIcon.classList.add("fa-trash-can");
+    delBtn.appendChild(delIcon);
+
+    delBtn.addEventListener("click", deleteTask);
+
+    let btnDivs = document.createElement("div");
+    btnDivs.classList.add("btn-div");
+
+    btnDivs.appendChild(editBtn);
+    btnDivs.appendChild(delBtn);
+
+    li.appendChild(btnDivs);
     ul.appendChild(li);
-  });
+  }
 
   delt.style.borderRadius = "10px";
   delt.style.color = "white";
@@ -501,13 +629,13 @@ let dark = () => {
   dropdown.style.borderRadius = "10px";
   iPalette.style.color = "#A6ADBA";
 
-  for (item of containerListItems) {
-    item.border = "1px solid yellow";
-    // item.style.backgroundColor = "#4A4E5A";
-    //item.style.backgroundColor = "pink";
-    item.style.color = "#A6ADBA";
-    item.style.borderBottom = "1px solid #A6ADBA ";
-  }
+  // for (item of containerListItems) {
+  //   item.border = "1px solid yellow";
+  //   // item.style.backgroundColor = "#4A4E5A";
+  //   //item.style.backgroundColor = "pink";
+  //   // item.style.color = "#A6ADBA";
+  //   item.style.borderBottom = "1px solid #A6ADBA ";
+  // }
 
   Array.from(themes).map((i) => {
     i.style.backgroundColor = "#2A303C";
