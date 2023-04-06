@@ -173,7 +173,7 @@ const addingTask = () => {
   // console.log("edited text", edited);
 };
 
-addingTask();
+//addingTask();
 
 function deleteTask() {
   //get the task to delete
@@ -422,6 +422,7 @@ let cupcake = () => {
 };
 
 let dark = () => {
+  //addingTask();
   body.style.backgroundColor = "#2A303C";
   h1.style.backgroundColor = "#4A4E5A";
   h1.style.color = "#A6ADBA";
@@ -438,10 +439,29 @@ let dark = () => {
     plus.style.border = "1px solid #AF3888";
   };
   plus.onmouseout = function mouseOut() {
-    console.log("mouse out ");
     plus.style.backgroundColor = "#f360c2";
     plus.style.border = "1px solid #f360c2 ";
   };
+
+  console.log("lisdata", listData);
+
+  Array.from(listData).map((i) => {
+    // console.log("li", i);
+    i.style.backgroundColor = "green";
+    i.style.color = "red";
+    i.style.border = "3px solid blue";
+    console.log("sss", i.className);
+  });
+
+  plus.addEventListener("click", () => {
+    let i = document.querySelector("input");
+    console.log("input", i.value);
+    let li = document.createElement("li");
+    li.textContent = i.value;
+    li.style.background = "blue";
+    li.style.border = "1px solid red";
+    ul.appendChild(li);
+  });
 
   delt.style.borderRadius = "10px";
   delt.style.color = "white";
@@ -466,14 +486,6 @@ let dark = () => {
     items[i].style.backgroundColor = "yellow";
   }
 
-  console.log("lisdata", listData);
-  Array.from(listData).map((i) => {
-    console.log("li", i);
-    i.style.backgroundColor = "red";
-    i.style.border = "6px solid green";
-    i.style.zIndex = "1";
-  });
-
   input.style.border = "1px solid #AF3888";
   input.style.backgroundColor = "#2A303C";
   input.style.borderRadius = "10px";
@@ -491,7 +503,8 @@ let dark = () => {
 
   for (item of containerListItems) {
     item.border = "1px solid yellow";
-    item.style.backgroundColor = "#4A4E5A";
+    // item.style.backgroundColor = "#4A4E5A";
+    //item.style.backgroundColor = "pink";
     item.style.color = "#A6ADBA";
     item.style.borderBottom = "1px solid #A6ADBA ";
   }

@@ -156,7 +156,6 @@ ul {
 .data-container li {
   list-style: none;
   display: flex;
-
   flex-direction: row;
   justify-content: space-between;
   background-color: #fbf8f6;
