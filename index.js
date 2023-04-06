@@ -15,8 +15,8 @@ let h1 = document.querySelector("h1");
 let h2 = document.querySelector("h2");
 let themes = document.getElementsByClassName("themes");
 let themeItems = document.getElementsByClassName("themes-data");
-let dataContainer = document.querySelector(".data-container");
-let listData = document.querySelectorAll(".list-data");
+let dataContainer = document.querySelectorAll(".data-container");
+let listData = document.getElementsByClassName("list-data");
 let containerListItems = document.getElementsByClassName("list-data");
 let deletBotton = document.getElementsByClassName("delete-btn");
 let editBotton = document.getElementsByClassName("edit-btn");
@@ -459,6 +459,20 @@ let dark = () => {
   };
 
   container.style.backgroundColor = "#4A4E5A";
+  container.style.border = "1px solid red";
+
+  let items = Array.from(dataContainer);
+  for (let i = 0; i < items.length; i++) {
+    items[i].style.backgroundColor = "yellow";
+  }
+
+  console.log("lisdata", listData);
+  Array.from(listData).map((i) => {
+    console.log("li", i);
+    i.style.backgroundColor = "red";
+    i.style.border = "6px solid green";
+    i.style.zIndex = "1";
+  });
 
   input.style.border = "1px solid #AF3888";
   input.style.backgroundColor = "#2A303C";
@@ -476,6 +490,7 @@ let dark = () => {
   iPalette.style.color = "#A6ADBA";
 
   for (item of containerListItems) {
+    item.border = "1px solid yellow";
     item.style.backgroundColor = "#4A4E5A";
     item.style.color = "#A6ADBA";
     item.style.borderBottom = "1px solid #A6ADBA ";
