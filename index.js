@@ -443,16 +443,6 @@ let dark = () => {
     plus.style.border = "1px solid #f360c2 ";
   };
 
-  // plus.addEventListener("click", () => {
-  //   let i = document.querySelector("input");
-  //   console.log("input", i.value);
-  //   let li = document.createElement("li");
-  //   li.textContent = i.value;
-  //   li.style.background = "blue";
-  //   li.style.border = "1px solid red";
-  //   ul.appendChild(li);
-  // });
-
   plus.addEventListener("click", (e) => {
     e.preventDefault();
     if (input.value) {
@@ -479,23 +469,24 @@ let dark = () => {
           newValues.push(ulChild[i].innerText);
         }
         localStorage.setItem("task", JSON.stringify(newValues));
-        let nw = JSON.parse(localStorage.getItem("task"));
       } else {
         let li = document.createElement("li");
         li.classList.add("list-data");
-        //NOTE : will come back to modify
-        let h2 = document.createElement("h2");
-        h2.classList.add("data-item");
-        h2.textContent = input.value;
-
         li.style.backgroundColor = "#4A4E5B";
         li.style.color = "#A6ADBA";
         li.style.borderBottom = "1px solid #A6ADBA ";
+
+        let h2 = document.createElement("h2");
+        h2.classList.add("data-item");
+        h2.textContent = input.value;
 
         li.appendChild(h2);
 
         let editBtn = document.createElement("button");
         editBtn.classList.add("edit-btn");
+        editBtn.style.borderRadius = "10px";
+        editBtn.style.fontSize = "20px";
+        editBtn.style.padding = "10px 15px";
 
         let editIcon = document.createElement("i");
         editIcon.classList.add("fa-solid");
@@ -509,6 +500,12 @@ let dark = () => {
 
         let delBtn = document.createElement("button");
         delBtn.classList.add("delete-btn");
+
+        delBtn.style.borderRadius = "10px";
+        delBtn.style.fontSize = "20px";
+        delBtn.style.padding = "10px 15px";
+        delBtn.style.color = "#470C0A";
+
         let delIcon = document.createElement("i");
         delIcon.classList.add("fa-regular");
         delIcon.classList.add("fa-trash-can");
@@ -607,12 +604,6 @@ let dark = () => {
   };
 
   container.style.backgroundColor = "#4A4E5A";
-  container.style.border = "1px solid red";
-
-  let items = Array.from(dataContainer);
-  for (let i = 0; i < items.length; i++) {
-    items[i].style.backgroundColor = "yellow";
-  }
 
   input.style.border = "1px solid #AF3888";
   input.style.backgroundColor = "#2A303C";
@@ -623,19 +614,16 @@ let dark = () => {
   palette.style.backgroundColor = "#111318";
   palette.style.borderRadius = "10px";
   palette.style.padding = "5px";
-  // palette.i.style.color = "#FFFFFF";
 
   dropdown.style.backgroundColor = "#111318";
   dropdown.style.borderRadius = "10px";
   iPalette.style.color = "#A6ADBA";
 
-  // for (item of containerListItems) {
-  //   item.border = "1px solid yellow";
-  //   // item.style.backgroundColor = "#4A4E5A";
-  //   //item.style.backgroundColor = "pink";
-  //   // item.style.color = "#A6ADBA";
-  //   item.style.borderBottom = "1px solid #A6ADBA ";
-  // }
+  for (item of containerListItems) {
+    item.style.backgroundColor = "#4A4E5A";
+    item.style.color = "#A6ADBA";
+    item.style.borderBottom = "1px solid #A6ADBA ";
+  }
 
   Array.from(themes).map((i) => {
     i.style.backgroundColor = "#2A303C";
