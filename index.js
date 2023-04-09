@@ -246,126 +246,26 @@ function paletteColorList() {
 
       a.addEventListener("click", () => {
         if (a.innerHTML == "cupcake") {
-          a.onmousedown = function () {
-            a.style.backgroundColor = "red";
-            a.style.borderRadius = "25px";
-            a.style.padding = "10px";
-          };
-          a.onmouseup = function () {
-            a.style.backgroundColor = "";
-            a.style.padding = "0";
-          };
-
           cupcake();
         } else if (a.innerHTML == "dark") {
-          a.onmousedown = function () {
-            a.style.backgroundColor = "#3db4c4";
-            a.style.borderRadius = "15px";
-            a.style.padding = "10px";
-          };
-          a.onmouseup = function () {
-            a.style.backgroundColor = "";
-            a.style.padding = "0";
-          };
           dark();
         } else if (a.innerHTML == "light") {
-          a.onmousedown = function () {
-            a.style.backgroundColor = "rgb(38, 97, 224)";
-            a.style.borderRadius = "15px";
-            a.style.padding = "10px";
-          };
-          a.onmouseup = function () {
-            a.style.backgroundColor = "";
-            a.style.padding = "0";
-          };
           light();
         } else if (a.innerHTML == "bumblebee") {
-          a.onmousedown = function () {
-            a.style.backgroundColor = "rgb(185, 185, 44)";
-            a.style.borderRadius = "15px";
-            a.style.padding = "10px";
-          };
-          a.onmouseup = function () {
-            a.style.backgroundColor = "";
-            a.style.padding = "0";
-          };
           bumblebee();
         } else if (a.innerHTML == "synthwave") {
-          a.onmousedown = function () {
-            a.style.backgroundColor = "rgb(238, 124, 162)";
-            a.style.borderRadius = "15px";
-            a.style.padding = "10px";
-          };
-          a.onmouseup = function () {
-            a.style.backgroundColor = "";
-            a.style.padding = "0";
-          };
           synthwave();
         } else if (a.innerHTML == "halloween") {
-          a.onmousedown = function () {
-            a.style.backgroundColor = "rgb(221, 124, 32)";
-            a.style.borderRadius = "15px";
-            a.style.padding = "10px";
-          };
-          a.onmouseup = function () {
-            a.style.backgroundColor = "";
-            a.style.padding = "0";
-          };
           halloween();
         } else if (a.innerHTML == "fantasy") {
-          a.onmousedown = function () {
-            a.style.backgroundColor = "rgb(128, 19, 128)";
-            a.style.borderRadius = "15px";
-            a.style.padding = "10px";
-          };
-          a.onmouseup = function () {
-            a.style.backgroundColor = "";
-            a.style.padding = "0";
-          };
           fantasy();
         } else if (a.innerHTML == "dracula") {
-          a.onmousedown = function () {
-            a.style.backgroundColor = "#d87283";
-            a.style.borderRadius = "15px";
-            a.style.padding = "10px";
-          };
-          a.onmouseup = function () {
-            a.style.backgroundColor = "";
-            a.style.padding = "0";
-          };
           dracula();
         } else if (a.innerHTML == "aqua") {
-          a.onmousedown = function () {
-            a.style.backgroundColor = "#27e0d7";
-            a.style.borderRadius = "15px";
-            a.style.padding = "10px";
-          };
-          a.onmouseup = function () {
-            a.style.backgroundColor = "";
-            a.style.padding = "0";
-          };
           aqua();
         } else if (a.innerHTML == "luxury") {
-          a.onmousedown = function () {
-            a.style.backgroundColor = "#fbf8f6";
-            a.style.borderRadius = "15px";
-            a.style.padding = "10px";
-          };
-          a.onmouseup = function () {
-            a.style.backgroundColor = "";
-            a.style.padding = "0";
-          };
           luxury();
         } else if (a.innerHTML == "night") {
-          a.onmousedown = function () {
-            a.style.backgroundColor = "#43d3dd";
-            a.style.borderRadius = "15px";
-            a.style.padding = "10px";
-          };
-          a.onmouseup = function () {
-            a.style.backgroundColor = "";
-            a.style.padding = "0";
-          };
           night();
         } else {
           defaultFunction();
@@ -499,18 +399,29 @@ let cupcake = () => {
 
   Array.from(themes).map((i) => {
     i.style.backgroundColor = "#FAF7F5";
-    i.style.border = "3px solid #efe8eb";
+    i.style.border = "1px solid #efe8eb";
     i.style.borderRadius = "10px";
     i.style.color = "black";
+    i.style.cursor = "pointer";
     i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
   });
 
   Array.from(themeItems).map((item) => {
     item.onmouseover = function () {
       item.style.backgroundColor = "#e4dfe1";
-      //item.style.borderBottom = "20px";
-      //item.style.backgroundColor = "yellow";
+      item.style.borderRadius = "20px";
+      item.style.cursor = "pointer";
+      // item.style.backgroundColor = "yellow";
+      item.onmousedown = function () {
+        item.style.backgroundColor = "#3db4c4";
+        //item.style.color = "#1F2937";
+      };
+      item.onmouseup = function () {
+        item.style.backgroundColor = "#e4dfe1";
+        //item.style.color = "#1F2937";
+      };
     };
+
     item.onmouseout = function () {
       item.style.backgroundColor = "#FAF7F5";
     };
@@ -768,6 +679,15 @@ let dark = () => {
     item.onmouseover = function () {
       item.style.backgroundColor = "#4A4E5A";
       item.style.borderRadius = "10px";
+
+      item.onmousedown = function () {
+        item.style.backgroundColor = "rgb(96, 98, 241)";
+        item.style.color = "white";
+      };
+      item.onmouseup = function () {
+        item.style.backgroundColor = "#4A4E5A";
+        item.style.color = "#A6ADBA";
+      };
     };
     item.onmouseout = function () {
       item.style.backgroundColor = "#2A303C";
@@ -778,6 +698,7 @@ let dark = () => {
 let light = () => {
   h1.style.color = "black";
   h1.style.backgroundColor = "#FAF7F5";
+
   body.style.backgroundColor = "#faf7f5";
 
   palette.style.backgroundColor = "#303540";
@@ -854,6 +775,13 @@ let light = () => {
     item.onmouseover = function () {
       item.style.backgroundColor = "#E4DFE1";
       item.style.borderRadius = "10px";
+
+      item.onmousedown = function () {
+        item.style.backgroundColor = "rgb(38, 97, 224)";
+      };
+      item.onmouseup = function () {
+        item.style.backgroundColor = "#E4DFE1";
+      };
     };
 
     item.onmouseout = function () {
@@ -940,6 +868,13 @@ let bumblebee = () => {
     item.onmouseover = function () {
       item.style.backgroundColor = "#E4DFE1";
       item.style.borderRadius = "10px";
+
+      item.onmousedown = function () {
+        item.style.backgroundColor = "rgb(185, 185, 44)";
+      };
+      item.onmouseup = function () {
+        item.style.backgroundColor = "#E4DFE1";
+      };
     };
 
     item.onmouseout = function () {
@@ -1027,6 +962,12 @@ let synthwave = () => {
     item.onmouseover = function () {
       item.style.backgroundColor = "#4B357F";
       item.style.borderRadius = "10px";
+      item.onmousedown = function () {
+        item.style.backgroundColor = "rgb(238, 124, 162)";
+      };
+      item.onmouseup = function () {
+        item.style.backgroundColor = "#4B357F";
+      };
     };
 
     item.onmouseout = function () {
@@ -1123,6 +1064,12 @@ let halloween = () => {
     item.onmouseover = function () {
       item.style.backgroundColor = "#424242";
       item.style.borderRadius = "10px";
+      item.onmousedown = function () {
+        item.style.backgroundColor = "rgb(221, 124, 32)";
+      };
+      item.onmouseup = function () {
+        item.style.backgroundColor = "#424242";
+      };
     };
 
     item.onmouseout = function () {
@@ -1221,6 +1168,12 @@ let fantasy = () => {
     item.onmouseover = function () {
       item.style.backgroundColor = "#e4dfe1";
       item.style.borderRadius = "10px";
+      item.onmousedown = function () {
+        item.style.backgroundColor = "rgb(128, 19, 128)";
+      };
+      item.onmouseup = function () {
+        item.style.backgroundColor = "#e4dfe1";
+      };
     };
 
     item.onmouseout = function () {
@@ -1317,6 +1270,12 @@ let dracula = () => {
     item.onmouseover = function () {
       item.style.backgroundColor = "#474853";
       item.style.borderRadius = "10px";
+      item.onmousedown = function () {
+        item.style.backgroundColor = "#d87283";
+      };
+      item.onmouseup = function () {
+        item.style.backgroundColor = "#474853";
+      };
     };
 
     item.onmouseout = function () {
@@ -1416,6 +1375,12 @@ let aqua = () => {
     item.onmouseover = function () {
       item.style.backgroundColor = "#5173B4";
       item.style.borderRadius = "10px";
+      item.onmousedown = function () {
+        item.style.backgroundColor = "#27e0d7";
+      };
+      item.onmouseup = function () {
+        item.style.backgroundColor = "#5173B4";
+      };
     };
 
     item.onmouseout = function () {
@@ -1518,6 +1483,12 @@ let luxury = () => {
     item.onmouseover = function () {
       item.style.backgroundColor = "#2E2E2F";
       item.style.borderRadius = "10px";
+      item.onmousedown = function () {
+        item.style.backgroundColor = "#fbf8f6";
+      };
+      item.onmouseup = function () {
+        item.style.backgroundColor = "#2E2E2F";
+      };
     };
 
     item.onmouseout = function () {
@@ -1614,6 +1585,12 @@ let night = () => {
     item.onmouseover = function () {
       item.style.backgroundColor = "#323949";
       item.style.borderRadius = "10px";
+      item.onmousedown = function () {
+        item.style.backgroundColor = "#43d3dd";
+      };
+      item.onmouseup = function () {
+        item.style.backgroundColor = "#323949";
+      };
     };
 
     item.onmouseout = function () {

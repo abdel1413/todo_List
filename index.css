@@ -62,15 +62,16 @@ body {
   padding: 10px;
   bottom: auto;
 }
-.themes-data:hover {
+/* .themes-data:hover {
   background-color: #e4dfe1;
   border-radius: 25px;
   top: 0;
-  /* padding: 10px; */
+  padding: 10px;
   bottom: auto;
   right: 100%;
   cursor: pointer;
-}
+} */
+
 .alert-message {
   display: hide;
   background-color: beige;
