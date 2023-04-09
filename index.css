@@ -66,7 +66,7 @@ body {
   background-color: #e4dfe1;
   border-radius: 25px;
   top: 0;
-  padding: 10px;
+  /* padding: 10px; */
   bottom: auto;
   right: 100%;
   cursor: pointer;
