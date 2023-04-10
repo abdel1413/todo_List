@@ -5,6 +5,14 @@ body {
 .header {
   text-align: center;
 }
+/* .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+  margin: auto;
+  margin-top: 150px;
+} */
 
 /* .alert-message {
   display: hide;
@@ -46,15 +54,19 @@ body {
   margin-left: 0;
   margin-top: 10px;
   padding: 0 5px;
+
   background-color: #200f29;
 }
 
 .dropdown-container {
   float: right;
+  clear: both;
   width: 250px;
   margin-right: 16px;
+  margin-top: 0;
+  margin-bottom: 100px;
+
   position: absolute;
-  /* clear: both; */
 }
 .themes {
   width: 60%;
@@ -91,6 +103,16 @@ body {
   cursor: pointer;
 }
 
+.container {
+  width: 500px;
+  margin: auto;
+  clear: both;
+  min-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 32px 0 rgb(31, 38, 135, 0.6);
+  padding: 20px;
+  background-color: #fbf8f6;
+}
 .input-field {
   display: flex;
 }
@@ -142,19 +164,6 @@ body {
   cursor: pointer;
 }
 
-.container {
-  width: 500px;
-  margin: auto;
-  /* margin-top: 100px; */
-  /* display: flex; */
-  min-width: 400px;
-  /* border: 1px solid blue; */
-  text-align: center;
-  box-shadow: 0 8px 32px 0 rgb(31, 38, 135, 0.6);
-
-  padding: 20px;
-  background-color: #fbf8f6;
-}
 ul {
   margin: 0;
   padding: 0;
