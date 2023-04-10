@@ -20,6 +20,9 @@ body {
   transform: scale(0.9);
   transition: all 0.3s ease;
 }
+.alert-edit {
+  color: white;
+}
 
 .palette {
   /* border: 1px solid red; */

@@ -59,7 +59,42 @@ const addingTask = () => {
           newValues.push(ulChild[i].innerText);
         }
         localStorage.setItem("task", JSON.stringify(newValues));
-        let nw = JSON.parse(localStorage.getItem("task"));
+
+        showAlert.innerHTML = "";
+        let div = document.createElement("div");
+        div.classList.add("alert-edit");
+        div.style.backgroundColor = "#67D49B";
+        div.style.border = "1px solid #67D49B";
+        div.style.padding = "15px";
+        div.style.borderRadius = "10px";
+        div.style.marginBottom = "10px";
+
+        // div.style.fontFamily = "Courier New, Courier, monospace";
+        div.style.fontFamily = " sans-serif";
+        div.style.transition = "all 3s ease";
+        div.style.transform = "scale(1)";
+
+        let span = document.createElement("span");
+        span.textContent = "Task updated successfully";
+        span.style.display = "flex";
+        span.style.color = "white";
+
+        div.appendChild(span);
+
+        showAlert.classList.add("show");
+
+        showAlert.style.display = "block";
+        if (showAlert.style.display == "block") {
+          showAlert.classList.add("show");
+        }
+
+        setTimeout(() => {
+          showAlert.style.display = "none";
+          showAlert.classList.remove("show");
+          showAlert.classList.add("hide");
+        }, 2000);
+
+        showAlert.append(div);
       } else {
         // create the li with the edit and delete buttons and
         // append the li to the ul
@@ -114,48 +149,42 @@ const addingTask = () => {
 
       //
 
-      if (input.value) {
-        showAlert.innerHTML = "";
-        let div = document.createElement("div");
-        div.classList.add("alert-error");
-        div.style.backgroundColor = "#67D49B";
-        div.style.border = "1px solid #67D49B";
-        div.style.padding = "15px";
-        div.style.borderRadius = "10px";
-        div.style.marginBottom = "10px";
-        // div.style.fontFamily = "Courier New, Courier, monospace";
-        div.style.fontFamily = " sans-serif";
-        div.style.transition = "all 3s ease";
-        div.style.transform = "scale(1)";
+      //  if (input.value) {
+      showAlert.innerHTML = "";
+      let div = document.createElement("div");
+      div.classList.add("alert-error");
+      div.style.backgroundColor = "#67D49B";
+      div.style.border = "1px solid #67D49B";
+      div.style.padding = "15px";
+      div.style.borderRadius = "10px";
+      div.style.marginBottom = "10px";
+      // div.style.fontFamily = "Courier New, Courier, monospace";
+      div.style.fontFamily = " sans-serif";
+      div.style.transition = "all 3s ease";
+      div.style.transform = "scale(1)";
 
-        // div.style.transition = "all 0.3s ease";
-        // div.style.transform = "scale(0.9)";
+      let span = document.createElement("span");
+      span.textContent = "Task added successfully";
+      span.style.display = "flex";
 
-        let span = document.createElement("span");
-        span.textContent = "Task added successfully";
-        span.style.display = "flex";
+      div.appendChild(span);
 
-        div.appendChild(span);
+      showAlert.classList.add("show");
 
+      showAlert.style.display = "block";
+      if (showAlert.style.display == "block") {
         showAlert.classList.add("show");
-
-        // showAlert.append(div);
-
-        showAlert.style.display = "block";
-        if (showAlert.style.display == "block") {
-          showAlert.classList.add("show");
-        }
-
-        setTimeout(() => {
-          showAlert.style.display = "none";
-          showAlert.classList.remove("show");
-          showAlert.classList.add("hide");
-        }, 2000);
-
-        showAlert.append(div);
       }
 
-      ///
+      setTimeout(() => {
+        showAlert.style.display = "none";
+        showAlert.classList.remove("show");
+        showAlert.classList.add("hide");
+      }, 2000);
+
+      showAlert.append(div);
+      //  }
+
       input.value = "";
     } else {
       // showAlert.style.display = "block";
@@ -270,10 +299,44 @@ function deleteTask() {
   localStorage.setItem("task", JSON.stringify(filtered));
 
   this.parentNode.parentNode.remove();
+  showAlert.innerHTML = "";
+  let div = document.createElement("div");
+  div.classList.add("alert-edit");
+  div.style.backgroundColor = "#67D49B";
+  div.style.border = "1px solid #67D49B";
+  div.style.padding = "15px";
+  div.style.borderRadius = "10px";
+  div.style.marginBottom = "10px";
+
+  // div.style.fontFamily = "Courier New, Courier, monospace";
+  div.style.fontFamily = " sans-serif";
+  div.style.transition = "all 3s ease";
+  div.style.transform = "scale(1)";
+
+  let span = document.createElement("span");
+  span.textContent = "Task deleted successfully";
+  span.style.display = "flex";
+  span.style.color = "white";
+
+  div.appendChild(span);
+
+  showAlert.classList.add("show");
+
+  showAlert.style.display = "block";
+  if (showAlert.style.display == "block") {
+    showAlert.classList.add("show");
+  }
+
+  setTimeout(() => {
+    showAlert.style.display = "none";
+    showAlert.classList.remove("show");
+    showAlert.classList.add("hide");
+  }, 2000);
+
+  showAlert.append(div);
 }
 function editTask(e) {
   input.value = e.parentNode.parentNode.firstChild.innerHTML;
-
   plus.classList.add("fa-check");
 }
 
@@ -281,6 +344,42 @@ function deletAll() {
   delt.addEventListener("click", function () {
     ul.innerHTML = "";
     localStorage.clear();
+
+    showAlert.innerHTML = "";
+    let div = document.createElement("div");
+    div.classList.add("alert-edit");
+    div.style.backgroundColor = "#67D49B";
+    div.style.border = "1px solid #67D49B";
+    div.style.padding = "15px";
+    div.style.borderRadius = "10px";
+    div.style.marginBottom = "10px";
+
+    // div.style.fontFamily = "Courier New, Courier, monospace";
+    div.style.fontFamily = " sans-serif";
+    div.style.transition = "all 3s ease";
+    div.style.transform = "scale(1)";
+
+    let span = document.createElement("span");
+    span.textContent = " All the tasks cleared successfully";
+    span.style.display = "flex";
+    //  span.style.color = "white";
+
+    div.appendChild(span);
+
+    showAlert.classList.add("show");
+
+    showAlert.style.display = "block";
+    if (showAlert.style.display == "block") {
+      showAlert.classList.add("show");
+    }
+
+    setTimeout(() => {
+      showAlert.style.display = "none";
+      showAlert.classList.remove("show");
+      showAlert.classList.add("hide");
+    }, 2000);
+
+    showAlert.append(div);
   });
 }
 deletAll();
