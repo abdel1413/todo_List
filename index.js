@@ -341,8 +341,6 @@ function editTask(e) {
 }
 
 function deletAll() {
-  console.log("ul inn", ul.innerHTML);
-
   delt.addEventListener("click", function () {
     if (ul.innerHTML != "") {
       showAlert.innerHTML = "";
@@ -362,7 +360,7 @@ function deletAll() {
       let span = document.createElement("span");
       span.textContent = " All the tasks cleared successfully";
       span.style.display = "flex";
-      //  span.style.color = "white";
+      span.style.color = "#00000";
 
       div.appendChild(span);
 
@@ -386,8 +384,8 @@ function deletAll() {
       showAlert.innerHTML = "";
       let div = document.createElement("div");
       div.classList.add("alert-edit");
-      div.style.backgroundColor = "red";
-      div.style.border = "1px solid red";
+      div.style.backgroundColor = "#EC7071";
+      div.style.border = "1px solid #EC7071";
       div.style.padding = "15px";
       div.style.borderRadius = "10px";
       div.style.marginBottom = "10px";
@@ -400,6 +398,7 @@ function deletAll() {
       let span = document.createElement("span");
       span.textContent = " No task to delete";
       span.style.display = "flex";
+      span.style.color = "#00000";
 
       div.appendChild(span);
 
