@@ -5,6 +5,25 @@ body {
 .header {
   text-align: center;
 }
+
+.alert-message {
+  display: hide;
+  /* background-color: beige; */
+}
+.alert-message {
+  border: 1px solid rgb(204, 77, 77);
+  background-color: rgb(204, 77, 77);
+  padding: 15px;
+  color: white;
+  font-size: 20px;
+  clear: both;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+.alert-message,
+span {
+  text-align: left;
+}
 .palette {
   /* border: 1px solid red; */
   padding: 10px;
@@ -62,7 +81,7 @@ body {
   padding: 10px;
   bottom: auto;
 }
-/* .themes-data:hover {
+.themes-data:hover {
   background-color: #e4dfe1;
   border-radius: 25px;
   top: 0;
@@ -70,12 +89,8 @@ body {
   bottom: auto;
   right: 100%;
   cursor: pointer;
-} */
-
-.alert-message {
-  display: hide;
-  background-color: beige;
 }
+
 .input-field {
   display: flex;
 }

@@ -24,12 +24,21 @@ let btns = document.querySelector(".btn-div");
 let palette = document.querySelector(".palette");
 let iPalette = document.querySelector(".fa-palette");
 let saveTask = document.querySelector("#save-task");
+let showAlert = document.querySelector(".alert-message");
+console.log(showAlert);
 
-alertMessage.style.display = "none";
+showAlert.style.display = "none";
 
 dropdown.addEventListener("click", paletteColorList);
 let edited;
 
+// function showAlert() {
+//   let alertMessage = "Please enter a task";
+//   let p = document.createElement("p");
+//   p.textContent = alertMessage;
+//   alert(p);
+
+// }
 const addingTask = () => {
   let e2 = null;
 
@@ -113,8 +122,25 @@ const addingTask = () => {
       }
       input.value = "";
     } else {
-      let modal = document.createElement("modal");
-      alert("you have to enter a task!!!");
+      // showAlert.style.display = "block";
+      if (!input.value) {
+        showAlert.style.display = "block";
+        setTimeout(() => {
+          showAlert.style.display = "none";
+        }, 4000);
+      } else {
+        let div = document.createElement("div");
+        div.className = "alert-success";
+        let span = document.createElement("span");
+        span.classList.add("alert-success-msg");
+        span.textContent = "Task added successfully";
+        div.appendChild(span);
+        showAlert.appendChild(div);
+        div.style.display = "block";
+        setTimeout(() => {
+          div.style.display = "none";
+        }, 4000);
+      }
     }
   });
 
@@ -306,15 +332,6 @@ function paletteColorList() {
 // }
 
 let cupcake = () => {
-  // // console.log("li", li);
-  // console.log(listData);
-  // Array.from(listData).map((e) => {
-  //   console.log(e);
-  // });
-
-  // plus.onclick = function () {
-  //   console.log("input value", input.value);
-  // };
   body.style.backgroundColor = "#faf7f5";
 
   h1.style.backgroundColor = "#FBF8F6";
@@ -331,30 +348,26 @@ let cupcake = () => {
     plus.style.backgroundColor = "#e2598c";
     plus.style.border = "1px solid #e2598c";
   };
+
   plus.onmouseout = function () {
     plus.style.backgroundColor = "#ef9fbc";
     plus.style.border = "1px solid #ef9fbc";
   };
 
-  //
-
-  //
   delt.style.borderRadius = "30px";
-  delt.style.border = "1px solid pink ";
+  delt.style.border = "1px solid #ef9fbc";
   delt.backgroundColor = "#ef9fbc";
-  delt.style.color = "black";
-  delt.style.padding = "10px 5px";
-  delt.style.textTransform = "uppercase";
-  delt.style.borderBottom = "";
-
-  delt.onmouseout = function () {
-    delt.style.backgroundColor = "#ef9fbc";
-    delt.style.border = "#ef9fbc";
-  };
+  delt.style.color = "#00000";
+  //delt.style.textTransform = "uppercase";
 
   delt.onmouseover = function () {
     delt.style.backgroundColor = "#e2598c";
     delt.style.border = "#e2598c";
+  };
+
+  delt.onmouseout = function () {
+    delt.style.backgroundColor = "#ef9fbc";
+    delt.style.border = " 1px solid #ef9fbc";
   };
 
   container.style.backgroundColor = "#fbf8f6";
@@ -368,10 +381,6 @@ let cupcake = () => {
   input.style.backgroundColor = "#FAF7F5";
   input.style.borderRadius = "25px";
   input.style.placeHolder = "#A6ADBA";
-
-  ///
-  // console.log(listData);
-  ///
 
   palette.style.backgroundColor = "#200f29";
   palette.style.borderRadius = "20px";
@@ -413,7 +422,7 @@ let cupcake = () => {
       item.style.cursor = "pointer";
       // item.style.backgroundColor = "yellow";
       item.onmousedown = function () {
-        item.style.backgroundColor = "#3db4c4";
+        item.style.backgroundColor = "#67D49B";
         //item.style.color = "#1F2937";
       };
       item.onmouseup = function () {
@@ -686,7 +695,7 @@ let dark = () => {
       };
       item.onmouseup = function () {
         item.style.backgroundColor = "#4A4E5A";
-        item.style.color = "#A6ADBA";
+        item.style.color = "";
       };
     };
     item.onmouseout = function () {
@@ -798,7 +807,6 @@ let bumblebee = () => {
   container.style.backgroundColor = "#FFFFFF";
 
   plus.style.backgroundColor = "#f8d76a";
-  // plus.style.backgroundColor = "yellow";
   plus.style.border = "1px solid #f8d76a";
   plus.style.color = "black";
   plus.style.borderRadius = "10px";
