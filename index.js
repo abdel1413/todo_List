@@ -27,7 +27,7 @@ let saveTask = document.querySelector("#save-task");
 let showAlert = document.querySelector(".alert-message");
 console.log(showAlert);
 
-showAlert.style.display = "none";
+// showAlert.style.display = "none";
 
 dropdown.addEventListener("click", paletteColorList);
 let edited;
@@ -124,23 +124,45 @@ const addingTask = () => {
     } else {
       // showAlert.style.display = "block";
       if (!input.value) {
+        let div = document.createElement("div");
+        div.classList.add("alert-error");
+        div.style.backgroundColor = "rgb(204, 77, 77)";
+        div.style.border = "1px solid rgb(204, 77, 77)";
+        div.style.padding = "15px";
+        div.style.borderRadius = "10px";
+        let span = document.createElement("span");
+
+        span.textContent = "Please enter a task";
+        span.style.display = "flex";
+
+        div.appendChild(span);
+        showAlert.append(div);
         showAlert.style.display = "block";
+        if (showAlert.style.display == "block") {
+          showAlert.classList.add("show");
+        }
+
         setTimeout(() => {
           showAlert.style.display = "none";
-        }, 4000);
-      } else {
-        let div = document.createElement("div");
-        div.className = "alert-success";
-        let span = document.createElement("span");
-        span.classList.add("alert-success-msg");
-        span.textContent = "Task added successfully";
-        div.appendChild(span);
-        showAlert.appendChild(div);
-        div.style.display = "block";
-        setTimeout(() => {
-          div.style.display = "none";
-        }, 4000);
+          showAlert.classList.remove("show");
+          showAlert.classList.add("hide");
+        }, 2000);
+        //  showAlert.innerHTML = "";
       }
+
+      // else {
+      //   let div = document.createElement("div");
+      //   div.className = "alert-success";
+      //   let span = document.createElement("span");
+      //   span.classList.add("alert-success-msg");
+      //   span.textContent = "Task added successfully";
+      //   div.appendChild(span);
+      //   showAlert.appendChild(div);
+      //   div.style.display = "block";
+      //   setTimeout(() => {
+      //     div.style.display = "none";
+      //   }, 4000);
+      // }
     }
   });
 

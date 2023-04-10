@@ -10,20 +10,7 @@ body {
   display: hide;
   /* background-color: beige; */
 }
-.alert-message {
-  border: 1px solid rgb(204, 77, 77);
-  background-color: rgb(204, 77, 77);
-  padding: 15px;
-  color: white;
-  font-size: 20px;
-  clear: both;
-  border-radius: 15px;
-  margin-bottom: 20px;
-}
-.alert-message,
-span {
-  text-align: left;
-}
+
 .palette {
   /* border: 1px solid red; */
   padding: 10px;
