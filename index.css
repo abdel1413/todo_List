@@ -6,9 +6,19 @@ body {
   text-align: center;
 }
 
-.alert-message {
+/* .alert-message {
   display: hide;
-  /* background-color: beige; */
+  background-color: beige;
+} */
+.alert-message .show {
+  display: block;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+.alert-message .hide {
+  display: none;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
 }
 
 .palette {

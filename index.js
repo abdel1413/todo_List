@@ -27,18 +27,9 @@ let saveTask = document.querySelector("#save-task");
 let showAlert = document.querySelector(".alert-message");
 console.log(showAlert);
 
-// showAlert.style.display = "none";
-
 dropdown.addEventListener("click", paletteColorList);
 let edited;
 
-// function showAlert() {
-//   let alertMessage = "Please enter a task";
-//   let p = document.createElement("p");
-//   p.textContent = alertMessage;
-//   alert(p);
-
-// }
 const addingTask = () => {
   let e2 = null;
 
@@ -120,23 +111,36 @@ const addingTask = () => {
         }
         localStorage.setItem("task", JSON.stringify(t));
       }
-      input.value = "";
-    } else {
-      // showAlert.style.display = "block";
-      if (!input.value) {
+
+      //
+
+      if (input.value) {
+        showAlert.innerHTML = "";
         let div = document.createElement("div");
         div.classList.add("alert-error");
-        div.style.backgroundColor = "rgb(204, 77, 77)";
-        div.style.border = "1px solid rgb(204, 77, 77)";
+        div.style.backgroundColor = "#67D49B";
+        div.style.border = "1px solid #67D49B";
         div.style.padding = "15px";
         div.style.borderRadius = "10px";
-        let span = document.createElement("span");
+        div.style.marginBottom = "10px";
+        // div.style.fontFamily = "Courier New, Courier, monospace";
+        div.style.fontFamily = " sans-serif";
+        div.style.transition = "all 3s ease";
+        div.style.transform = "scale(1)";
 
-        span.textContent = "Please enter a task";
+        // div.style.transition = "all 0.3s ease";
+        // div.style.transform = "scale(0.9)";
+
+        let span = document.createElement("span");
+        span.textContent = "Task added successfully";
         span.style.display = "flex";
 
         div.appendChild(span);
-        showAlert.append(div);
+
+        showAlert.classList.add("show");
+
+        // showAlert.append(div);
+
         showAlert.style.display = "block";
         if (showAlert.style.display == "block") {
           showAlert.classList.add("show");
@@ -147,22 +151,52 @@ const addingTask = () => {
           showAlert.classList.remove("show");
           showAlert.classList.add("hide");
         }, 2000);
-        //  showAlert.innerHTML = "";
+
+        showAlert.append(div);
       }
 
-      // else {
-      //   let div = document.createElement("div");
-      //   div.className = "alert-success";
-      //   let span = document.createElement("span");
-      //   span.classList.add("alert-success-msg");
-      //   span.textContent = "Task added successfully";
-      //   div.appendChild(span);
-      //   showAlert.appendChild(div);
-      //   div.style.display = "block";
-      //   setTimeout(() => {
-      //     div.style.display = "none";
-      //   }, 4000);
-      // }
+      ///
+      input.value = "";
+    } else {
+      // showAlert.style.display = "block";
+      if (!input.value) {
+        showAlert.innerHTML = "";
+        let div = document.createElement("div");
+        div.classList.add("alert-error");
+        div.style.backgroundColor = "#EC7071";
+        div.style.border = "1px solid #EC7071";
+        div.style.padding = "15px";
+        div.style.borderRadius = "10px";
+        div.style.marginBottom = "10px";
+        // div.style.fontFamily = " sans-serif";
+        div.style.fontFamily = "Courier New, Courier, monospace";
+
+        div.style.transition = "all 3s ease-in-out";
+        div.style.transform = "scale(1)";
+
+        let span = document.createElement("span");
+        span.textContent = "Please enter a task";
+        span.style.display = "flex";
+
+        div.appendChild(span);
+
+        showAlert.classList.add("show");
+
+        // showAlert.append(div);
+
+        showAlert.style.display = "block";
+        if (showAlert.style.display == "block") {
+          showAlert.classList.add("show");
+        }
+
+        setTimeout(() => {
+          showAlert.style.display = "none";
+          showAlert.classList.remove("show");
+          showAlert.classList.add("hide");
+        }, 2000);
+
+        showAlert.append(div);
+      }
     }
   });
 
