@@ -42,24 +42,6 @@ const addingTask = () => {
       //if edite is active and there is an event
       //then assign new values to list base on the event target;
       if (isEditing && e2) {
-        if (e2.target.parentNode.className == "edit-btn") {
-          e2.target.parentNode.parentNode.previousSibling.innerHTML =
-            input.value;
-        } else if (e2.target.parentNode.className == "btn-div") {
-          e2.target.parentNode.previousSibling.innerHTML = input.value;
-        }
-
-        plus.classList.remove("fa-check");
-
-        //save new edited value into local storage by
-        // using ul nod child textContent
-        let newValues = [];
-        let ulChild = ul.childNodes;
-        for (let i = 0; i < ulChild.length; i++) {
-          newValues.push(ulChild[i].innerText);
-        }
-        localStorage.setItem("task", JSON.stringify(newValues));
-
         showAlert.innerHTML = "";
         let div = document.createElement("div");
         div.classList.add("alert-edit");
@@ -87,7 +69,6 @@ const addingTask = () => {
         if (showAlert.style.display == "block") {
           showAlert.classList.add("show");
         }
-
         setTimeout(() => {
           showAlert.style.display = "none";
           showAlert.classList.remove("show");
@@ -95,6 +76,25 @@ const addingTask = () => {
         }, 2000);
 
         showAlert.append(div);
+        if (e2.target.parentNode.className == "edit-btn") {
+          e2.target.parentNode.parentNode.previousSibling.innerHTML =
+            input.value;
+        } else if (e2.target.parentNode.className == "btn-div") {
+          e2.target.parentNode.previousSibling.innerHTML = input.value;
+        }
+
+        plus.classList.remove("fa-check");
+
+        //save new edited value into local storage by
+        // using ul nod child textContent
+        let newValues = [];
+        let ulChild = ul.childNodes;
+        for (let i = 0; i < ulChild.length; i++) {
+          newValues.push(ulChild[i].innerText);
+        }
+        localStorage.setItem("task", JSON.stringify(newValues));
+
+        //display alert message when task is updated
       } else {
         // create the li with the edit and delete buttons and
         // append the li to the ul
@@ -149,41 +149,41 @@ const addingTask = () => {
 
       //
 
-      //  if (input.value) {
-      showAlert.innerHTML = "";
-      let div = document.createElement("div");
-      div.classList.add("alert-error");
-      div.style.backgroundColor = "#67D49B";
-      div.style.border = "1px solid #67D49B";
-      div.style.padding = "15px";
-      div.style.borderRadius = "10px";
-      div.style.marginBottom = "10px";
-      // div.style.fontFamily = "Courier New, Courier, monospace";
-      div.style.fontFamily = " sans-serif";
-      div.style.transition = "all 3s ease";
-      div.style.transform = "scale(1)";
+      if (input.value && !isEditing) {
+        showAlert.innerHTML = "";
+        let div = document.createElement("div");
+        div.classList.add("alert-error");
+        div.style.backgroundColor = "#67D49B";
+        div.style.border = "1px solid #67D49B";
+        div.style.padding = "15px";
+        div.style.borderRadius = "10px";
+        div.style.marginBottom = "10px";
+        // div.style.fontFamily = "Courier New, Courier, monospace";
+        div.style.fontFamily = " sans-serif";
+        div.style.transition = "all 3s ease";
+        div.style.transform = "scale(1)";
 
-      let span = document.createElement("span");
-      span.textContent = "Task added successfully";
-      span.style.display = "flex";
+        let span = document.createElement("span");
+        span.textContent = "Task added successfully";
+        span.style.display = "flex";
 
-      div.appendChild(span);
+        div.appendChild(span);
 
-      showAlert.classList.add("show");
-
-      showAlert.style.display = "block";
-      if (showAlert.style.display == "block") {
         showAlert.classList.add("show");
+
+        showAlert.style.display = "block";
+        if (showAlert.style.display == "block") {
+          showAlert.classList.add("show");
+        }
+
+        setTimeout(() => {
+          showAlert.style.display = "none";
+          showAlert.classList.remove("show");
+          showAlert.classList.add("hide");
+        }, 2000);
+
+        showAlert.append(div);
       }
-
-      setTimeout(() => {
-        showAlert.style.display = "none";
-        showAlert.classList.remove("show");
-        showAlert.classList.add("hide");
-      }, 2000);
-
-      showAlert.append(div);
-      //  }
 
       input.value = "";
     } else {
@@ -341,45 +341,83 @@ function editTask(e) {
 }
 
 function deletAll() {
+  console.log("ul inn", ul.innerHTML);
+
   delt.addEventListener("click", function () {
-    ul.innerHTML = "";
-    localStorage.clear();
+    if (ul.innerHTML != "") {
+      showAlert.innerHTML = "";
+      let div = document.createElement("div");
+      div.classList.add("alert-edit");
+      div.style.backgroundColor = "#67D49B";
+      div.style.border = "1px solid #67D49B";
+      div.style.padding = "15px";
+      div.style.borderRadius = "10px";
+      div.style.marginBottom = "10px";
 
-    showAlert.innerHTML = "";
-    let div = document.createElement("div");
-    div.classList.add("alert-edit");
-    div.style.backgroundColor = "#67D49B";
-    div.style.border = "1px solid #67D49B";
-    div.style.padding = "15px";
-    div.style.borderRadius = "10px";
-    div.style.marginBottom = "10px";
+      // div.style.fontFamily = "Courier New, Courier, monospace";
+      div.style.fontFamily = " sans-serif";
+      div.style.transition = "all 3s ease";
+      div.style.transform = "scale(1)";
 
-    // div.style.fontFamily = "Courier New, Courier, monospace";
-    div.style.fontFamily = " sans-serif";
-    div.style.transition = "all 3s ease";
-    div.style.transform = "scale(1)";
+      let span = document.createElement("span");
+      span.textContent = " All the tasks cleared successfully";
+      span.style.display = "flex";
+      //  span.style.color = "white";
 
-    let span = document.createElement("span");
-    span.textContent = " All the tasks cleared successfully";
-    span.style.display = "flex";
-    //  span.style.color = "white";
+      div.appendChild(span);
 
-    div.appendChild(span);
-
-    showAlert.classList.add("show");
-
-    showAlert.style.display = "block";
-    if (showAlert.style.display == "block") {
       showAlert.classList.add("show");
+
+      showAlert.style.display = "block";
+      if (showAlert.style.display == "block") {
+        showAlert.classList.add("show");
+      }
+
+      setTimeout(() => {
+        showAlert.style.display = "none";
+        showAlert.classList.remove("show");
+        showAlert.classList.add("hide");
+      }, 2000);
+
+      showAlert.append(div);
+      ul.innerHTML = "";
+      localStorage.clear();
+    } else {
+      showAlert.innerHTML = "";
+      let div = document.createElement("div");
+      div.classList.add("alert-edit");
+      div.style.backgroundColor = "red";
+      div.style.border = "1px solid red";
+      div.style.padding = "15px";
+      div.style.borderRadius = "10px";
+      div.style.marginBottom = "10px";
+
+      // div.style.fontFamily = "Courier New, Courier, monospace";
+      div.style.fontFamily = " sans-serif";
+      div.style.transition = "all 3s ease";
+      div.style.transform = "scale(1)";
+
+      let span = document.createElement("span");
+      span.textContent = " No task to delete";
+      span.style.display = "flex";
+
+      div.appendChild(span);
+
+      showAlert.classList.add("show");
+
+      showAlert.style.display = "block";
+      if (showAlert.style.display == "block") {
+        showAlert.classList.add("show");
+      }
+
+      setTimeout(() => {
+        showAlert.style.display = "none";
+        showAlert.classList.remove("show");
+        showAlert.classList.add("hide");
+      }, 2000);
+
+      showAlert.append(div);
     }
-
-    setTimeout(() => {
-      showAlert.style.display = "none";
-      showAlert.classList.remove("show");
-      showAlert.classList.add("hide");
-    }, 2000);
-
-    showAlert.append(div);
   });
 }
 deletAll();
