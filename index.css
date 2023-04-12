@@ -60,12 +60,11 @@ body {
 
 .dropdown-container {
   float: right;
-  clear: both;
+  /* clear: both; */
   width: 250px;
   margin-right: 16px;
   margin-top: 0;
   margin-bottom: 100px;
-
   position: absolute;
 }
 .themes {
@@ -106,7 +105,9 @@ body {
 .container {
   width: 500px;
   margin: auto;
-  clear: both;
+  margin-top: 10px;
+  /* clear: both; */
+
   min-width: 400px;
   text-align: center;
   box-shadow: 0 8px 32px 0 rgb(31, 38, 135, 0.6);

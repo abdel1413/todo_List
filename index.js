@@ -25,7 +25,6 @@ let palette = document.querySelector(".palette");
 let iPalette = document.querySelector(".fa-palette");
 let saveTask = document.querySelector("#save-task");
 let showAlert = document.querySelector(".alert-message");
-console.log(showAlert);
 
 dropdown.addEventListener("click", paletteColorList);
 let edited;
@@ -37,7 +36,7 @@ const addingTask = () => {
     e.preventDefault();
     if (input.value) {
       let isEditing = plus.classList.contains("fa-check");
-      console.log("isEditing", isEditing);
+      // console.log("isEditing", isEditing);
 
       //if edite is active and there is an event
       //then assign new values to list base on the event target;
@@ -76,6 +75,7 @@ const addingTask = () => {
         }, 2000);
 
         showAlert.append(div);
+
         if (e2.target.parentNode.className == "edit-btn") {
           e2.target.parentNode.parentNode.previousSibling.innerHTML =
             input.value;
@@ -211,8 +211,6 @@ const addingTask = () => {
 
         showAlert.classList.add("show");
 
-        // showAlert.append(div);
-
         showAlert.style.display = "block";
         if (showAlert.style.display == "block") {
           showAlert.classList.add("show");
@@ -266,6 +264,7 @@ const addingTask = () => {
     let delIcon = document.createElement("i");
     delIcon.classList.add("fa-regular");
     delIcon.classList.add("fa-trash-can");
+
     delBtn.appendChild(delIcon);
 
     delBtn.addEventListener("click", deleteTask);
@@ -295,6 +294,7 @@ function deleteTask() {
 
   // get the current tasks in local storage and return all
   //of them except the one you want to delete.
+
   const filtered = tasks.filter((task) => task != taskToRemove);
   localStorage.setItem("task", JSON.stringify(filtered));
 
@@ -326,7 +326,6 @@ function deleteTask() {
   if (showAlert.style.display == "block") {
     showAlert.classList.add("show");
   }
-
   setTimeout(() => {
     showAlert.style.display = "none";
     showAlert.classList.remove("show");
@@ -335,6 +334,7 @@ function deleteTask() {
 
   showAlert.append(div);
 }
+
 function editTask(e) {
   input.value = e.parentNode.parentNode.firstChild.innerHTML;
   plus.classList.add("fa-check");
@@ -344,6 +344,7 @@ function deletAll() {
   delt.addEventListener("click", function () {
     if (ul.innerHTML != "") {
       showAlert.innerHTML = "";
+
       let div = document.createElement("div");
       div.classList.add("alert-edit");
       div.style.backgroundColor = "#67D49B";
@@ -527,7 +528,7 @@ let cupcake = () => {
   body.style.backgroundColor = "#faf7f5";
 
   h1.style.backgroundColor = "#FBF8F6";
-  h1.style.color = "#1F2937";
+  h1.style.color = "#291334";
 
   plus.style.backgroundColor = "#ef9fbc";
   plus.style.borderRadius = "25px";
@@ -549,12 +550,13 @@ let cupcake = () => {
   delt.style.borderRadius = "30px";
   delt.style.border = "1px solid #ef9fbc";
   delt.backgroundColor = "#ef9fbc";
-  delt.style.color = "#00000";
-  //delt.style.textTransform = "uppercase";
+  delt.style.color = "#52111E";
+  delt.style.textTransform = "uppercase";
+  delt.style.cursor = "pointer";
 
   delt.onmouseover = function () {
     delt.style.backgroundColor = "#e2598c";
-    delt.style.border = "#e2598c";
+    delt.style.border = "1px solid #e2598c";
   };
 
   delt.onmouseout = function () {
@@ -563,11 +565,11 @@ let cupcake = () => {
   };
 
   container.style.backgroundColor = "#fbf8f6";
-  container.style.width = "500px";
-  container.style.margin = "auto";
-  container.textAlign = "center";
-  container.style.boxShadow = "0 8px 32px 0 rgb(31, 38, 135, 0.6)";
-  container.style.padding = "20px";
+  // container.style.width = "500px";
+  // container.style.margin = "auto";
+  // container.textAlign = "center";
+  // container.style.boxShadow = "0 8px 32px 0 rgb(31, 38, 135, 0.6)";
+  // container.style.padding = "20px";
 
   input.style.border = "1px solid #da5d8b";
   input.style.backgroundColor = "#FAF7F5";
@@ -596,6 +598,8 @@ let cupcake = () => {
     item.style.color = "#4A4E5A";
     item.style.backgroundColor = "#FBF8F6";
     item.style.padding = "10px";
+    item.style.color = "#291334";
+    item.style.borderBottom = "";
   }
 
   Array.from(themes).map((i) => {
@@ -611,15 +615,14 @@ let cupcake = () => {
     item.onmouseover = function () {
       item.style.backgroundColor = "#e4dfe1";
       item.style.borderRadius = "20px";
-      item.style.cursor = "pointer";
-      // item.style.backgroundColor = "yellow";
+
       item.onmousedown = function () {
         item.style.backgroundColor = "#67D49B";
-        //item.style.color = "#1F2937";
+        item.style.color = "#1F2937";
       };
       item.onmouseup = function () {
         item.style.backgroundColor = "#e4dfe1";
-        //item.style.color = "#1F2937";
+        item.style.color = "#1F2937";
       };
     };
 
@@ -651,7 +654,6 @@ let cupcake = () => {
 };
 
 let dark = () => {
-  //addingTask();
   body.style.backgroundColor = "#2A303C";
   h1.style.backgroundColor = "#4A4E5A";
   h1.style.color = "#A6ADBA";
@@ -673,151 +675,6 @@ let dark = () => {
     plus.style.border = "1px solid #f360c2 ";
   };
 
-  // plus.addEventListener("click", (e) => {
-  //   e.preventDefault();
-  //   if (input.value) {
-  //     let isEditing = plus.classList.contains("fa-check");
-  //     console.log("isEditing", isEditing);
-
-  //     //if edite is active and there is an event
-  //     //then assign new values to list base on the event target;
-  //     if (isEditing && e2) {
-  //       if (e2.target.parentNode.className == "edit-btn") {
-  //         e2.target.parentNode.parentNode.previousSibling.innerHTML =
-  //           input.value;
-  //       } else if (e2.target.parentNode.className == "btn-div") {
-  //         e2.target.parentNode.previousSibling.innerHTML = input.value;
-  //       }
-
-  //       plus.classList.remove("fa-check");
-
-  //       //save new edited value into local storage by
-  //       // using ul nod child textContent
-  //       let newValues = [];
-  //       let ulChild = ul.childNodes;
-  //       for (let i = 0; i < ulChild.length; i++) {
-  //         newValues.push(ulChild[i].innerText);
-  //       }
-  //       localStorage.setItem("task", JSON.stringify(newValues));
-  //     } else {
-  //       let li = document.createElement("li");
-  //       li.classList.add("list-data");
-  //       li.style.backgroundColor = "#4A4E5B";
-  //       li.style.color = "#A6ADBA";
-  //       li.style.borderBottom = "1px solid #A6ADBA ";
-
-  //       let h2 = document.createElement("h2");
-  //       h2.classList.add("data-item");
-  //       h2.textContent = input.value;
-
-  //       li.appendChild(h2);
-
-  //       let editBtn = document.createElement("button");
-  //       editBtn.classList.add("edit-btn");
-  //       editBtn.style.borderRadius = "10px";
-  //       editBtn.style.fontSize = "20px";
-  //       editBtn.style.padding = "10px 15px";
-
-  //       let editIcon = document.createElement("i");
-  //       editIcon.classList.add("fa-solid");
-  //       editIcon.classList.add("fa-pen");
-  //       editBtn.appendChild(editIcon);
-
-  //       editBtn.addEventListener("click", function (ev) {
-  //         e2 = ev;
-  //         editTask(this);
-  //       });
-
-  //       let delBtn = document.createElement("button");
-  //       delBtn.classList.add("delete-btn");
-
-  //       delBtn.style.borderRadius = "10px";
-  //       delBtn.style.fontSize = "20px";
-  //       delBtn.style.padding = "10px 15px";
-  //       delBtn.style.color = "#470C0A";
-
-  //       let delIcon = document.createElement("i");
-  //       delIcon.classList.add("fa-regular");
-  //       delIcon.classList.add("fa-trash-can");
-  //       delBtn.appendChild(delIcon);
-
-  //       delBtn.addEventListener("click", deleteTask);
-
-  //       let btnDivs = document.createElement("div");
-  //       btnDivs.classList.add("btn-div");
-
-  //       btnDivs.appendChild(editBtn);
-  //       btnDivs.appendChild(delBtn);
-
-  //       li.appendChild(btnDivs);
-
-  //       ul.appendChild(li);
-
-  //       let c = ul.childNodes;
-  //       let t = [];
-  //       for (let i = 0; i < c.length; i++) {
-  //         t.push(c[i].textContent);
-  //       }
-  //       localStorage.setItem("task", JSON.stringify(t));
-  //     }
-  //     input.value = "";
-  //   } else {
-  //     let modal = document.createElement("modal");
-  //     alert("you have to enter a task!!!");
-  //   }
-  // });
-
-  // //get local storage values using tanery operator
-  // let saveItems = localStorage.getItem("task")
-  //   ? JSON.parse(localStorage.getItem("task"))
-  //   : [];
-
-  // for (let i = 0; i < saveItems.length; i++) {
-  //   let text = saveItems[i];
-
-  //   // create the li with the edit and delete buttons as above
-  //   // append the li to the list
-  //   let li = document.createElement("li");
-  //   li.classList.add("list-data");
-
-  //   let h2 = document.createElement("h2");
-  //   h2.classList.add("data-item");
-  //   h2.textContent = text;
-
-  //   li.appendChild(h2);
-
-  //   let editBtn = document.createElement("button");
-  //   editBtn.classList.add("edit-btn");
-
-  //   let editIcon = document.createElement("i");
-  //   editIcon.classList.add("fa-solid");
-  //   editIcon.classList.add("fa-pen");
-  //   editBtn.appendChild(editIcon);
-
-  //   editBtn.addEventListener("click", function (ev) {
-  //     e2 = ev;
-  //     editTask(this);
-  //   });
-
-  //   let delBtn = document.createElement("button");
-  //   delBtn.classList.add("delete-btn");
-  //   let delIcon = document.createElement("i");
-  //   delIcon.classList.add("fa-regular");
-  //   delIcon.classList.add("fa-trash-can");
-  //   delBtn.appendChild(delIcon);
-
-  //   delBtn.addEventListener("click", deleteTask);
-
-  //   let btnDivs = document.createElement("div");
-  //   btnDivs.classList.add("btn-div");
-
-  //   btnDivs.appendChild(editBtn);
-  //   btnDivs.appendChild(delBtn);
-
-  //   li.appendChild(btnDivs);
-  //   ul.appendChild(li);
-  // }
-
   delt.style.borderRadius = "10px";
   delt.style.color = "white";
   delt.style.border = "1px solid #f360c2";
@@ -825,9 +682,10 @@ let dark = () => {
   delt.style.cursor = "pointer";
 
   delt.onmouseover = function () {
-    delt.style.border = "1px solid #4A4E5A ";
+    delt.style.border = "1px solid #AF3888 ";
     delt.style.backgroundColor = "#AF3888";
   };
+
   delt.onmouseout = function () {
     delt.style.border = "1px solid #f360c2";
     delt.style.backgroundColor = "#f360c2";
@@ -855,18 +713,15 @@ let dark = () => {
     item.style.borderBottom = "1px solid #A6ADBA ";
   }
 
-  Array.from(themes).map((i) => {
-    i.style.backgroundColor = "#2A303C";
-    i.style.border = "1px solid #2A303C";
-    i.style.color = "#A6ADBA";
-    i.style.fontSize = "20px";
-    i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
-  });
-
   for (let edit of editBotton) {
     edit.style.borderRadius = "10px";
     edit.style.fontSize = "20px";
     edit.style.padding = "10px 15px";
+    edit.style.cursor = "pointer";
+    edit.style.backgroundColor = "#67d49b";
+    edit.style.border = "1px solid #67d49b";
+    edit.style.color = "#183B27";
+    edit.style.marginRight = "10px";
   }
 
   for (let del of deletBotton) {
@@ -874,7 +729,19 @@ let dark = () => {
     del.style.fontSize = "20px";
     del.style.padding = "10px 15px";
     del.style.color = "#470C0A";
+    del.style.cursor = "pointer";
+    del.style.border = "1px solid  #EC7071";
+    del.style.backgroundColor = "#EC7071";
   }
+
+  Array.from(themes).map((i) => {
+    i.style.backgroundColor = "#2A303C";
+    i.style.border = "1px solid #2A303C";
+    i.style.color = "#A6ADBA";
+    i.style.fontSize = "20px";
+    i.style.cursor = "pointer";
+    i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
+  });
 
   Array.from(themeItems).map((item) => {
     item.onmouseover = function () {
@@ -887,7 +754,7 @@ let dark = () => {
       };
       item.onmouseup = function () {
         item.style.backgroundColor = "#4A4E5A";
-        item.style.color = "";
+        item.style.color = "#A6ADBA";
       };
     };
     item.onmouseout = function () {
