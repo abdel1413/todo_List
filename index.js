@@ -822,7 +822,7 @@ let light = () => {
     i.style.backgroundColor = "#faf7f5";
     i.style.border = "2px solid #E8E9EB";
     i.style.borderRadius = "10px";
-    i.style.color = "#000000";
+    i.style.color = "rgb(12, 11, 11)";
     i.style.boxShadow = "15px 10px 4px 0 rgba(155 155 155 0.8)";
   });
 
@@ -1453,6 +1453,7 @@ let aqua = () => {
 
 let luxury = () => {
   body.style.backgroundColor = "#09090B";
+
   h1.style.backgroundColor = "#2E2E2F";
   h1.style.color = "#DCA54C";
 
