@@ -249,3 +249,86 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+.aqua,
+.aqua .list-data,
+.aqua .themes,
+.aqua .container {
+  background-color: aqua;
+}
+
+.night,
+.night .themes,
+.night #text-field {
+  background-color: #0f1729;
+  color: #b3c5ef;
+  border: 1px solid #0f1729;
+}
+
+.night #text-field {
+  border: 1px solid #9197dd;
+  font-size: 17px;
+  color: #b3ccf5;
+  border-radius: 10px;
+}
+
+.night .edit-btn,
+.night .edit-btn i {
+  background-color: #66d5be;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 7px;
+}
+
+.night .delete-btn,
+.night .delete-btn i {
+  background-color: #eb6c83;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 7px;
+}
+
+.night .palette,
+.night .palette i {
+  background-color: #273449;
+  border-radius: 10px;
+  color: #b3ccf5;
+}
+
+.night .fa-plus,
+.night #delete-all {
+  background-color: #9197dd;
+  border: 1px solid #9197dd;
+  border-radius: 10px;
+  color: black;
+}
+.night .fa-plus:hover,
+.night #delete-all:hover {
+  background-color: #3a4cf4;
+  border: 1px solid #3a4cf4;
+}
+
+.night .themes li:hover {
+  background-color: #323949;
+  border-radius: 10px;
+}
+
+.night .container,
+.night .list-data {
+  background-color: #323949;
+  border-bottom: solid 1px gray;
+  border-radius: 15px;
+}
+
+/* .night .themes {
+  color: #b3c5ef;
+  background-color: #323949;
+} */
+
+.cupcake,
+.cupcake .list-data,
+.cupcake .themes,
+.cupcake .container {
+  background-color: #faf7f5;
+}
