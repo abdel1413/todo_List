@@ -384,7 +384,7 @@ ul {
 .light .palette,
 .light .palette i {
   background-color: #303746;
-  border: 1px solid #303746;
+  /* border: 1px solid #303746; */
   color: #a6adba;
   cursor: pointer;
   border-radius: 10px;
@@ -393,7 +393,56 @@ ul {
 .light.palette:hover,
 .light .palette i:hover {
   background-color: #1b1e25;
-  border: 1px solid #1b1e25;
+  /* border: 1px solid #1b1e25; */
+  cursor: pointer;
+}
+
+.bumblebee {
+  background-color: #ffffff;
+}
+
+.bumblebee .fa-plus,
+.bumblebee #delete-all {
+  background-color: #ebc858;
+  border: 1px solid #ebc858;
+
+  border-radius: 10px;
+}
+
+.bumblebee .fa-plus:hover,
+.bumblebee #delete-all:hover {
+  border: 1px solid #e4bf45;
+  background-color: #e4bf45;
+}
+
+.bumblebee #text-field {
+  border: 1px solid #e4bf45;
+}
+
+.bumblebee .themes {
+  background-color: #ffffff;
+}
+.bumblebee .themes li:hover {
+  background-color: #eaeaea;
+  border-radius: 10px;
+}
+.bumblebee .edit-btn,
+.bumblebee .edit-btn i {
+  background-color: #67d49b;
+  border: 1px solid #67d49b;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 7px;
+}
+
+.bumblebee .delete-btn,
+.bumblebee .delete-btn i {
+  background-color: #ec7071;
+  border: 1px solid #ec7071;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 7px;
   cursor: pointer;
 }
 
