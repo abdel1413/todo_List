@@ -278,9 +278,6 @@ const addingTask = () => {
     li.appendChild(btnDivs);
     ul.appendChild(li);
   }
-
-  // console.log("after save", saveItems);
-  // console.log("edited text", edited);
 };
 
 addingTask();
@@ -353,7 +350,6 @@ function deletAll() {
       div.style.borderRadius = "10px";
       div.style.marginBottom = "10px";
 
-      // div.style.fontFamily = "Courier New, Courier, monospace";
       div.style.fontFamily = " sans-serif";
       div.style.transition = "all 3s ease";
       div.style.transform = "scale(1)";
@@ -391,7 +387,6 @@ function deletAll() {
       div.style.borderRadius = "10px";
       div.style.marginBottom = "10px";
 
-      // div.style.fontFamily = "Courier New, Courier, monospace";
       div.style.fontFamily = " sans-serif";
       div.style.transition = "all 3s ease";
       div.style.transform = "scale(1)";
@@ -436,20 +431,6 @@ function paletteColorList() {
     "luxury",
     "night",
   ];
-
-  /**
-   *  { cupcake: "#FAF7F5" },
-    { dark: "#2A303C" },
-    { light: "#FFFFFF" },
-    { bumblebee: "#FFFFFF" },
-    { synthwave: "#2D1B69" },
-    { halloween: "#212121" },
-    { fantasy: "#FFFFFF" },
-    { dracula: "#272935" },
-    { aqua: "#335CA8" },
-    { luxury: "#09090B" },
-    { night: "#0F1729" },
-   */
 
   let colorTheme = document.getElementsByClassName("themes");
   const body = document.getElementsByTagName("body")[0];

@@ -250,11 +250,239 @@ ul {
   padding: 0;
 }
 
+.cupcake h1,
+.cupcake input {
+  color: #291334;
+}
+
+.cupcake,
+.cupcake .list-data,
+.cupcake .themes,
+.cupcake .container {
+  background-color: #faf7f5;
+}
+
+.cupcake .delete-btn,
+.cupcake .edit-btn {
+  padding: 15px 17px;
+  cursor: pointer;
+  font-size: 17px;
+  border-radius: 20px;
+}
+
+.dark,
+.dark .themes,
+.dark #text-field {
+  background-color: #2a303c;
+  color: #a6adba;
+  border: none;
+}
+.dark .input-field,
+.dark #text-field {
+  border: 1px solid #af3888;
+}
+
+.dark .list-data,
+.dark .container {
+  background-color: #4a4e5a;
+  color: #a6adba;
+  border-bottom: 1px solid gray;
+}
+
+.dark .fa-plus,
+.dark #delete-all {
+  background-color: #ce49a1;
+  border: 1px solid #ce49a1;
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+.dark .fa-plus:hover,
+.dark #delete-all:hover {
+  border: 1px solid #b83e8f;
+  background-color: #af3888;
+}
+
+.dark .edit-btn,
+.dark .edit-btn i {
+  background-color: #67d49b;
+  border: 1px solid #67d49b;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 7px;
+}
+
+.dark .delete-btn,
+.dark .delete-btn i {
+  background-color: #ec7071;
+  border: 1px solid #ec7071;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.dark .palette,
+.dark .palette i {
+  background-color: #21252e;
+  border: 1px solid #21252e;
+  color: #a6adba;
+  border-radius: 10px;
+}
+
+.dark .palette:hover,
+.dark .palette i:hover {
+  background-color: #111318;
+}
+
+.dark .themes li:hover {
+  background-color: #4a4e5a;
+  border-radius: 10px;
+}
+
+.light {
+  background-color: #ffffff;
+}
+
+.light .themes {
+  background-color: #ffffff;
+}
+
+.light .fa-plus,
+.light #delete-all {
+  background-color: #c43f95;
+  border: solid 1px #c43f95;
+  color: #ffff;
+  border-radius: 10px;
+}
+
+.light #text-field {
+  border: 1px solid #c43f95;
+}
+
+.light .edit-btn,
+.light .edit-btn i {
+  background-color: #67d49b;
+  border: 1px solid #67d49b;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 7px;
+}
+
+.light .delete-btn,
+.light .delete-btn i {
+  background-color: #ec7071;
+  border: 1px solid #ec7071;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.light .palette,
+.light .palette i {
+  background-color: #303746;
+  border: 1px solid #303746;
+  color: #a6adba;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.light.palette:hover,
+.light .palette i:hover {
+  background-color: #1b1e25;
+  border: 1px solid #1b1e25;
+  cursor: pointer;
+}
+
 .aqua,
 .aqua .list-data,
-.aqua .themes,
-.aqua .container {
-  background-color: aqua;
+.aqua .themes {
+  background-color: #335ca8;
+}
+
+.aqua .container,
+.aqua .list-data {
+  background-color: #5173b4;
+  color: #c7dbfb;
+}
+
+.aqua h1 .aqua #text-field {
+  color: #c7dbfb;
+}
+
+.aqua #text-field {
+  background-color: #335ca8;
+  font-size: 15px;
+  color: #c7dbfb;
+  border: 1px solid #784f97;
+}
+
+.aqua .edit-btn,
+.aqua .edit-btn i {
+  background-color: #4ea24b;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 7px;
+  color: white;
+  border: 1px solid #4ea24b;
+}
+
+.aqua .delete-btn,
+.aqua .delete-btn i {
+  background-color: #dd3b33;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 7px;
+  border: 1px solid #dd3b33;
+  cursor: pointer;
+  color: white;
+}
+
+.aqua .fa-plus,
+.aqua #delete-all {
+  background-color: #a277c3;
+  border: 1px solid #a277c3;
+  border-radius: 10px;
+  color: #ffffff;
+}
+.aqua .fa-plus:hover,
+.aqua #delete-all:hover {
+  background-color: #784f97;
+  border: 1px solid #784f97;
+}
+
+.aqua .themes li:hover {
+  background-color: #5173b4;
+  border-radius: 10px;
+}
+.aqua .themes {
+  border: none;
+  color: #c7dbfb;
+}
+
+.aqua .palette,
+.aqua .dropdown,
+.aqua .palette i {
+  background-color: #56a0d4;
+  border-radius: 10px;
+  color: #b3ccf5;
+  border: 1px solid #56a0d4;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.aqua .palette:hover,
+.aqua .palette i:hover {
+  background-color: #2f6f9d;
+  cursor: pointer;
+  padding: 5px;
+  color: #b3ccf5;
+  border: 1px solid #2f6f9d;
+  border-radius: 10px;
 }
 
 .night,
@@ -319,11 +547,4 @@ ul {
   background-color: #323949;
   border-bottom: solid 1px gray;
   border-radius: 15px;
-}
-
-.cupcake,
-.cupcake .list-data,
-.cupcake .themes,
-.cupcake .container {
-  background-color: #faf7f5;
 }
