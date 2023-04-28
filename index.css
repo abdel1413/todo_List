@@ -270,6 +270,12 @@ ul {
   border-radius: 20px;
 }
 
+.cupcake #text-author,
+.cupcake b {
+  color: #291334;
+  font-family: Arial, sans-serif;
+}
+
 .dark,
 .dark .themes,
 .dark #text-field {
@@ -341,6 +347,10 @@ ul {
   border-radius: 10px;
 }
 
+.dark.author-text,
+.dark b {
+  color: #a6adba;
+}
 .light {
   background-color: #ffffff;
 }
@@ -395,6 +405,10 @@ ul {
   background-color: #1b1e25;
   /* border: 1px solid #1b1e25; */
   cursor: pointer;
+}
+.light.author-text,
+.light b {
+  color: black;
 }
 
 .bumblebee {
@@ -459,6 +473,337 @@ ul {
   background-color: #131325;
   color: #babaee;
   border-radius: 10px;
+}
+
+.bumblebee.author-text,
+.bumblebee b {
+  color: black;
+}
+
+.synthwave,
+.synthwave .themes,
+.synthwave #text-field {
+  background-color: #2d1b69;
+  border: none;
+  color: #f9f7fd;
+}
+
+.synthwave .themes li:hover {
+  background-color: #4b357f;
+  border-radius: 10px;
+}
+
+.synthwave .container,
+.synthwave .container .list-data {
+  background-color: #4b357f;
+  border-bottom: solid 0.1em gray;
+}
+
+.synthwave .fa-plus,
+.synthwave #delete-all {
+  background-color: #56c1ff;
+  border: 1px solid #56c1ff;
+  border-radius: 10px;
+  color: black;
+}
+
+.synthwave .fa-plus:hover,
+.synthwave #delete-all:hover {
+  background-color: #4fb4f0;
+  border: 1px solid #4fb4f0;
+  border-radius: 10px;
+  color: black;
+}
+
+.synthwave #text-field {
+  border-radius: 10px;
+  border: solid 1px #4fb4f0;
+}
+
+.synthwave .palette,
+.synthwave .palette i {
+  background-color: #251757;
+  border-radius: 10px;
+  color: #f9f7fd;
+  cursor: pointer;
+}
+
+.synthwave .palette:hover,
+.synthwave .palette i:hover {
+  background-color: #190f3d;
+  border-radius: 10px;
+  color: #f9f7fd;
+}
+.synthwave .edit-btn {
+  background-color: #71ead2;
+  font-size: 20px;
+}
+.synthwave .delete-btn,
+.synthwave .delete-btn i {
+  background-color: #e34056;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.synthwave .edit-btn,
+.synthwave .delete-btn {
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.synthwave.author-text,
+.synthwave b {
+  color: #f9f7fd;
+}
+
+.halloween,
+.halloween #text-field,
+.halloween .themes {
+  background-color: #212121;
+  border: none;
+  color: #d4d4d4;
+}
+.halloween .author-text,
+.halloween b {
+  color: #d4d4d4;
+}
+
+.halloween .container,
+.halloween .list-data {
+  background-color: #424242;
+  color: #d4d4d4;
+  border-bottom: solid 1px gray;
+}
+
+.halloween .fa-plus,
+.halloween #delete-all {
+  background-color: #6c3b9b;
+  border: 1px solid #6c3b9b;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.halloween #text-field {
+  border: 2px solid #582f7f;
+  border-radius: 10px;
+}
+
+.halloween .fa-plus:hover,
+.halloween #delete-all:hover {
+  background-color: #582f7f;
+  border: 1px solid #582f7f;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.halloween .palette,
+.halloween .palette i {
+  background-color: #1f2222;
+  border-radius: 10px;
+  color: #f9f7fd;
+  cursor: pointer;
+}
+
+.halloween .palette:hover,
+.halloween .palette i:hover {
+  background-color: #161818;
+  border-radius: 10px;
+  color: #f9f7fd;
+}
+
+.halloween .themes li:hover {
+  background-color: #424242;
+  border-radius: 10px;
+}
+.halloween .edit-btn,
+.halloween .edit-btn i {
+  background-color: #4ea24b;
+  font-size: 20px;
+  color: white;
+}
+.halloween .delete-btn,
+.halloween .delete-btn i {
+  background-color: #dd3b33;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.halloween .edit-btn,
+.halloween .delete-btn {
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.halloween,
+.halloween #text-field,
+.halloween .themes {
+  background-color: #212121;
+  border: none;
+  color: #d4d4d4;
+}
+.halloween .author-text,
+.halloween b {
+  color: #d4d4d4;
+}
+
+.fantasy,
+.fantasy .container,
+.fantasy .list-data,
+.fantasy .themes {
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+.fantasy .fa-plus,
+.fantasy #delete-all {
+  background-color: #2d73ac;
+  border: 1px solid #2d73ac;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.fantasy #text-field {
+  border: 2px solid #2d73ac;
+  border-radius: 10px;
+}
+
+.fantasy .fa-plus:hover,
+.fantasy #delete-all:hover {
+  background-color: #29679a;
+  border: 1px solid #29679a;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.fantasy .palette,
+.fantasy .palette i {
+  background-color: #242e41;
+  border-radius: 10px;
+  color: #f9f7fd;
+  cursor: pointer;
+}
+
+.fantasy .palette:hover,
+.fantasy .palette i:hover {
+  background-color: #181f2b;
+  border-radius: 10px;
+  color: #f9f7fd;
+}
+
+.fantasy .themes li:hover {
+  background-color: lightgray;
+  border-radius: 10px;
+}
+.fantasy .edit-btn,
+.fantasy .edit-btn {
+  background-color: #67d49b;
+  font-size: 20px;
+}
+.fantasy .delete-btn,
+.fantasy .delete-btn {
+  background-color: #ec7071;
+
+  font-size: 20px;
+}
+
+.fantasy .edit-btn,
+.fantasy .delete-btn {
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.fantasy .author-text,
+.fantasy b {
+  color: black;
+}
+
+.dracula,
+.dracula #text-field,
+.dracula .themes {
+  background-color: #272935;
+  border: none;
+  color: #f8f8f2;
+}
+.dracula .author-text,
+.dracula b {
+  color: #f8f8f2;
+}
+
+.dracula .container,
+.dracula .list-data {
+  background-color: #474853;
+  color: #f8f8f2;
+  border-bottom: solid 1px gray;
+}
+
+.dracula .fa-plus,
+.dracula #delete-all {
+  background-color: #9c5ef8;
+  border: 1px solid #9c5ef8;
+  border-radius: 10px;
+  color: black;
+}
+
+.dracula #text-field {
+  border: 1px solid #9c5ef8;
+  border-radius: 10px;
+}
+
+.dracula .fa-plus:hover,
+.dracula #delete-all:hover {
+  background-color: #904cf4;
+  border: 1px solid #904cf4;
+  border-radius: 10px;
+  /* color: #ffffff; */
+}
+
+.dracula .palette,
+.dracula .palette i {
+  background-color: #44485d;
+  border-radius: 10px;
+  color: #f9f7fd;
+  cursor: pointer;
+}
+
+.dracula .palette:hover,
+.dracula .palette i:hover {
+  background-color: #343746;
+  border-radius: 10px;
+  color: #f9f7fd;
+}
+
+.dracula .themes li:hover {
+  background-color: #424242;
+  border-radius: 10px;
+}
+.dracula .edit-btn,
+.dracula .edit-btn i {
+  background-color: #79f47c;
+  font-size: 20px;
+}
+.dracula .delete-btn,
+.dracula .delete-btn i {
+  background-color: #ea5253;
+  color: #f8dbda;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.dracula .edit-btn,
+.dracula .delete-btn {
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.dracula .author-text,
+.dracula b {
+  color: #d4d4d4;
 }
 
 .aqua,
@@ -549,6 +894,91 @@ ul {
   border-radius: 10px;
 }
 
+.aqua .author-text,
+.aqua b {
+  color: #c7dbfb;
+}
+
+.luxury,
+.luxury #text-field,
+.luxury .themes {
+  background-color: #09090b;
+  border: none;
+  color: #dca54c;
+}
+
+.luxury .container,
+.luxury .list-data {
+  background-color: #2e2e2f;
+  color: #dca54c;
+  border-bottom: solid 1px gray;
+}
+
+.luxury .fa-plus,
+.luxury #delete-all {
+  background-color: #1c3663;
+  border: 1px solid #1c3663;
+  border-radius: 10px;
+  color: #a9c7f5;
+}
+
+.luxury #text-field {
+  border: 1px solid #152747;
+  border-radius: 10px;
+}
+
+.luxury .fa-plus:hover,
+.luxury #delete-all:hover {
+  background-color: #152747;
+  border: 1px solid #152747;
+  border-radius: 10px;
+  /* color: #ffffff; */
+}
+
+.luxury .palette,
+.luxury .palette i {
+  background-color: #121112;
+  border-radius: 10px;
+  color: #dca54c;
+  cursor: pointer;
+}
+
+.luxury .palette:hover,
+.luxury .palette i:hover {
+  background-color: #121112;
+  border-radius: 10px;
+  color: #dca54c;
+}
+
+.luxury .themes li:hover {
+  background-color: #1d1b1d;
+  border-radius: 10px;
+}
+.luxury .edit-btn,
+.luxury .edit-btn i {
+  background-color: #87d03a;
+  font-size: 20px;
+}
+.luxury .delete-btn,
+.luxury .delete-btn i {
+  background-color: #eb6d6e;
+  /* color: #f8dbda; */
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.luxury .edit-btn,
+.luxury .delete-btn {
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.luxury .author-text,
+.luxury b {
+  color: #dca54c;
+}
+
 .night,
 .night .themes,
 .night #text-field {
@@ -611,4 +1041,9 @@ ul {
   background-color: #323949;
   border-bottom: solid 1px gray;
   border-radius: 15px;
+}
+
+.night .author-text,
+.night b {
+  color: #b3c5ef;
 }
