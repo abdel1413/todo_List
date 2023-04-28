@@ -417,6 +417,7 @@ ul {
 
 .bumblebee #text-field {
   border: 1px solid #e4bf45;
+  border-radius: 10px;
 }
 
 .bumblebee .themes {
@@ -444,6 +445,20 @@ ul {
   font-size: 20px;
   padding: 7px;
   cursor: pointer;
+}
+
+.bumblebee .palette,
+.bumblebee .palette i {
+  background-color: #2f2f53;
+  color: #babaee;
+  border-radius: 10px;
+}
+
+.bumblebee .palette :hover,
+.bumblebee .palette i:hover {
+  background-color: #131325;
+  color: #babaee;
+  border-radius: 10px;
 }
 
 .aqua,
